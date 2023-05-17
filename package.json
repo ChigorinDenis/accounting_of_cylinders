@@ -1,0 +1,40 @@
+{
+  "name": "electron-react-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --config webpack.common.js --watch",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^10.1.2",
+    "electron-reload": "^2.0.0-alpha.1",
+    "electron-router-dom": "^1.0.5",
+    "mysql2": "^3.3.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^6.11.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
+    "electron-is-dev": "^2.0.0",
+    "file-loader": "^6.2.0",
+    "sass": "^1.26.11",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^4.15.0"
+  }
+}
