@@ -1,41 +1,23 @@
 
 import React, {useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Button } from 'semantic-ui-react'
 import Main from './components/Main';
 import Expertise from './components/Expertise';
+import ExpertiseControl from './components/ExpertiseControl';
 import Employee from './components/Employee';
 import Equipment from './components/Equipment';
-
+import Header from './components/Header';
 
 export default function App() {
-  const [books, setBooks] = useState([]);
+  const activeTab = useSelector((state) => state.tabs.activeTab);
   return (
     <>
-      <ul>
-        {books && books.map((book) => (<li key={book.id}>{book.title}</li>))}
-      </ul>
-      {/* <button onClick={() => {
-        electron.notificationApi.sendNotification('My custom notification!');
-      }}>Notify</button> */}
-      <button onClick={async () => {
-        const result = await electron.ipcRenderer.invoke('get-books');
-        // if (result.success) {
-          setBooks(result)
-        // }
-        
-    //     electron.ipcRenderer.send('get-books');
-
-    // // Обработка ответа на запрос
-    //   electron.ipcRenderer.on('get-books-response', (event, data) => {
-    //   if (data.success) {
-    //     setBooks(data.books);
-    //   } else {
-    //     console.error('Ошибка при получении списка книг: ', data.error);
-    //   }
-    // });
-      }}>Get</button>
-      <Button content='Click Here' />
-      <Main />
+      <Header />
+      {activeTab === 'сосуды' && <Main />}
+      {activeTab === 'персонал' && <Employee />}
+      {activeTab === 'оборудование' && <Equipment />}
+      {activeTab === 'экспертиза' && <ExpertiseControl/>}
     </>
   )
 }

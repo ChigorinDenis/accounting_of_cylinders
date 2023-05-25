@@ -1,9 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState} from 'react';
 import { Button, Checkbox, Icon, Table } from 'semantic-ui-react'
 import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 
 export default () => {
+  const [baloons, setBaloons] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      // You can await here
+      const data = await electron.ipcRenderer.invoke('get-baloons');
+      setBaloons(data);
+      return () => {
+        ipcRenderer.removeAllListeners('get-baloons');
+      };
+    }
+    fetchData(); 
+  }, []);
+
   return (
     <>
     <Table striped>
@@ -25,84 +39,46 @@ export default () => {
       </Table.Header>
 
       <Table.Body>
-        <Table.Row>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>Статус</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Jamie Harington</Table.Cell>
-          <Table.Cell>January 11, 2014</Table.Cell>
-          <Table.Cell>jamieharingonton@yahoo.com</Table.Cell>
-          <Table.Cell>Yes</Table.Cell>
-          <Table.Cell>Jamie Harington</Table.Cell>
-          <Table.Cell>January 11, 2014</Table.Cell>
-          <Table.Cell>jamieharingonton@yahoo.com</Table.Cell>
-          <Table.Cell>Yes</Table.Cell>
-          <Table.Cell>Jamie Harington</Table.Cell>
-          <Table.Cell>January 11, 2014</Table.Cell>
-          <Table.Cell>jamieharingonton@yahoo.com</Table.Cell>
-          <Table.Cell>Статус</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>Jill Lewis</Table.Cell>
-          <Table.Cell>May 11, 2014</Table.Cell>
-          <Table.Cell>jilsewris22@yahoo.com</Table.Cell>
-          <Table.Cell>Yes</Table.Cell>
-          <Table.Cell>Jill Lewis</Table.Cell>
-          <Table.Cell>May 11, 2014</Table.Cell>
-          <Table.Cell>jilsewris22@yahoo.com</Table.Cell>
-          <Table.Cell>Yes</Table.Cell>
-          <Table.Cell>Jill Lewis</Table.Cell>
-          <Table.Cell>May 11, 2014</Table.Cell>
-          <Table.Cell>jilsewris22@yahoo.com</Table.Cell>
-          <Table.Cell>Статус</Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell negative>
-            <Icon name='close' />
-            Брак
-          </Table.Cell>
-        </Table.Row>
-        <Table.Row>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>No</Table.Cell>
-          <Table.Cell>John Lilki</Table.Cell>
-          <Table.Cell>September 14, 2013</Table.Cell>
-          <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-          <Table.Cell>Статус</Table.Cell>
-        </Table.Row>
+        {baloons.map((baloon) => {
+          const {
+            id,
+            prod_number,
+            prod_date,
+            pressure_work,
+            shape,
+            volume,
+            env,
+            thickness,
+            diameter,
+            length,
+            mark,
+            gost,
+            status
+          } = baloon;
+          const date = new Date(prod_date).getFullYear();
+          return (
+            <Table.Row key={`${id}${prod_number}`}>
+              <Table.Cell>{prod_number}</Table.Cell>
+              <Table.Cell>{date}</Table.Cell>
+              <Table.Cell>{pressure_work}</Table.Cell>
+              <Table.Cell>{volume}</Table.Cell>
+              <Table.Cell>{shape}</Table.Cell>
+              <Table.Cell>{env}</Table.Cell>
+              <Table.Cell>{thickness}</Table.Cell>
+              <Table.Cell>{diameter}</Table.Cell>
+              <Table.Cell>{length}</Table.Cell>
+              <Table.Cell>{mark}</Table.Cell>
+              <Table.Cell>{gost}</Table.Cell>
+              <Table.Cell>{status}</Table.Cell>
+            </Table.Row>
+          )
+        })}
+        
       </Table.Body>
       <Table.Footer fullWidth>
       <Table.Row>
         <Table.HeaderCell />
-        <Table.HeaderCell colSpan='11'>
+        <Table.HeaderCell colSpan='12'>
           <Button
             floated='right'
             icon

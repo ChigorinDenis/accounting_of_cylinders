@@ -2,23 +2,30 @@
 const { BrowserWindow, app, ipcMain, Notification } = require('electron');
 const path = require('path');
 const url = require('url');
-
 const isDev = require('electron-is-dev');
 const mysql = require('mysql2');
+
+const subscribeToRoutes = require('./routes/routes');
+
+
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'craft',
   password: '111',
-  database: 'ref-book-catalog'
+  database: 'baloons'
 });
 
-connection.connect((error) => {
-  if (error) {
-    console.error('Error connection to DB: ', error);
-  } else {
-    console.log('Connection to DB is successfull');
-  }
-});
+function handleConnect() {
+  connection.connect((err) => {
+    if (err) {
+      console.error('Error connection to DB', err);
+    } else {
+      console.log('Connection to DB is successfull');
+    }
+  });
+}
+
+handleConnect();
 
 function createWindow() {
   const win = new BrowserWindow({
@@ -46,44 +53,11 @@ function createWindow() {
   );
 }
 
-
-
 // ipcMain.on('notify', (_, message) => {
 //   new Notification({title: 'Notifiation', body: message}).show();
 // })
 
-
-// ipcMain.handle('get-books', (event, args) => {
-//   const query = 'SELECT * FROM book';
-//   let response;
-//   connection.query(query, (error, results) => {
-//     if (error) {
-//       console.error('Error by execute query', error);
-//       response = { success: false, error: error.message };
-//     } else {
-//       response = { success: true, books: results }; 
-//       console.error('There is no problem', response);
-//     }
-//   });
-//   console.log(response);
-//   return response;
-//   });
-
-ipcMain.handle('get-books', async () => {
-  const query = 'SELECT * FROM book';
-
-  return new Promise((resolve, reject) => {
-    connection.query(query, (error, results) => {
-      if (error) {
-        console.error('Ошибка при выполнении запроса: ', error);
-        reject(error);
-      } else {
-        console.log(results)
-        resolve(results);
-      }
-    });
-  });
-});
+subscribeToRoutes(ipcMain, connection);
 
 app.setPath('userData', path.join(__dirname, 'build', 'fonts'));
   
