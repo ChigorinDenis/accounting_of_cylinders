@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Form, Input, TextArea, Button, Select } from 'semantic-ui-react'
+import formHandling from '../../utils/formHandling';
 
 const shapeOptions = [
   { key: 'c', text: 'Цилиндр', value: 'Цилиндр' },
@@ -29,19 +30,7 @@ const FormAddBaloon = () => {
     status: 'Активный'
   });
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    console.log(event.target);
-    console.log('name', name, value)
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value
-    }));
-  };
-
-  const handleSelectChange = (e, { name, value }) => {
-    setFormData({ ...formData, [name]: value });
-  };
+  const { handleInputChange, handleSelectChange } = formHandling(formData, setFormData);
 
   const handleSubmit = () => {
     // Отправка данных в главный процесс Electron

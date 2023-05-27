@@ -3,14 +3,16 @@ import { Button, Checkbox, Icon, Table } from 'semantic-ui-react'
 import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 
-export default () => {
-  const [baloons, setBaloons] = useState([]);
+export default ({ handleSet }) => {
 
+  const [baloons, setBaloons] = useState([]);
+  const [allChecked, setAllChecked] = useState(false);
   useEffect(() => {
     async function fetchData() {
       // You can await here
       const data = await electron.ipcRenderer.invoke('get-baloons');
-      setBaloons(data);
+      const mappedData = data.map((baloon) => ({...baloon, checked: false}))
+      setBaloons(mappedData);
       return () => {
         ipcRenderer.removeAllListeners('get-baloons');
       };
@@ -18,11 +20,51 @@ export default () => {
     fetchData(); 
   }, []);
 
+  const onChangeAll = () => {
+    setAllChecked(!allChecked)
+    const newBaloons = baloons.map((baloon) => ({...baloon, checked: !allChecked}));
+    setBaloons(newBaloons);
+    const baloonsIds = newBaloons.reduce((acc, baloon) => {
+      if (baloon.checked) {
+        return [...acc, baloon.id]
+      }
+      return acc;
+    }, []);
+    handleSet && handleSet(baloonsIds);
+  }
+
+  const onChange = (id) => () => {
+    const newBaloons = baloons.map((baloon) => {
+      if (baloon.id === id) {
+        return {
+          ...baloon,
+          checked: !baloon.checked
+        }
+      }
+      return baloon;
+    });
+    setBaloons(newBaloons);
+    const baloonsIds = newBaloons.reduce((acc, baloon) => {
+      if (baloon.checked) {
+        return [...acc, baloon.id]
+      }
+      return acc;
+    }, []);
+    handleSet && handleSet(baloonsIds);
+  }
+
   return (
     <>
     <Table striped>
       <Table.Header>
         <Table.Row>
+          <Table.HeaderCell>
+            <Checkbox
+              checked={allChecked}
+              onChange={onChangeAll}
+            />
+          </Table.HeaderCell>
+          
           <Table.HeaderCell>Зав.номер</Table.HeaderCell>
           <Table.HeaderCell>Дата производства</Table.HeaderCell>
           <Table.HeaderCell>Рабочее давление</Table.HeaderCell>
@@ -42,6 +84,7 @@ export default () => {
         {baloons.map((baloon) => {
           const {
             id,
+            checked,
             prod_number,
             prod_date,
             pressure_work,
@@ -58,6 +101,12 @@ export default () => {
           const date = new Date(prod_date).getFullYear();
           return (
             <Table.Row key={`${id}${prod_number}`}>
+              <Table.Cell>
+                <Checkbox 
+                  checked={checked}
+                  onChange={onChange(id)}
+                />
+              </Table.Cell>
               <Table.Cell>{prod_number}</Table.Cell>
               <Table.Cell>{date}</Table.Cell>
               <Table.Cell>{pressure_work}</Table.Cell>
@@ -76,7 +125,7 @@ export default () => {
         
       </Table.Body>
       <Table.Footer fullWidth>
-      <Table.Row>
+      {/* <Table.Row>
         <Table.HeaderCell />
         <Table.HeaderCell colSpan='12'>
           <Button
@@ -88,17 +137,13 @@ export default () => {
           >
             <Icon name='fire extinguisher' /> Добавить балон
           </Button>
-          <Button size='small'>Approve</Button>
-          <Button disabled size='small'>
-            Approve All
-          </Button>
         </Table.HeaderCell>
-      </Table.Row>
+      </Table.Row> */}
     </Table.Footer>
     </Table>
-    <Modal>
+    {/* <Modal>
       <FormAddBaloon />
-    </Modal>
+    </Modal> */}
     </>
     );
 }

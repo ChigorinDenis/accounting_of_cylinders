@@ -5,6 +5,7 @@ export default ({children}) => {
   
   return (
     <Modal
+    size='large'
       trigger={<Button>Show Modal</Button>}
     >
       <Modal.Content>
