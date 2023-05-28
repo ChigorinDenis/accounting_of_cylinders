@@ -17,20 +17,40 @@ function ExpertiseCreate() {
 
   const handleCreateExpertise = () => {
       const idExpertise = electron.ipcRenderer.sendSync('add-expertise', formData);
-      electron.ipcRenderer.send('add-visual-control-items', {
+
+      // VISUAL CONTROL ADD AND RESULT
+      const idVisualControl = electron.ipcRenderer.sendSync('add-visual-control', {
         idExpertise,
+      });
+      electron.ipcRenderer.send('add-visual-result', {
+        idVisualControl,
         idBaloons
       });
-      electron.ipcRenderer.send('add-ultrasonic-control-items', {
-        idExpertise,
+
+      //ULTRASONIC CONTROL ADD AND RESULT
+      const idUltrasonicControl = electron.ipcRenderer.sendSync('add-ultrasonic-control', {
+        idExpertise
+      });
+      electron.ipcRenderer.send('add-ultrasonic-result', {
+        idUltrasonicControl,
         idBaloons
       });
-      electron.ipcRenderer.send('add-solid-control-items', {
-        idExpertise,
+
+      //SOLID CONTROL ADD AND RESULT
+      const idSolidControl = electron.ipcRenderer.sendSync('add-solid-control', {
+        idExpertise
+      });
+      electron.ipcRenderer.send('add-solid-result', {
+        idSolidControl,
         idBaloons
       });
-      electron.ipcRenderer.send('add-pneumatic-control-items', {
-        idExpertise,
+
+      //PNEUMATIC CONTROL ADD AND RESULT
+      const idPneumaticControl = electron.ipcRenderer.sendSync('add-pneumatic-control', {
+        idExpertise
+      });
+      electron.ipcRenderer.send('add-pneumatic-result', {
+        idPneumaticControl,
         idBaloons
       });
   }

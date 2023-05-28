@@ -35,7 +35,7 @@ const FormAddBaloon = () => {
   const handleSubmit = () => {
     // Отправка данных в главный процесс Electron
     electron.ipcRenderer.send('add-baloon', formData);
-    console.log(formData);
+    
   };
 
   return (

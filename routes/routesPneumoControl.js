@@ -12,12 +12,40 @@ const routesPneumoControl = [
   },
   {
     method: "on",
-    routeName: "add-pneumatic-control-items",
+    routeName: "add-pneumatic-control-employee",
     func: (formData) => {
-      const { idExpertise, idBaloons } = formData;
-      const values = idBaloons.map((idBaloon) => `(${idExpertise}, ${idBaloon})`).join(', ');
-      const query = `INSERT INTO \`pneumatic_control\` (\`id_expertise\`, \`id_baloon\`) VALUES ${values}`;
-      console.log(query);
+      const { idPneumaticControl, idEmployees } = formData;
+      const values = idEmployees.map((idEmployee) => `(${idPneumaticControl}, ${idEmployee})`).join(', ');
+      const query = `INSERT INTO pneumatic_control_employee (id_pneumatic_control, id_employee) VALUES ${values}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
+    routeName: "add-pneumatic-control-equipment",
+    func: (formData) => {
+      const { idPneumaticControl, idEquipments } = formData;
+      const values = idEquipments.map((idEquipment) => `(${idPneumaticControl}, ${idEquipment})`).join(', ');
+      const query = `INSERT INTO pneumatic_control_equipment (id_pneumatic_control, id_equipment) VALUES ${values}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
+    routeName: "add-pneumatic-result",
+    func: (formData) => {
+      const { idPneumaticControl, idBaloons } = formData;
+      const values = idBaloons.map((idBaloon) => `(${idPneumaticControl}, ${idBaloon})`).join(', ');
+      const query = `INSERT INTO pneumatic_result (id_pneumatic_control, id_baloon) VALUES ${values}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
+    routeName: "add-pneumatic-control",
+    func: (formData) => {
+      const { idExpertise } = formData;
+      const query = `INSERT INTO pneumatic_control (id_expertise) VALUES (${idExpertise})`;
       return query;
     },
   },
