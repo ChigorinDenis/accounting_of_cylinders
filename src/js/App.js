@@ -11,7 +11,8 @@ import Employee from './components/Employee';
 import Equipment from './components/Equipment';
 import Header from './components/Header';
 import EditableTable from './components/EditableTable';
-import VisualExpertise from './components/VisualExpertise';
+import UpdateControl from './components/UpdateControl';
+import VisualControl from './components/VisualControl';
 
 export default function App() {
   const activeTab = useSelector((state) => state.tabs.activeTab);
@@ -32,8 +33,8 @@ export default function App() {
       {activeTab === 'сосуды' && <Main />}
       {activeTab === 'персонал' && <Employee />}
       {activeTab === 'оборудование' && <Equipment />}
-      {activeTab === 'экспертиза' && <Modal><ExpertiseCreate/></Modal>}
-      {/* {activeTab === 'экспертиза' && <VisualExpertise />} */}
+      {/* {activeTab === 'экспертиза' && <Modal><ExpertiseCreate/></Modal>} */}
+      {activeTab === 'экспертиза' && <VisualControl />}
     </>
   )
 }

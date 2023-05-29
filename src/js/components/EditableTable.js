@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Table, Input } from 'semantic-ui-react';
 
 const EditableTable = ({ tableHeader, data }) => {
+  console.log(data)
   const [editingCell, setEditingCell] = useState(null); // Хранение информации о редактируемой ячейке
   const [tableData, setTableData] = useState(data);
 

@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  activeTab: 'сосуды', // Изначально активной вкладкой является "Оборудование"
+  activeTab: 'экспертиза', // Изначально активной вкладкой является "Оборудование"
 };
 
 const tabsSlice = createSlice({

@@ -1,17 +1,19 @@
 import React from "react";
 import Steps from "./Steps";
-import VisualExpertise from "./VisualExpertise";
-import SolidExperitise from "./SolidExpertise";
-import PneumoExpertise from "./PnuemoExpertise"
-import UltrasonicExpertise from "./UltrasonicExpertise";
+import VisualControl from "./VisualControl";
+import SolidControl from "./SolidControl";
+import PnuemoControl from "./PnuemoControl"
+import UltrasonicControl from "./UltrasonicControl";
+
+
 function ExpertiseControl() {
   return (
     <>
       <Steps />
-      <VisualExpertise />
-      <UltrasonicExpertise />
-      <SolidExperitise />
-      <PneumoExpertise />
+      <VisualControl />
+      <UltrasonicControl />
+      <SolidControl />
+      <PnuemoControl />
     </>
     
   )
