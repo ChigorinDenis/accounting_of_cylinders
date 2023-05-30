@@ -11,6 +11,19 @@ const routesSolidControl = [
     },
   },
   {
+    method: "handle",
+    routeName: "get-solid-control-result",
+    func: (value) => {
+      const query = `SELECT b.prod_number, b.prod_date, sr.*
+      FROM expertise e
+      JOIN solid_control sc ON sc.id_expertise = e.id
+      JOIN solid_result sr ON sr.id_solid_control = sc.id
+      JOIN baloon b ON b.id = sr.id_baloon
+      WHERE e.id = ${value}`;
+      return query;
+    },
+  },
+  {
     method: "on",
     routeName: "add-solid-control-employee",
     func: (formData) => {

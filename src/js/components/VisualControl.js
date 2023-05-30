@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
-import { Header } from "semantic-ui-react";
+import { Button, Header } from "semantic-ui-react";
 
 
 const tableHeader = [
@@ -12,13 +12,13 @@ const tableHeader = [
 ];
 
 
-function VisualControl() {
+function VisualControl({next}) {
   const [results, setResults] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const data = await electron.ipcRenderer.invoke('get-visual-control-result', 23);
+      const data = await electron.ipcRenderer.invoke('get-visual-control-result', 29);
       setResults(data);
       return () => {
         ipcRenderer.removeAllListeners('get-visual-control-result');
@@ -32,6 +32,7 @@ function VisualControl() {
     <Header as="h3" color="blue">Визуально-измерительный контроль</Header>
     <UpdateControl />
     <EditableTable tableHeader={tableHeader} data={results} />
+    <Button onClick={() => next('ultrasonic')}>Дальше</Button>
     </>
   )
 }

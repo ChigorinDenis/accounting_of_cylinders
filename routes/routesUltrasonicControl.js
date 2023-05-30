@@ -11,6 +11,19 @@ const routesUltrasonicControl = [
     },
   },
   {
+    method: "handle",
+    routeName: "get-ultrasonic-control-result",
+    func: (value) => {
+      const query = `SELECT b.prod_number, b.prod_date, ur.id, ur.*
+      FROM expertise e
+      JOIN ultrasonic_control uc ON uc.id_expertise = e.id
+      JOIN ultrasonic_result ur ON ur.id_ultrasonic_control = uc.id
+      JOIN baloon b ON b.id = ur.id_baloon
+      WHERE e.id = ${value}`;
+      return query;
+    },
+  },
+  {
     method: "on",
     routeName: "add-ultrasonic-control-employee",
     func: (formData) => {

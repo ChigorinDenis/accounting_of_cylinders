@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Table, Input } from 'semantic-ui-react';
 
 const EditableTable = ({ tableHeader, data }) => {
-  console.log(data)
   const [editingCell, setEditingCell] = useState(null); // Хранение информации о редактируемой ячейке
-  const [tableData, setTableData] = useState(data);
+  const [tableData, setTableData] = useState([]);
+
+  useEffect(() => {
+    setTableData(data);
+  }, [data]);
 
   const handleCellClick = (rowId, field) => {
     setEditingCell({ rowId, field });
@@ -24,13 +27,13 @@ const EditableTable = ({ tableHeader, data }) => {
   };
 
   const buildCell = (field, row) => {
-    if (field === 'id') {
+    const finded = tableHeader.find((item) => item.name === field);
+    if (!finded) {
       return null;
     }
-    const finded = tableHeader.find((item) => item.name === field);
     if (finded?.editable) {
       return (
-        <Table.Cell key={`${row}${field}`}>
+        <Table.Cell key={`${row}${field}`}  onClick={() => handleCellClick(row.id, field)}>
           {editingCell &&
           editingCell.rowId === row.id &&
           editingCell.field === field ? (
@@ -41,7 +44,7 @@ const EditableTable = ({ tableHeader, data }) => {
               style={{ margin: "0px" }}
             />
           ) : (
-            <span onClick={() => handleCellClick(row.id, field)}>
+            <span>
               {row[field]}
             </span>
           )}

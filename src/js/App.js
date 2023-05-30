@@ -34,7 +34,7 @@ export default function App() {
       {activeTab === 'персонал' && <Employee />}
       {activeTab === 'оборудование' && <Equipment />}
       {/* {activeTab === 'экспертиза' && <Modal><ExpertiseCreate/></Modal>} */}
-      {activeTab === 'экспертиза' && <VisualControl />}
+      {activeTab === 'экспертиза' && <ExpertiseControl />}
     </>
   )
 }
