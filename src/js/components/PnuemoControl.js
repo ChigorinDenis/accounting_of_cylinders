@@ -13,8 +13,8 @@ const tableHeader = [
   { id: 7, title: 'Схема 5', name: 'point_5', width: 1, editable: false },
   { id: 8, title: 'Схема 6', name: 'point_6', width: 1, editable: false },
   { id: 9, title: 'Схема 7', name: 'point_7', width: 1, editable: false },
-  { id: 10, title: 'Схема 8', name: 'point_7', width: 1, editable: false },
-  { id: 11, title: 'Схема 9', name: 'point_7', width: 1, editable: false },
+  { id: 10, title: 'Схема 8', name: 'point_8', width: 1, editable: false },
+  { id: 11, title: 'Схема 9', name: 'point_9', width: 1, editable: false },
 ];
 
 

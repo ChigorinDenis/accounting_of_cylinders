@@ -12,6 +12,7 @@ const tableHeader = [
 ];
 
 
+
 function VisualControl({next}) {
   const [results, setResults] = useState([]);
 
@@ -30,7 +31,7 @@ function VisualControl({next}) {
   return (
     <>
     <Header as="h3" color="blue">Визуально-измерительный контроль</Header>
-    <UpdateControl />
+    <UpdateControl routeName={'visual-control'}/>
     <EditableTable tableHeader={tableHeader} data={results} />
     <Button onClick={() => next('ultrasonic')}>Дальше</Button>
     </>

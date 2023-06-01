@@ -55,7 +55,7 @@ const TableExampleDefinition = () => (
   </Table>
 );
 
-function UpdateControl({ route, ptd }) {
+function UpdateControl({ routeName, ptd }) {
   const [saved, setSaved] = useState(false);
   const [employees, setEmployees] = useState([]);
   const [equipment, setEquipment] = useState([]);
@@ -101,10 +101,21 @@ function UpdateControl({ route, ptd }) {
 
   const handleSubmit = () => {
     console.log(formData);
-    const idVisualControls = [15, 16];
-    electron.ipcRenderer.send("update-visual-control-items-by-common", {
-      idVisualControls,
-      common: formData,
+    const idControl = 29
+    // electron.ipcRenderer.send(`update-${routeName}`, {
+    //   idControl,
+    //   common: formData,
+    // });
+
+    const idEquipments = formData.equipment
+    const idEmployees = formData.employee;
+    electron.ipcRenderer.send(`add-${routeName}-equipment`, {
+      idControl,
+      idEquipments
+    });
+    electron.ipcRenderer.send(`add-${routeName}-employee`, {
+      idControl,
+      idEmployees,
     });
   };
 

@@ -63,6 +63,34 @@ const routesSolidControl = [
       return query;
     },
   },
+  {
+    method: "on",
+    multiple: true,
+    routeName: "update-solid-result",
+    func: (formData) => {
+      const queries = formData.map((rc) => {
+        const {
+          id,
+          point_1,
+          point_2,
+          point_3,
+          point_4,
+          point_5,
+          point_6,
+          point_7,
+          point_8,
+          point_9
+        } = rc;
+        const query = `UPDATE solid_result
+        SET point_1=${point_1}, point_2=${point_2}, point_3=${point_3}, point_4=${point_4}, point_5=${point_5},
+        point_6=${point_6}, point_7=${point_7}, point_8=${point_8}, point_9=${point_9}
+        WHERE id = ${id}`;
+        return query;
+      } );
+      
+      return queries
+    },
+  },
 ];
 
 module.exports = routesSolidControl;
