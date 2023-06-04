@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
+
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
   { id: 2, title: 'Год выпуска', name: 'prod_date', width: 1, editable: false },
@@ -19,6 +20,7 @@ const tableHeader = [
 
 function UltrasonicExpertise({next}) {
   const [results, setResults] = useState([]);
+  const [ultrasonicControlData, setUltrasonicControlData] = useState({ controlEquipment: [], controlEmployees: []});
 
   const submitUpdate = (formData) => {
     electron.ipcRenderer.send('update-ultrasonic-result', formData);
@@ -28,7 +30,18 @@ function UltrasonicExpertise({next}) {
     async function fetchData() {
       // You can await here
       const data = await electron.ipcRenderer.invoke('get-ultrasonic-control-result', 29);
-      console.log(data)
+
+      const controlData = await electron.ipcRenderer.invoke('get-ultrasonic-control-by-id', 14);
+      
+      const controlEquipment = await electron.ipcRenderer.invoke('get-ultrasonic-control-equipments', 29);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-ultrasonic-control-employees', 29);
+
+      setUltrasonicControlData({
+        controlData,
+        controlEmployees,
+        controlEquipment
+      });
+
       setResults(data);
       return () => {
         ipcRenderer.removeAllListeners('get-ultrasonic-control-result');
@@ -39,9 +52,9 @@ function UltrasonicExpertise({next}) {
   return (
     <>
     <Header as="h3" color="blue">Ультразвуковая толщинаметрия</Header>
-    <UpdateControl />
+    <UpdateControl routeName={'ultrasonic-control'} ptd={false} data={ultrasonicControlData}/>
     <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
-    <Button onClick={() => next('solid')}>Дальше</Button>
+    <Button onClick={() => next('solid')} floated="right">Далee</Button>
     </>
   )
 }

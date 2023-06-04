@@ -1,61 +1,85 @@
-import React, { useState, useEffect } from "react";
-import Main from "./Main";
-import { Form, Select, Input, Button, Icon, Table, Label, List } from "semantic-ui-react";
+import React, { useState, useEffect, useMemo } from "react";
+import { format } from 'date-fns'
+import {
+  Form,
+  Select,
+  Input,
+  Button,
+  Icon,
+  Table,
+  Label,
+  List,
+} from "semantic-ui-react";
 import formHandling from "../../utils/formHandling";
 
-const TableExampleDefinition = () => (
-  <Table celled structured>
-     <Table.Header textAlign="center">
-      <Table.Row>
-        <Table.HeaderCell widths={3}>Контроль произвели</Table.HeaderCell>
-        <Table.HeaderCell widths={3}>Инструменты для проведения</Table.HeaderCell>
-        <Table.HeaderCell>Объем контроля</Table.HeaderCell>
-        <Table.HeaderCell>НТД по оценке качества</Table.HeaderCell>
-        <Table.HeaderCell>ПТД на вид контроля</Table.HeaderCell>
-      </Table.Row>
-    </Table.Header>
-    <Table.Body>
-      <Table.Row>
-        <Table.Cell>
-          <List>
-            <List.Item>
-            <Label as='a' basic color='blue'>
-            Иванов И.И
-          </Label>
-            </List.Item>
-          </List>
-          <List.Item>
-          <Label as='a' basic color='blue'>
-            Петров И.И
-          </Label>
-          </List.Item>
-        </Table.Cell>
-        <Table.Cell>
-          <List>
-            <List.Item>
-              <Label as='a' basic>
-                Линейка измерительная
-              </Label>
-            </List.Item>
-            <List.Item>
-              <Label as='a' basic>
-                Штангель циркуль
-              </Label>
-            </List.Item>
-          </List>
-            
-            
-        </Table.Cell>
-        <Table.Cell>Creatine supplementation is the reference compound for increasing muscular creatine levels; there is variability in this increase, however, with some nonresponders.</Table.Cell>
-        <Table.Cell>Creatine supplementation is the reference compound for increasing muscular creatine levels; there is variability in this increase, however, with some nonresponders.</Table.Cell>
-        <Table.Cell></Table.Cell>
-      </Table.Row>
-     
-    </Table.Body>
-  </Table>
-);
+const TableInfo = ({ data, ptd }) => {
+  const { controlData, controlEmployees, controlEquipment } = data;
+  console.log('TableInfo')
+  return (
+    <>
+      <Label basic color="red">
+        Дата проведения
+        <Label.Detail>
+          {controlData && format(new Date(controlData.date), 'dd.MM.yyyy')}
+        </Label.Detail>
+      </Label>
 
-function UpdateControl({ routeName, ptd }) {
+      <Table celled structured>
+        <Table.Header>
+          <Table.Row>
+            <Table.HeaderCell>Контроль произвели</Table.HeaderCell>
+            <Table.HeaderCell>Инструменты для проведения</Table.HeaderCell>
+            <Table.HeaderCell widths={1}>Объем контроля</Table.HeaderCell>
+            <Table.HeaderCell widths={1}>
+              НТД по оценке качества
+            </Table.HeaderCell>
+            {ptd && <Table.HeaderCell>ПТД на вид контроля</Table.HeaderCell>}
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>
+              <List>
+                {controlEmployees &&
+                  controlEmployees.map(({ id, fullname, post }) => (
+                    <List.Item key={`${id}${fullname}`}>
+                      <Label as="a" basic color="blue">
+                        {`${fullname} - ${post}`}
+                      </Label>
+                    </List.Item>
+                  ))}
+              </List>
+            </Table.Cell>
+            <Table.Cell>
+              <List>
+                {controlEquipment &&
+                  controlEquipment.map(({ id, name, prod_number }) => (
+                    <List.Item key={`${id}${prod_number}`}>
+                      <Label as="a" basic color="blue">
+                        {`${name} №${prod_number}`}
+                      </Label>
+                    </List.Item>
+                  ))}
+              </List>
+            </Table.Cell>
+            <Table.Cell>
+              {controlData && controlData.volme_control}
+            </Table.Cell>
+            <Table.Cell>
+              {controlData && controlData.ntd_doc}
+            </Table.Cell>
+            {ptd && <Table.Cell>
+              {controlData && controlData.ptd_doc}
+            </Table.Cell>}
+          </Table.Row>
+        </Table.Body>
+      </Table>
+    </>
+  );
+};
+
+function UpdateControl({ routeName, ptd, data }) {
+  // console.log('updateControl')
   const [saved, setSaved] = useState(false);
   const [employees, setEmployees] = useState([]);
   const [equipment, setEquipment] = useState([]);
@@ -67,10 +91,15 @@ function UpdateControl({ routeName, ptd }) {
     ntd_doc: "",
     volme_control: "",
   });
+
   const { handleInputChange, handleSelectChange } = formHandling(
     formData,
     setFormData
   );
+
+  const tableComponent = useMemo(() => {
+    return <TableInfo data={data} ptd={ptd} />;
+  }, [data, ptd]);
 
   useEffect(() => {
     async function fetchData() {
@@ -91,27 +120,30 @@ function UpdateControl({ routeName, ptd }) {
       );
       setEmployees(mappedEmployees);
       setEquipment(mappedEquipment);
+      const { controlData } = data;
+      if (controlData && controlData.length != 0) {
+        setSaved(true);
+      }
       return () => {
         ipcRenderer.removeAllListeners("get-employees");
         ipcRenderer.removeAllListeners("get-equipment");
       };
     }
     fetchData();
-  }, []);
+  }, [data]);
 
   const handleSubmit = () => {
-    console.log(formData);
-    const idControl = 29
-    // electron.ipcRenderer.send(`update-${routeName}`, {
-    //   idControl,
-    //   common: formData,
-    // });
+    const idControl = 12;
+    electron.ipcRenderer.send(`update-${routeName}`, {
+      idControl,
+      common: formData,
+    });
 
-    const idEquipments = formData.equipment
+    const idEquipments = formData.equipment;
     const idEmployees = formData.employee;
     electron.ipcRenderer.send(`add-${routeName}-equipment`, {
       idControl,
-      idEquipments
+      idEquipments,
     });
     electron.ipcRenderer.send(`add-${routeName}-employee`, {
       idControl,
@@ -121,100 +153,99 @@ function UpdateControl({ routeName, ptd }) {
 
   return (
     <>
-    {!saved && <div>
-      <Form>
-        <Form.Field
-          id="form-input-control-prod_date"
-          name="date"
-          control={Input}
-          type="date"
-          label="Дата проведения"
-          placeholder="Дата проведения"
-          value={formData.date}
-          onChange={handleInputChange}
-        />
+      {!saved && (
+        <div>
+          <Form>
+            <Form.Group widths="equal">
+              <Form.Field
+                control={Select}
+                options={employees}
+                label={{
+                  children: "Сотрудники",
+                  htmlFor: "form-select-employee",
+                }}
+                placeholder="Сотрудники"
+                search
+                searchInput={{ id: "form-select-control-employee" }}
+                name="employee"
+                action={{ icon: "search" }}
+                multiple
+                value={formData.employee}
+                onChange={handleSelectChange}
+              />
 
-        <Form.Group widths="equal">
-          <Form.Field
-            control={Select}
-            options={employees}
-            label={{ children: "Сотрудники", htmlFor: "form-select-employee" }}
-            placeholder="Сотрудники"
-            search
-            searchInput={{ id: "form-select-control-employee" }}
-            name="employee"
-            action={{ icon: "search" }}
-            multiple
-            value={formData.employee}
-            onChange={handleSelectChange}
-          />
+              <Form.Field
+                control={Select}
+                options={equipment}
+                label={{
+                  children: "Оборудование",
+                  htmlFor: "form-select-equipment",
+                }}
+                placeholder="Оборудование"
+                search
+                searchInput={{ id: "form-select-control-equipment" }}
+                name="equipment"
+                multiple
+                value={formData.equipment}
+                onChange={handleSelectChange}
+              />
+            </Form.Group>
+            <Form.Group widths="equal">
+              {ptd && (
+                <Form.TextArea
+                  label="ПТД на вид контроля"
+                  name="ptd_doc"
+                  placeholder="Введите текст..."
+                  value={formData.ptd_doc}
+                  onChange={handleInputChange}
+                />
+              )}
+              <Form.TextArea
+                label="НТД по оценке качества"
+                name="ntd_doc"
+                placeholder="Введите текст..."
+                value={formData.ntd_doc}
+                onChange={handleInputChange}
+              />
 
-          <Form.Field
-            control={Select}
-            options={equipment}
-            label={{
-              children: "Оборудование",
-              htmlFor: "form-select-equipment",
-            }}
-            placeholder="Оборудование"
-            search
-            searchInput={{ id: "form-select-control-equipment" }}
-            name="equipment"
-            multiple
-            value={formData.equipment}
-            onChange={handleSelectChange}
-          />
-        </Form.Group>
-        <Form.Group widths="equal">
-          {ptd && (
-            <Form.TextArea
-              label="ПТД на вид контроля"
-              name="ptd_doc"
-              placeholder="Введите текст..."
-              value={formData.ptd_doc}
-              onChange={handleInputChange}
-            />
-          )}
-          <Form.TextArea
-            label="НТД по оценке качества"
-            name="ntd_doc"
-            placeholder="Введите текст..."
-            value={formData.ntd_doc}
-            onChange={handleInputChange}
-          />
-
-          <Form.TextArea
-            label="Объем контроля"
-            name="volme_control"
-            placeholder="Введите текст..."
-            value={formData.volme_control}
-            onChange={handleInputChange}
-          />
-        </Form.Group>
-      </Form>
-      <Button
-        floated="right"
-        icon
-        labelPosition="left"
-        primary
-        size="small"
-        onClick={handleSubmit}
-      >
-        <Icon name="save" />
-        Сохранить
-      </Button>
-      </div>}
-      {saved && <div>
-        <Label
-        basic
-        color="blue"
-        size="large"
-        >
-          Дата проведения
-          <Label.Detail>31.05.2023</Label.Detail>
-        </Label>
-        <TableExampleDefinition />
-      </div>}
+              <Form.TextArea
+                label="Объем контроля"
+                name="volme_control"
+                placeholder="Введите текст..."
+                value={formData.volme_control}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+              <Form.Field
+                id="form-input-control-prod_date"
+                name="date"
+                control={Input}
+                type="date"
+                style={{width: '50%'}}
+                label="Дата проведения"
+                placeholder="Дата проведения"
+                value={formData.date}
+                onChange={handleInputChange}
+              />
+            <Button
+                floated="right"
+                icon
+                labelPosition="left"
+                primary
+                size="small"
+                onClick={handleSubmit}
+              >
+                <Icon name="save" />
+                Сохранить
+              </Button>
+          </Form>
+        </div>
+      )}
+      {saved && (
+        <div>
+          {tableComponent}
+        </div>
+      )}
     </>
   );
 }

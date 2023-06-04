@@ -1,12 +1,11 @@
 const routesPneumoControl = [
   {
     method: "handle",
-    routeName: "get-pneumatic-control-items",
+    routeName: "get-pneumatic-control-by-id",
     func: (value) => {
-      const query = `SELECT b.id, b.prod_number, pc.*
-      FROM baloon AS b
-      JOIN pneumatic_control AS pc ON b.id = pc.id_baloon
-      WHERE pc.id_expertise = ${value}`;
+      const query = `SELECT pc.* FROM expertise e
+      JOIN pneumatic_control pc ON pc.id_expertise = e.id
+      WHERE e.id = ${value}`;
       return query;
     },
   },
@@ -46,6 +45,22 @@ const routesPneumoControl = [
     func: (formData) => {
       const { idExpertise } = formData;
       const query = `INSERT INTO pneumatic_control (id_expertise) VALUES (${idExpertise})`;
+      return query;
+    },
+  },
+  {
+    method: "on",
+    routeName: "update-pnumatic-control",
+    func: (formData) => {
+      const { idControl, common } = formData;
+      const {
+        ntd_quality_doc,
+        volme_control,
+        date
+      } = common;
+      const query = `UPDATE ultrasonic_control
+      SET ntd_quality_doc ='${ntd_quality_doc}', volme_control ='${volme_control}', date ='${date}'
+      WHERE id = ${idControl}`;
       return query;
     },
   },

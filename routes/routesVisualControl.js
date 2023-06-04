@@ -1,12 +1,11 @@
 const routesVisualControl = [
   {
     method: "handle",
-    routeName: "get-visual-control-items",
+    routeName: "get-visual-control-by-id",
     func: (value) => {
-      const query = `SELECT b.id, b.prod_number, vc.*
-      FROM baloon AS b
-      JOIN visual_control AS vc ON b.id = vc.id_baloon
-      WHERE vc.id_expertise = ${value}`;
+      const query = `SELECT vc.* FROM expertise e
+      JOIN visual_control vc ON vc.id_expertise = e.id
+      WHERE e.id = ${value}`;
       return query;
     },
   },
@@ -84,8 +83,9 @@ const routesVisualControl = [
     routeName: "add-visual-control-equipment",
     func: (formData) => {
       const { idControl, idEquipments } = formData;
+      console.log('visual-control-equipment', idEquipments)
       const values = idEquipments.map((idEquipment) => `(${idControl}, ${idEquipment})`).join(', ');
-      const query = `INSERT INTO visual-control-equipment (id_visual_control, id_equipment) VALUES ${values}`;
+      const query = `INSERT INTO visual_control_equipment (id_visual_control, id_equipment) VALUES ${values}`;
       return query;
     },
   },
@@ -94,8 +94,9 @@ const routesVisualControl = [
     routeName: "add-visual-control-employee",
     func: (formData) => {
       const { idControl, idEmployees } = formData;
+      console.log('visual-control-employee', idEmployees)
       const values = idEmployees.map((idEmployee) => `(${idControl}, ${idEmployee})`).join(', ');
-      const query = `INSERT INTO visual-control-employee (id_visual_control, id_employee) VALUES ${values}`;
+      const query = `INSERT INTO visual_control_employee (id_visual_control, id_employee) VALUES ${values}`;
       return query;
     },
   },

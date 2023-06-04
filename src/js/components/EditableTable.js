@@ -95,7 +95,6 @@ const EditableTable = ({ tableHeader, data, submit }) => {
           ))}
         </Table.Body>
       </Table>
-      <Button onClick={() => submit(changedRow)}>Обновить</Button>
     </>
   );
 };

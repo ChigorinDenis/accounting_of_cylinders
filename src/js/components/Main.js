@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Button, Checkbox, Icon, Table } from 'semantic-ui-react'
+import { Header, Checkbox, Icon, Table, Button } from 'semantic-ui-react'
 import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 
@@ -55,6 +55,7 @@ export default ({ handleSet }) => {
 
   return (
     <>
+    <Header style={{marginTop: '30px', marginBottom: '20px'}} as='h3'>Сосуды</Header>
     <Table striped>
       <Table.Header>
         <Table.Row>
@@ -125,7 +126,7 @@ export default ({ handleSet }) => {
         
       </Table.Body>
       <Table.Footer fullWidth>
-      {/* <Table.Row>
+      <Table.Row>
         <Table.HeaderCell />
         <Table.HeaderCell colSpan='12'>
           <Button
@@ -138,12 +139,12 @@ export default ({ handleSet }) => {
             <Icon name='fire extinguisher' /> Добавить балон
           </Button>
         </Table.HeaderCell>
-      </Table.Row> */}
+      </Table.Row>
     </Table.Footer>
     </Table>
-    {/* <Modal>
+    <Modal>
       <FormAddBaloon />
-    </Modal> */}
+    </Modal>
     </>
     );
 }

@@ -1,16 +1,17 @@
 import React, { useState} from 'react'
-import { Input, Menu} from 'semantic-ui-react'
+import { Input, Menu, Sticky} from 'semantic-ui-react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveTab } from '../state/tabsSlice';
 
 
-function Header() {
+
+function Header({ contextRef }) {
   const dispatch = useDispatch();
   const activeItem = useSelector((state) => state.tabs.activeTab);
 
   const handleItemClick = (e, { name }) => dispatch(setActiveTab(name));
   return (
-    <div>
+    <Sticky context={contextRef}>
       <Menu  inverted>
         <Menu.Item
           name='сосуды'
@@ -38,11 +39,11 @@ function Header() {
         />
         <Menu.Menu position='right'>
           <Menu.Item>
-            <Input icon='search' placeholder='Search...' />
+            <Input icon='search' placeholder='Поиск...' />
           </Menu.Item>
         </Menu.Menu>
       </Menu>
-    </div>
+    </Sticky>
   )
   
 }

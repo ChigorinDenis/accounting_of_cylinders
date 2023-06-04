@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-import { Button, Icon, Table } from "semantic-ui-react";
+import { Button, Header, Icon, Table } from "semantic-ui-react";
 import { format, differenceInDays} from "date-fns";
-// import Modal from "./Modal";
-// import FormAddEquipment from "./FormAddEquipment";
+import { useSelector, useDispatch } from "react-redux";
+import { setActiveExpertise, setIsOpen, setControlsData } from "../state/expertiseReducer";
+
+
 const spanStyle = {
   color: 'red'
 }
 export default () => {
   const [expertise, setExpertise] = useState([]);
+  const activeExpertise = useSelector((state) => state.expertise);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -20,8 +24,30 @@ export default () => {
     fetchData();
   }, []);
 
+  const openExpertiseModal = async (id) =>{
+    const [visualControl] = await electron.ipcRenderer.invoke('get-visual-control-by-id', id);
+    const [ultrasonicControl] = await electron.ipcRenderer.invoke('get-ultrasonic-control-by-id', id);
+    const [solidControl] = await electron.ipcRenderer.invoke('get-solid-control-by-id', id);
+    const [pneumaticControl] = await electron.ipcRenderer.invoke('get-pneumatic-control-by-id', id);
+
+    visualControl.date = visualControl.date && visualControl.date.toISOString();
+    ultrasonicControl.date = ultrasonicControl.date && ultrasonicControl.date.toISOString();
+    solidControl.date = solidControl.date && solidControl.date.toISOString();
+    pneumaticControl.date = solidControl.date && pneumaticControl.date.toISOString();
+
+    dispatch(setControlsData({
+      visualControl,
+      ultrasonicControl,
+      solidControl,
+      pneumaticControl
+    }))
+
+    dispatch(setIsOpen(true));
+  }
+
   return (
     <>
+      <Header style={{marginTop: '30px', marginBottom: '20px'}} as='h3'>Экспертиза</Header>
       <Table striped>
         <Table.Header>
           <Table.Row>
@@ -39,7 +65,13 @@ export default () => {
                 <Table.Cell>{number}</Table.Cell>
                 <Table.Cell>{format(date_exp, 'dd.MM.yyyy')}</Table.Cell>
                 <Table.Cell>
-                  <Button basic color="blue">Результаты</Button>
+                  <Button
+                    basic color="blue"
+                    floated="right"
+                    onClick={() => {openExpertiseModal(29)}}
+                  >
+                    Результаты
+                  </Button>
                 </Table.Cell>
                 
               </Table.Row>

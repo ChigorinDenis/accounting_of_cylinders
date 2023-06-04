@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Icon, Table } from "semantic-ui-react";
+import { Button, Icon, Table, Header} from "semantic-ui-react";
 import { format, differenceInDays} from "date-fns";
 // import Modal from "./Modal";
 // import FormAddEquipment from "./FormAddEquipment";
@@ -22,6 +22,7 @@ export default () => {
 
   return (
     <>
+      <Header style={{marginTop: '30px', marginBottom: '20px'}} as='h3'>Оборудование</Header>
       <Table striped>
         <Table.Header>
           <Table.Row>
@@ -67,10 +68,6 @@ export default () => {
               >
                 <Icon name="plus" />
                 Добавить оборудование
-              </Button>
-              <Button size="small">Approve</Button>
-              <Button disabled size="small">
-                Approve All
               </Button>
             </Table.HeaderCell>
           </Table.Row>

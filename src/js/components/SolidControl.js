@@ -20,6 +20,7 @@ const tableHeader = [
 
 function SolidControl({next}) {
   const [results, setResults] = useState([]);
+  const [solidControlData, setSolidControlData] = useState({ controlEquipment: [], controlEmployees: []});
 
   const submitUpdate = (formData) => {
     electron.ipcRenderer.send('update-solid-result', formData);
@@ -29,6 +30,18 @@ function SolidControl({next}) {
     async function fetchData() {
       // You can await here
       const data = await electron.ipcRenderer.invoke('get-solid-control-result', 29);
+
+      const controlData = await electron.ipcRenderer.invoke('get-solid-control-by-id', 12);
+      
+      const controlEquipment = await electron.ipcRenderer.invoke('get-solid-control-equipments', 29);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-solid-control-employees', 29);
+
+      setSolidControlData({
+        controlData,
+        controlEmployees,
+        controlEquipment
+      });
+
       setResults(data);
       return () => {
         ipcRenderer.removeAllListeners('get-solid-control-result');
@@ -39,9 +52,9 @@ function SolidControl({next}) {
   return (
     <>
     <Header as="h3" color="blue">Замер твердости</Header>
-    <UpdateControl />
+    <UpdateControl routeName={'solid-control'} ptd={false} data={solidControlData}/>
     <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
-    <Button onClick={() => next('pneumatic')}>Дальше</Button>
+    <Button onClick={() => next('pneumatic')} floated="right">Далее</Button>
     </>
   )
 }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState} from 'react';
-import { Button, Checkbox, Icon, Table } from 'semantic-ui-react'
+import { Button, Header, Icon, Table } from 'semantic-ui-react'
 import { format } from 'date-fns'
 import Modal from './Modal';
 import FormAddEmployee from './FormAddEmployee';
@@ -21,6 +21,7 @@ export default () => {
 
   return (
     <>
+    <Header style={{marginTop: '30px', marginBottom: '20px'}} as='h3'>Персонал</Header>
     <Table striped>
       <Table.Header>
         <Table.Row>
@@ -63,17 +64,13 @@ export default () => {
               primary
               size='small'
             >
-              <Icon name='fire extinguisher' /> Добавить сотрудника
-            </Button>
-            <Button size='small'>Approve</Button>
-            <Button disabled size='small'>
-              Approve All
+              <Icon name='user' /> Добавить сотрудника
             </Button>
           </Table.HeaderCell>
         </Table.Row>
       </Table.Footer>
     </Table>
-    <Modal>
+    <Modal open={false}>
       <FormAddEmployee />
     </Modal>
     </>

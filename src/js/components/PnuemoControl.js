@@ -20,14 +20,27 @@ const tableHeader = [
 
 function PnematicControl({next}) {
   const [results, setResults] = useState([]);
+  const [pneumaticControlData, setPneumaticControlData] = useState({ controlEquipment: [], controlEmployees: []});
 
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const data = await electron.ipcRenderer.invoke('get-solid-control-result', 29);
+      const data = await electron.ipcRenderer.invoke('get-pneumatic-control-result', 29);
+
+      const controlData = await electron.ipcRenderer.invoke('get-pneumatic-control-by-id', 29);
+      
+      const controlEquipment = await electron.ipcRenderer.invoke('get-pneumatic-control-equipments', 29);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-pneumatic-control-employees', 29);
+
+      setPneumaticControlData({
+        controlData,
+        controlEmployees,
+        controlEquipment
+      });
+      
       setResults(data);
       return () => {
-        ipcRenderer.removeAllListeners('get-solid-control-result');
+        ipcRenderer.removeAllListeners('get-pneumatic-control-result');
       };
     }
     fetchData(); 
@@ -35,9 +48,9 @@ function PnematicControl({next}) {
   return (
     <>
     <Header as="h3" color="blue">Пневматические испытания</Header>
-    <UpdateControl />
+    <UpdateControl routeName={'pneumatic-control'} ptd={false} data={pneumaticControlData}/>
     <EditableTable tableHeader={tableHeader} data={results} />
-    <Button onClick={() => next('pneumatic')}>Завершить</Button>
+    <Button onClick={() => next('pneumatic')} floated="right">Завершить</Button>
     </>
   )
 }
