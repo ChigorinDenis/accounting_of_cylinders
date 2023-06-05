@@ -8,8 +8,8 @@ import { useSelector } from "react-redux";
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
   { id: 2, title: 'Год выпуска', name: 'prod_date', width: 1, editable: false },
-  { id: 3, title: 'Чек', name: 'check', width: 1, editable: false },
-  { id: 4, title: 'Описание', name: 'description', width: 2, editable: true }
+  { id: 3, title: 'Визуальное состояние', name: 'check', width: 1, editable: false },
+  { id: 4, title: 'Описание', name: 'description', width: 1, editable: true }
 ];
 
 
@@ -17,17 +17,23 @@ const tableHeader = [
 function VisualControl({next}) {
   const [results, setResults] = useState([]);
   const [visualControlData, setVisualControlData] = useState({ controlEquipment: [], controlEmployees: []});
-  const controlData = useSelector((state) => (state.expertise.controlsData.visualControl));
+  const [isUpdate, setIsUpdate] = useState(null);
 
+  const controlData = useSelector((state) => (state.expertise.controlsData.visualControl));
+  const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
+
+  const submitUpdate = (formData) => {
+    electron.ipcRenderer.send('update-visual-result', formData);
+  }
+  
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const data = await electron.ipcRenderer.invoke('get-visual-control-result', 29);
-      const controlEquipment = await electron.ipcRenderer.invoke('get-visual-control-equipments', 29);
-      const controlEmployees = await electron.ipcRenderer.invoke('get-visual-control-employees', 29);
+      const data = await electron.ipcRenderer.invoke('get-visual-control-result', idExpertiseActive);
+      const controlEquipment = await electron.ipcRenderer.invoke('get-visual-control-equipments', idExpertiseActive);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-visual-control-employees', idExpertiseActive);
 
       setVisualControlData({
-        controlData,
         controlEmployees,
         controlEquipment
       });
@@ -42,14 +48,15 @@ function VisualControl({next}) {
       };
     }
     fetchData(); 
-  }, []);
+  }, [isUpdate]);
   
   return (
     <>
     <Header as="h3" color="blue">Визуально-измерительный контроль</Header>
-    <UpdateControl routeName={'visual-control'} ptd={false} data={{...visualControlData, controlData}} />
-    <EditableTable tableHeader={tableHeader} data={results} />
-    <Button onClick={() => next('ultrasonic')} floated="right">Далee</Button>
+    <UpdateControl routeName={'visual-control'} ntd={true} data={{...visualControlData, controlData}} setIsUpdate={setIsUpdate} />
+    <Header as="h4" color="blue">Сосуды</Header>
+    <EditableTable tableHeader={tableHeader} data={results} actionCell={true} submit={submitUpdate}/>
+    <Button onClick={() => next('ultrasonic')} floated="right" style={{margin: '20px 0'}}>Далee</Button>
     </>
   )
 }

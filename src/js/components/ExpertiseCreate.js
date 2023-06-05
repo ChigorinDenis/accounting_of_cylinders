@@ -131,10 +131,10 @@ function ExpertiseCreate() {
       </div>
     </Form>
     <Header as='h5'>3. Выберите сосуды для экпертизы</Header>
-    <Main handleSet={setIdBaloons} />
-    <Button onClick={getData}>
+    <Main handleSet={setIdBaloons} footer={false}/>
+    {/* <Button onClick={getData}>
       Получить данные
-    </Button>
+    </Button> */}
     <Button
       primary
       floated="right"
@@ -147,7 +147,6 @@ function ExpertiseCreate() {
     >
       Создать экспертизу
     </Button>
-    <p>{idBaloons.join(', ')}</p>
     </>
   )
 }

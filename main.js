@@ -42,7 +42,7 @@ function createWindow() {
     }
   })
 
-  win.setTitle('Экпертиза проводимая по балонам');
+  win.setTitle('Экспертиза проводимая по балонам');
   // win.loadFile('index.html');
   win.loadURL(
     url.format({

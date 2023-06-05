@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Button } from 'semantic-ui-react';
+import { Table, Input, Button, Icon } from 'semantic-ui-react';
 
-const EditableTable = ({ tableHeader, data, submit }) => {
+const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
   const [editingCell, setEditingCell] = useState(null); // Хранение информации о редактируемой ячейке
   const [tableData, setTableData] = useState([]);
   const [changedRow, setChangedRow] = useState([]);
 
   useEffect(() => {
     setTableData(data);
-  }, [data]);
+  }, [data, actionCell]);
 
   const handleCellClick = (rowId, field) => {
     setEditingCell({ rowId, field });
@@ -45,6 +45,42 @@ const EditableTable = ({ tableHeader, data, submit }) => {
     console.log(changedRow);
   };
 
+  const updateTableData = (tableData, row, value) => {
+    const updatedTableData = tableData.map((rowData) => {
+      if (rowData.id === row.id) {
+        return { ...rowData, check: value }; // Изменение поля "check" на true
+      }
+      return rowData;
+    });
+  
+    const updatedChangedRow = [...changedRow];
+    const changedRowIndex = updatedChangedRow.findIndex((item) => item.id === row.id);
+    if (changedRowIndex !== -1) {
+      // Изменения уже были в записи, обновляем ее
+      updatedChangedRow[changedRowIndex].check = value;
+    } else {
+      // Изменения в записи еще не было, добавляем новую запись
+      const newChangedRow = { ...row, check: value };
+      updatedChangedRow.push(newChangedRow);
+    }
+    setTableData(updatedTableData);
+    setChangedRow(updatedChangedRow);
+  };
+
+  const spanBuild = (field, value) => {
+    if (field === 'check') {
+      switch (value) {
+        case 'unchecked':
+          return <Icon name='exclamation' color='yellow' />
+        case 'checked':
+          return <Icon name='check' color='green'/>
+        default:
+          return value
+      }
+    }
+    return value;
+  }
+
   const buildCell = (field, row) => {
     const finded = tableHeader.find((item) => item.name === field);
     if (!finded) {
@@ -52,25 +88,29 @@ const EditableTable = ({ tableHeader, data, submit }) => {
     }
     if (finded?.editable) {
       return (
-        <Table.Cell key={`${row}${field}`}  onClick={() => handleCellClick(row.id, field)}>
-          {editingCell &&
-          editingCell.rowId === row.id &&
-          editingCell.field === field ? (
-            <Input
-              value={row[field] || ''}
-              onChange={(event) => handleCellChange(event, row.id, field)}
-              onBlur={() => handleCellBlur(row, field)}
-            />
-          ) : (
-            <span>
-              {row[field]}
-            </span>
-          )}
-        </Table.Cell>
+        <>
+          <Table.Cell key={`${row}${field}`}  onClick={() => handleCellClick(row.id, field)}>
+            {editingCell &&
+            editingCell.rowId === row.id &&
+            editingCell.field === field ? (
+              <Input
+                value={row[field] || ''}
+                onChange={(event) => handleCellChange(event, row.id, field)}
+                onBlur={() => handleCellBlur(row, field)}
+              />
+            ) : (
+              <span>
+                {row[field] || ''}
+              </span>
+            )}
+          </Table.Cell>
+        </>
       );
     }
     return (
-      <Table.Cell key={`${row}${field}`}>{row[field]}</Table.Cell>
+      <>
+        <Table.Cell key={`${row}${field}`}>{spanBuild(field, row[field])}</Table.Cell>
+      </>
     );
   }
 
@@ -83,18 +123,37 @@ const EditableTable = ({ tableHeader, data, submit }) => {
               .map(({ id, name, title, width }) => (
                 <Table.HeaderCell key={`${id}${name}`} width={width}>{title}</Table.HeaderCell>
             ))}
+            {actionCell && <Table.HeaderCell width={1}></Table.HeaderCell>}
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {tableData.map((row) => (
             <Table.Row key={row.id}>
               {Object.keys(row)
-              .map((field) => buildCell(field, row))
+                .map((field) => buildCell(field, row))
               }
+              {actionCell &&
+              <Table.Cell>
+                <Icon
+                  name='check square outline'
+                  color='green'
+                  size='large'
+                  onClick={() => updateTableData(tableData, row, 'checked')}
+                  style={{ cursor: "pointer" }}
+                />
+                <Icon
+                  name='exclamation triangle'
+                  color='yellow'
+                  size='large'
+                  onClick={() => updateTableData(tableData, row, 'unchecked')}
+                  style={{ cursor: "pointer" }}
+                />
+              </Table.Cell>}
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
+      <Button  onClick={() => submit(changedRow)} style={{margin: '20px 0'}} color="blue">Сохранить</Button>
     </>
   );
 };

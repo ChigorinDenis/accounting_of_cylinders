@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
@@ -21,6 +22,10 @@ const tableHeader = [
 function UltrasonicExpertise({next}) {
   const [results, setResults] = useState([]);
   const [ultrasonicControlData, setUltrasonicControlData] = useState({ controlEquipment: [], controlEmployees: []});
+  const [isUpdate, setIsUpdate] = useState(null);
+
+  const controlData = useSelector((state) => (state.expertise.controlsData.ultrasonicControl));
+  const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
 
   const submitUpdate = (formData) => {
     electron.ipcRenderer.send('update-ultrasonic-result', formData);
@@ -29,15 +34,11 @@ function UltrasonicExpertise({next}) {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const data = await electron.ipcRenderer.invoke('get-ultrasonic-control-result', 29);
-
-      const controlData = await electron.ipcRenderer.invoke('get-ultrasonic-control-by-id', 14);
-      
-      const controlEquipment = await electron.ipcRenderer.invoke('get-ultrasonic-control-equipments', 29);
-      const controlEmployees = await electron.ipcRenderer.invoke('get-ultrasonic-control-employees', 29);
+      const data = await electron.ipcRenderer.invoke('get-ultrasonic-control-result', idExpertiseActive);   
+      const controlEquipment = await electron.ipcRenderer.invoke('get-ultrasonic-control-equipments', idExpertiseActive);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-ultrasonic-control-employees', idExpertiseActive);
 
       setUltrasonicControlData({
-        controlData,
         controlEmployees,
         controlEquipment
       });
@@ -48,13 +49,14 @@ function UltrasonicExpertise({next}) {
       };
     }
     fetchData(); 
-  }, []);
+  }, [isUpdate]);
   return (
     <>
     <Header as="h3" color="blue">Ультразвуковая толщинаметрия</Header>
-    <UpdateControl routeName={'ultrasonic-control'} ptd={false} data={ultrasonicControlData}/>
-    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
-    <Button onClick={() => next('solid')} floated="right">Далee</Button>
+    <UpdateControl routeName={'ultrasonic-control'} ptd={true} ntd={true} data={{...ultrasonicControlData, controlData}} setIsUpdate={setIsUpdate}/>
+    <Header as="h4" color="blue">Сосуды</Header>
+    <EditableTable tableHeader={tableHeader} data={results}  submit={submitUpdate} />
+    <Button onClick={() => next('solid')} floated="right" style={{margin: '20px 0'}}>Далee</Button>
     </>
   )
 }

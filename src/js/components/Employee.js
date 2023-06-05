@@ -3,9 +3,13 @@ import { Button, Header, Icon, Table } from 'semantic-ui-react'
 import { format } from 'date-fns'
 import Modal from './Modal';
 import FormAddEmployee from './FormAddEmployee';
+import { setIsOpenNewEmployee } from '../state/modalReducer';
+import { useSelector, useDispatch } from 'react-redux';
 
 export default () => {
   const [employees, setEmployees] = useState([]);
+  const isOpenNewEmployee = useSelector(state => state.modal.isOpenNewEmployee);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -63,6 +67,9 @@ export default () => {
               labelPosition='left'
               primary
               size='small'
+              onClick={() => {
+                dispatch(setIsOpenNewEmployee(true))
+              }}
             >
               <Icon name='user' /> Добавить сотрудника
             </Button>
@@ -70,7 +77,7 @@ export default () => {
         </Table.Row>
       </Table.Footer>
     </Table>
-    <Modal open={false}>
+    <Modal open={isOpenNewEmployee} close={setIsOpenNewEmployee}>
       <FormAddEmployee />
     </Modal>
     </>

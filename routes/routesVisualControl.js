@@ -36,8 +36,8 @@ const routesVisualControl = [
     method: "on",
     routeName: "add-visual-control-employee",
     func: (formData) => {
-      const { idVisualControl, idEmployees } = formData;
-      const values = idEmployees.map((idEmployee) => `(${idVisualControl}, ${idEmployee})`).join(', ');
+      const { idControl, idEmployees } = formData;
+      const values = idEmployees.map((idEmployee) => `(${idControl}, ${idEmployee})`).join(', ');
       const query = `INSERT INTO visual_control_employee (id_visual_control, id_employee) VALUES ${values}`;
       return query;
     },
@@ -46,8 +46,8 @@ const routesVisualControl = [
     method: "on",
     routeName: "add-visual-control-equipment",
     func: (formData) => {
-      const { idVisualControl, idEquipments } = formData;
-      const values = idEquipments.map((idEquipment) => `(${idVisualControl}, ${idEquipment})`).join(', ');
+      const { idControl, idEquipments } = formData;
+      const values = idEquipments.map((idEquipment) => `(${idControl}, ${idEquipment})`).join(', ');
       const query = `INSERT INTO visual_control_equipment (id_visual_control, id_equipment) VALUES ${values}`;
       return query;
     },
@@ -70,36 +70,57 @@ const routesVisualControl = [
       const {
         ntd_doc,
         volme_control,
-        date
+        date,
+        name
       } = common;
       const query = `UPDATE visual_control
-      SET ntd_doc ='${ntd_doc}', volme_control ='${volme_control}', date ='${date}'
+      SET ntd_doc ='${ntd_doc}', volme_control ='${volme_control}', date ='${date}', name = '${name}'
       WHERE id = ${idControl}`;
       return query;
     },
   },
   {
     method: "on",
-    routeName: "add-visual-control-equipment",
+    multiple: true,
+    routeName: "update-visual-result",
     func: (formData) => {
-      const { idControl, idEquipments } = formData;
-      console.log('visual-control-equipment', idEquipments)
-      const values = idEquipments.map((idEquipment) => `(${idControl}, ${idEquipment})`).join(', ');
-      const query = `INSERT INTO visual_control_equipment (id_visual_control, id_equipment) VALUES ${values}`;
-      return query;
+      const queries = formData.map((rc) => {
+        const {
+          id,
+          check,
+          description
+        } = rc;
+        const query = `UPDATE visual_result
+        SET \`check\`='${check}', description='${description}'
+        WHERE id = ${id}`;
+        return query;
+      } );
+      
+      return queries
     },
   },
-  {
-    method: "on",
-    routeName: "add-visual-control-employee",
-    func: (formData) => {
-      const { idControl, idEmployees } = formData;
-      console.log('visual-control-employee', idEmployees)
-      const values = idEmployees.map((idEmployee) => `(${idControl}, ${idEmployee})`).join(', ');
-      const query = `INSERT INTO visual_control_employee (id_visual_control, id_employee) VALUES ${values}`;
-      return query;
-    },
-  },
+  // {
+  //   method: "on",
+  //   routeName: "add-visual-control-equipment",
+  //   func: (formData) => {
+  //     const { idControl, idEquipments } = formData;
+  //     console.log('visual-control-equipment', idEquipments)
+  //     const values = idEquipments.map((idEquipment) => `(${idControl}, ${idEquipment})`).join(', ');
+  //     const query = `INSERT INTO visual_control_equipment (id_visual_control, id_equipment) VALUES ${values}`;
+  //     return query;
+  //   },
+  // },
+  // {
+  //   method: "on",
+  //   routeName: "add-visual-control-employee",
+  //   func: (formData) => {
+  //     const { idControl, idEmployees } = formData;
+  //     console.log('visual-control-employee', idEmployees)
+  //     const values = idEmployees.map((idEmployee) => `(${idControl}, ${idEmployee})`).join(', ');
+  //     const query = `INSERT INTO visual_control_employee (id_visual_control, id_employee) VALUES ${values}`;
+  //     return query;
+  //   },
+  // },
 ];
 
 module.exports = routesVisualControl;

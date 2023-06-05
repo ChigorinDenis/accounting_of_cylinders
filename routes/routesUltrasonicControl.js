@@ -70,10 +70,11 @@ const routesUltrasonicControl = [
         ntd_doc,
         ptd_doc,
         volme_control,
-        date
+        date,
+        name
       } = common;
       const query = `UPDATE ultrasonic_control
-      SET ntd_doc ='${ntd_doc}', ptd_doc = ${ptd_doc} volme_control ='${volme_control}', date ='${date}'
+      SET ntd_doc ='${ntd_doc}', ptd_doc = '${ptd_doc}', volme_control ='${volme_control}', date ='${date}', name = '${name}'
       WHERE id = ${idControl}`;
       return query;
     },

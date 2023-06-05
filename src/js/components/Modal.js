@@ -3,10 +3,10 @@ import { Button, Modal } from 'semantic-ui-react'
 import { useDispatch } from 'react-redux';
 import { setIsOpen } from '../state/expertiseReducer';
 
-export default ({ open, children}) => {
+export default ({ open, close, children}) => {
   const dispatch = useDispatch();
   const closeModal = () => {
-    dispatch(setIsOpen(false));
+    dispatch(close(false));
   }
 
   return (

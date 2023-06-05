@@ -71,10 +71,11 @@ const routesSolidControl = [
         ntd_type_doc,
         ntd_quality_doc,
         volme_control,
-        date
+        date,
+        name
       } = common;
       const query = `UPDATE solid_control
-      SET ntd_type_doc ='${ntd_type_doc}', ntd_quality_doc = ${ntd_quality_doc} volme_control ='${volme_control}', date ='${date}'
+      SET ntd_type_doc ='${ntd_type_doc}', ntd_quality_doc = '${ntd_quality_doc}', volme_control ='${volme_control}', date ='${date}', name = '${name}'
       WHERE id = ${idControl}`;
       return query;
     },

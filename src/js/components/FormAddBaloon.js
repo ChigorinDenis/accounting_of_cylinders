@@ -156,6 +156,7 @@ const FormAddBaloon = () => {
         onClick={handleSubmit}
         type="submit" 
         positive
+        
       >
         Добавить
       </Button>

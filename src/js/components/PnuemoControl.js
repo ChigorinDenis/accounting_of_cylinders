@@ -2,36 +2,38 @@ import React, {useState, useEffect} from "react";
 import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
   { id: 2, title: 'Год выпуска', name: 'prod_date', width: 1, editable: false },
-  { id: 3, title: 'Схема 1', name: 'point_1', width: 1, editable: false },
-  { id: 4, title: 'Схема 2', name: 'point_2', width: 1, editable: false },
-  { id: 5, title: 'Схема 3', name: 'point_3', width: 1, editable: false },
-  { id: 6, title: 'Схема 4', name: 'point_4', width: 1, editable: false },
-  { id: 7, title: 'Схема 5', name: 'point_5', width: 1, editable: false },
-  { id: 8, title: 'Схема 6', name: 'point_6', width: 1, editable: false },
-  { id: 9, title: 'Схема 7', name: 'point_7', width: 1, editable: false },
-  { id: 10, title: 'Схема 8', name: 'point_8', width: 1, editable: false },
-  { id: 11, title: 'Схема 9', name: 'point_9', width: 1, editable: false },
+  { id: 3, title: '100 (0,25Рраб)', name: 'load_100', width: 1, editable: true },
+  { id: 4, title: '200 (0,5Рраб)', name: 'load_200', width: 1, editable: true },
+  { id: 5, title: '300,5 (0,75Рраб)', name: 'load_300', width: 1, editable: true },
+  { id: 6, title: '400 (Рраб)', name: 'load_400', width: 1, editable: true },
+  { id: 7, title: '420 (Рисп)', name: 'load_420', width: 1, editable: true },
 ];
 
 
 function PnematicControl({next}) {
   const [results, setResults] = useState([]);
   const [pneumaticControlData, setPneumaticControlData] = useState({ controlEquipment: [], controlEmployees: []});
+  const [isUpdate, setIsUpdate] = useState(null);
+
+  const controlData = useSelector((state) => (state.expertise.controlsData.pneumaticControl));
+  const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
+
+  const submitUpdate = (formData) => {
+    electron.ipcRenderer.send('update-pneumatic-result', formData);
+  }
 
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const data = await electron.ipcRenderer.invoke('get-pneumatic-control-result', 29);
-
-      const controlData = await electron.ipcRenderer.invoke('get-pneumatic-control-by-id', 29);
-      
-      const controlEquipment = await electron.ipcRenderer.invoke('get-pneumatic-control-equipments', 29);
-      const controlEmployees = await electron.ipcRenderer.invoke('get-pneumatic-control-employees', 29);
-
+      const data = await electron.ipcRenderer.invoke('get-pneumatic-control-result', idExpertiseActive);  
+      const controlEquipment = await electron.ipcRenderer.invoke('get-pneumatic-control-equipments', idExpertiseActive);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-pneumatic-control-employees', idExpertiseActive);
+      console.log('Pnematic', controlEquipment, controlEmployees)
       setPneumaticControlData({
         controlData,
         controlEmployees,
@@ -44,13 +46,14 @@ function PnematicControl({next}) {
       };
     }
     fetchData(); 
-  }, []);
+  }, [isUpdate]);
   return (
     <>
     <Header as="h3" color="blue">Пневматические испытания</Header>
-    <UpdateControl routeName={'pneumatic-control'} ptd={false} data={pneumaticControlData}/>
-    <EditableTable tableHeader={tableHeader} data={results} />
-    <Button onClick={() => next('pneumatic')} floated="right">Завершить</Button>
+    <UpdateControl routeName={'pneumatic-control'} quality_doc={true} volme={false} data={{...pneumaticControlData, controlData}} setIsUpdate={setIsUpdate}/>
+    <Header as="h4" color="blue">Сосуды</Header>
+    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
+    <Button onClick={() => next('pneumatic')} floated="right" style={{margin: '20px 0'}}>Завершить</Button>
     </>
   )
 }

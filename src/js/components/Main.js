@@ -2,11 +2,17 @@ import React, { useEffect, useState} from 'react';
 import { Header, Checkbox, Icon, Table, Button } from 'semantic-ui-react'
 import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsOpenNewBaloon } from '../state/modalReducer';
 
-export default ({ handleSet }) => {
+export default ({ handleSet, footer = true }) => {
 
   const [baloons, setBaloons] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
+
+  const dispatch = useDispatch();
+  const isOpenNewBaloon = useSelector(state => state.modal.isOpenNewBaloon);
+
   useEffect(() => {
     async function fetchData() {
       // You can await here
@@ -126,7 +132,7 @@ export default ({ handleSet }) => {
         
       </Table.Body>
       <Table.Footer fullWidth>
-      <Table.Row>
+      {footer && <Table.Row>
         <Table.HeaderCell />
         <Table.HeaderCell colSpan='12'>
           <Button
@@ -135,14 +141,17 @@ export default ({ handleSet }) => {
             labelPosition='left'
             primary
             size='small'
+            onClick={() => {
+              dispatch(setIsOpenNewBaloon(true))
+            }}
           >
             <Icon name='fire extinguisher' /> Добавить балон
           </Button>
         </Table.HeaderCell>
-      </Table.Row>
+      </Table.Row>}
     </Table.Footer>
     </Table>
-    <Modal>
+    <Modal open={isOpenNewBaloon} close={setIsOpenNewBaloon}>
       <FormAddBaloon />
     </Modal>
     </>

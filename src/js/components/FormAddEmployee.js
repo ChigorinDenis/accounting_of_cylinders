@@ -29,24 +29,26 @@ const FormAddEmployee = () => {
 
   return (
     <Form>
-      <Form.Field
-        id='form-input-control-fullname'
-        name="fullname"
-        control={Input}
-        label='ФИО'
-        placeholder='ФИО'
-        value={formData.fullname}
-        onChange={handleInputChange}
-      />
-      <Form.Field
-        id='form-input-control-post'
-        name="post"
-        control={Input}
-        label='Должность'
-        placeholder='Должность'
-        value={formData.post}
-        onChange={handleInputChange}
-      />
+      <Form.Group widths='equal'>
+        <Form.Field
+          id='form-input-control-fullname'
+          name="fullname"
+          control={Input}
+          label='ФИО'
+          placeholder='ФИО'
+          value={formData.fullname}
+          onChange={handleInputChange}
+        />
+        <Form.Field
+          id='form-input-control-post'
+          name="post"
+          control={Input}
+          label='Должность'
+          placeholder='Должность'
+          value={formData.post}
+          onChange={handleInputChange}
+        />
+      </Form.Group>
       <Form.Group widths='equal'>
         <Form.Field
           id='form-input-control-certificate_number'
@@ -68,7 +70,7 @@ const FormAddEmployee = () => {
           onChange={handleInputChange}
         />
       </Form.Group>
-      <Form.Button onClick={handleSubmit} positive>Отправить</Form.Button>
+      <Form.Button onClick={handleSubmit} positive >Сохранить</Form.Button>
     </Form>
   );
 };

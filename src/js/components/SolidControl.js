@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
@@ -21,6 +22,10 @@ const tableHeader = [
 function SolidControl({next}) {
   const [results, setResults] = useState([]);
   const [solidControlData, setSolidControlData] = useState({ controlEquipment: [], controlEmployees: []});
+  const [isUpdate, setIsUpdate] = useState(null);
+
+  const controlData = useSelector((state) => (state.expertise.controlsData.solidControl));
+  const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
 
   const submitUpdate = (formData) => {
     electron.ipcRenderer.send('update-solid-result', formData);
@@ -29,12 +34,9 @@ function SolidControl({next}) {
   useEffect(() => {
     async function fetchData() {
       // You can await here
-      const data = await electron.ipcRenderer.invoke('get-solid-control-result', 29);
-
-      const controlData = await electron.ipcRenderer.invoke('get-solid-control-by-id', 12);
-      
-      const controlEquipment = await electron.ipcRenderer.invoke('get-solid-control-equipments', 29);
-      const controlEmployees = await electron.ipcRenderer.invoke('get-solid-control-employees', 29);
+      const data = await electron.ipcRenderer.invoke('get-solid-control-result', idExpertiseActive);
+      const controlEquipment = await electron.ipcRenderer.invoke('get-solid-control-equipments', idExpertiseActive);
+      const controlEmployees = await electron.ipcRenderer.invoke('get-solid-control-employees', idExpertiseActive);
 
       setSolidControlData({
         controlData,
@@ -48,13 +50,15 @@ function SolidControl({next}) {
       };
     }
     fetchData(); 
-  }, []);
+  }, [isUpdate]);
+
   return (
     <>
     <Header as="h3" color="blue">Замер твердости</Header>
-    <UpdateControl routeName={'solid-control'} ptd={false} data={solidControlData}/>
+    <UpdateControl routeName={'solid-control'} type_doc={true} quality_doc={true} data={{...solidControlData, controlData}} setIsUpdate={setIsUpdate}/>
+    <Header as="h4" color="blue">Сосуды</Header>
     <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
-    <Button onClick={() => next('pneumatic')} floated="right">Далее</Button>
+    <Button onClick={() => next('pneumatic')} floated="right" style={{margin: '20px 0'}}>Далее</Button>
     </>
   )
 }

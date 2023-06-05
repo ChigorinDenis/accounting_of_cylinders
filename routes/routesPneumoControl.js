@@ -10,11 +10,24 @@ const routesPneumoControl = [
     },
   },
   {
+    method: "handle",
+    routeName: "get-pneumatic-control-result",
+    func: (value) => {
+      const query = `SELECT b.prod_number, b.prod_date, pr.*
+      FROM expertise e
+      JOIN pneumatic_control pc ON pc.id_expertise = e.id
+      JOIN pneumatic_result pr ON pr.id_pneumatic_control = pc.id
+      JOIN baloon b ON b.id = pr.id_baloon
+      WHERE e.id = ${value}`;
+      return query;
+    },
+  },
+  {
     method: "on",
     routeName: "add-pneumatic-control-employee",
     func: (formData) => {
-      const { idPneumaticControl, idEmployees } = formData;
-      const values = idEmployees.map((idEmployee) => `(${idPneumaticControl}, ${idEmployee})`).join(', ');
+      const { idControl, idEmployees } = formData;
+      const values = idEmployees.map((idEmployee) => `(${idControl}, ${idEmployee})`).join(', ');
       const query = `INSERT INTO pneumatic_control_employee (id_pneumatic_control, id_employee) VALUES ${values}`;
       return query;
     },
@@ -23,8 +36,8 @@ const routesPneumoControl = [
     method: "on",
     routeName: "add-pneumatic-control-equipment",
     func: (formData) => {
-      const { idPneumaticControl, idEquipments } = formData;
-      const values = idEquipments.map((idEquipment) => `(${idPneumaticControl}, ${idEquipment})`).join(', ');
+      const { idControl, idEquipments } = formData;
+      const values = idEquipments.map((idEquipment) => `(${idControl}, ${idEquipment})`).join(', ');
       const query = `INSERT INTO pneumatic_control_equipment (id_pneumatic_control, id_equipment) VALUES ${values}`;
       return query;
     },
@@ -50,20 +63,43 @@ const routesPneumoControl = [
   },
   {
     method: "on",
-    routeName: "update-pnumatic-control",
+    routeName: "update-pneumatic-control",
     func: (formData) => {
       const { idControl, common } = formData;
       const {
         ntd_quality_doc,
-        volme_control,
-        date
+        date,
+        name
       } = common;
-      const query = `UPDATE ultrasonic_control
-      SET ntd_quality_doc ='${ntd_quality_doc}', volme_control ='${volme_control}', date ='${date}'
+      const query = `UPDATE pneumatic_control
+      SET ntd_quality_doc ='${ntd_quality_doc}', date ='${date}', name = '${name}'
       WHERE id = ${idControl}`;
       return query;
     },
   },
+  {
+    method: "on",
+    multiple: true,
+    routeName: "update-pneumatic-result",
+    func: (formData) => {
+      const queries = formData.map((rc) => {
+        const {
+          id,
+          load_100,
+          load_200,
+          load_300,
+          load_400,
+          load_420
+        } = rc;
+        const query = `UPDATE pneumatic_result
+        SET load_100='${load_100}', load_200='${load_200}', load_300='${load_300}', load_400='${load_400}', load_420='${load_420}'
+        WHERE id = ${id}`;
+        return query;
+      } );
+      
+      return queries
+    },
+  }
 ];
 
 module.exports = routesPneumoControl;

@@ -3,7 +3,7 @@ import { Icon, Step, Header} from 'semantic-ui-react'
 
 const Steps = ({ current }) => (
   <Step.Group size='small' ordered>
-    <Step completed>
+    <Step active={current === 'visual'}>
       <Step.Content>
         <Step.Title>Визуальный</Step.Title>
         <Step.Description>Визуально измерительный контроль</Step.Description>

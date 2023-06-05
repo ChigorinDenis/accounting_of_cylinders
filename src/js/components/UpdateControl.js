@@ -11,74 +11,10 @@ import {
   List,
 } from "semantic-ui-react";
 import formHandling from "../../utils/formHandling";
+import TableInfo from "./TableInfo";
 
-const TableInfo = ({ data, ptd }) => {
-  const { controlData, controlEmployees, controlEquipment } = data;
-  console.log('TableInfo')
-  return (
-    <>
-      <Label basic color="red">
-        Дата проведения
-        <Label.Detail>
-          {controlData && format(new Date(controlData.date), 'dd.MM.yyyy')}
-        </Label.Detail>
-      </Label>
 
-      <Table celled structured>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>Контроль произвели</Table.HeaderCell>
-            <Table.HeaderCell>Инструменты для проведения</Table.HeaderCell>
-            <Table.HeaderCell widths={1}>Объем контроля</Table.HeaderCell>
-            <Table.HeaderCell widths={1}>
-              НТД по оценке качества
-            </Table.HeaderCell>
-            {ptd && <Table.HeaderCell>ПТД на вид контроля</Table.HeaderCell>}
-          </Table.Row>
-        </Table.Header>
-        <Table.Body>
-          <Table.Row>
-            <Table.Cell>
-              <List>
-                {controlEmployees &&
-                  controlEmployees.map(({ id, fullname, post }) => (
-                    <List.Item key={`${id}${fullname}`}>
-                      <Label as="a" basic color="blue">
-                        {`${fullname} - ${post}`}
-                      </Label>
-                    </List.Item>
-                  ))}
-              </List>
-            </Table.Cell>
-            <Table.Cell>
-              <List>
-                {controlEquipment &&
-                  controlEquipment.map(({ id, name, prod_number }) => (
-                    <List.Item key={`${id}${prod_number}`}>
-                      <Label as="a" basic color="blue">
-                        {`${name} №${prod_number}`}
-                      </Label>
-                    </List.Item>
-                  ))}
-              </List>
-            </Table.Cell>
-            <Table.Cell>
-              {controlData && controlData.volme_control}
-            </Table.Cell>
-            <Table.Cell>
-              {controlData && controlData.ntd_doc}
-            </Table.Cell>
-            {ptd && <Table.Cell>
-              {controlData && controlData.ptd_doc}
-            </Table.Cell>}
-          </Table.Row>
-        </Table.Body>
-      </Table>
-    </>
-  );
-};
-
-function UpdateControl({ routeName, ptd, data }) {
+function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme = true, setIsUpdate }) {
   // console.log('updateControl')
   const [saved, setSaved] = useState(false);
   const [employees, setEmployees] = useState([]);
@@ -89,6 +25,8 @@ function UpdateControl({ routeName, ptd, data }) {
     equipment: [],
     ptd_doc: "",
     ntd_doc: "",
+    ntd_type_doc: "",
+    ntd_quality_doc: "",
     volme_control: "",
   });
 
@@ -98,8 +36,8 @@ function UpdateControl({ routeName, ptd, data }) {
   );
 
   const tableComponent = useMemo(() => {
-    return <TableInfo data={data} ptd={ptd} />;
-  }, [data, ptd]);
+    return <TableInfo data={data} ptd={ptd} type_doc={type_doc} ntd={ntd} quality_doc={quality_doc} volme={volme} />;
+  }, [data, ptd, type_doc, ntd, quality_doc, volme]);
 
   useEffect(() => {
     async function fetchData() {
@@ -121,9 +59,11 @@ function UpdateControl({ routeName, ptd, data }) {
       setEmployees(mappedEmployees);
       setEquipment(mappedEquipment);
       const { controlData } = data;
-      if (controlData && controlData.length != 0) {
+
+      if (controlData && controlData.name === 'filled') {
         setSaved(true);
       }
+
       return () => {
         ipcRenderer.removeAllListeners("get-employees");
         ipcRenderer.removeAllListeners("get-equipment");
@@ -133,14 +73,18 @@ function UpdateControl({ routeName, ptd, data }) {
   }, [data]);
 
   const handleSubmit = () => {
-    const idControl = 12;
+    const { controlData } = data;
+    const idControl = controlData.id;
+    const common = { ...formData, name: 'filled'};
+
     electron.ipcRenderer.send(`update-${routeName}`, {
       idControl,
-      common: formData,
+      common
     });
 
     const idEquipments = formData.equipment;
     const idEmployees = formData.employee;
+
     electron.ipcRenderer.send(`add-${routeName}-equipment`, {
       idControl,
       idEquipments,
@@ -149,6 +93,9 @@ function UpdateControl({ routeName, ptd, data }) {
       idControl,
       idEmployees,
     });
+
+    setIsUpdate('updated');
+    setSaved(true);
   };
 
   return (
@@ -200,21 +147,37 @@ function UpdateControl({ routeName, ptd, data }) {
                   onChange={handleInputChange}
                 />
               )}
-              <Form.TextArea
+              {type_doc && (
+                <Form.TextArea
+                  label="НТД на вид котроля"
+                  name="ntd_type_doc"
+                  placeholder="Введите текст..."
+                  value={formData.ntd_type_doc}
+                  onChange={handleInputChange}
+                />
+              )}
+              {quality_doc && <Form.TextArea
+                label="НТД по оценке качества"
+                name="ntd_quality_doc"
+                placeholder="Введите текст..."
+                value={formData.ntd_quality_doc}
+                onChange={handleInputChange}
+              />}
+              {ntd && <Form.TextArea
                 label="НТД по оценке качества"
                 name="ntd_doc"
                 placeholder="Введите текст..."
                 value={formData.ntd_doc}
                 onChange={handleInputChange}
-              />
+              />}
 
-              <Form.TextArea
+              {volme && <Form.TextArea
                 label="Объем контроля"
                 name="volme_control"
                 placeholder="Введите текст..."
                 value={formData.volme_control}
                 onChange={handleInputChange}
-              />
+              />}
             </Form.Group>
               <Form.Field
                 id="form-input-control-prod_date"

@@ -17,6 +17,7 @@ const expertiseSlice = createSlice({
       state.isOpen = action.payload;
     },
     setControlsData: (state, action) => {
+      console.log(action.payload)
       state.controlsData = action.payload;
     },
   },

@@ -56,6 +56,18 @@ const routesEmployees = [
       return query;
     },
   },
+  {
+    method: "handle",
+    routeName: "get-pneumatic-control-employees",
+    func: (value) => {
+      const query = `SELECT employee.*
+      FROM pneumatic_control
+      JOIN pneumatic_control_employee ON pneumatic_control.id = pneumatic_control_employee.id_pneumatic_control
+      JOIN employee ON pneumatic_control_employee.id_employee = employee.id
+      WHERE pneumatic_control.id_expertise = ${value}`;
+      return query;
+    },
+  },
 ]
 
 module.exports = routesEmployees;
