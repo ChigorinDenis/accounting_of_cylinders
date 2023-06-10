@@ -4,6 +4,7 @@ const path = require('path');
 const url = require('url');
 const isDev = require('electron-is-dev');
 const mysql = require('mysql2');
+const prepareData = require('./mathModel/prepareData');
 
 const subscribeToRoutes = require('./routes/routes');
 
@@ -56,6 +57,7 @@ function createWindow() {
 // ipcMain.on('notify', (_, message) => {
 //   new Notification({title: 'Notifiation', body: message}).show();
 // })
+prepareData(connection); 
 
 subscribeToRoutes(ipcMain, connection);
 
