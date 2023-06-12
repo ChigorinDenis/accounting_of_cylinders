@@ -11,6 +11,8 @@ import Employee from './components/Employee';
 import Equipment from './components/Equipment';
 import Header from './components/Header';
 import { setIsOpen } from './state/expertiseReducer';
+import ChartSurvival from './components/ChartSurvival';
+import Statistic from './components/Statistic';
 
 export default function App() {
   const activeTab = useSelector((state) => state.tabs.activeTab);
@@ -35,7 +37,7 @@ export default function App() {
             {activeTab === 'сосуды' && <Main />}
             {activeTab === 'персонал' && <Employee />}
             {activeTab === 'оборудование' && <Equipment />}
-            {activeTab === 'экспертиза' && <Expertise />}
+            {activeTab === 'экспертиза' && <Statistic />}
           </div>
         </div>
         </Ref>

@@ -1,9 +1,21 @@
 import React, { useEffect, useState} from 'react';
-import { Header, Checkbox, Icon, Table, Button } from 'semantic-ui-react'
+import { Header, Checkbox, Icon, Table, Button, Label} from 'semantic-ui-react'
 import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsOpenNewBaloon } from '../state/modalReducer';
+
+
+const statusTag = (status) => {
+  switch (status) {
+    case 'InActive':
+      return <Label basic color='green'>Экплуатируется</Label>
+    case 'Defective':
+      return <Label basic color='red'>Брак</Label>
+    default:
+      return <Label basic color='grey'>Неопределен</Label>
+  }
+}
 
 export default ({ handleSet, footer = true }) => {
 
@@ -62,6 +74,7 @@ export default ({ handleSet, footer = true }) => {
   return (
     <>
     <Header style={{marginTop: '30px', marginBottom: '20px'}} as='h3'>Сосуды</Header>
+    
     <Table striped>
       <Table.Header>
         <Table.Row>
@@ -105,7 +118,7 @@ export default ({ handleSet, footer = true }) => {
             gost,
             status
           } = baloon;
-          const date = new Date(prod_date).getFullYear();
+          // const date = new Date(prod_date).getFullYear();
           return (
             <Table.Row key={`${id}${prod_number}`}>
               <Table.Cell>
@@ -115,7 +128,7 @@ export default ({ handleSet, footer = true }) => {
                 />
               </Table.Cell>
               <Table.Cell>{prod_number}</Table.Cell>
-              <Table.Cell>{date}</Table.Cell>
+              <Table.Cell>{prod_date}</Table.Cell>
               <Table.Cell>{pressure_work}</Table.Cell>
               <Table.Cell>{volume}</Table.Cell>
               <Table.Cell>{shape}</Table.Cell>
@@ -125,7 +138,7 @@ export default ({ handleSet, footer = true }) => {
               <Table.Cell>{length}</Table.Cell>
               <Table.Cell>{mark}</Table.Cell>
               <Table.Cell>{gost}</Table.Cell>
-              <Table.Cell>{status}</Table.Cell>
+              <Table.Cell>{statusTag(status)}</Table.Cell>
             </Table.Row>
           )
         })}

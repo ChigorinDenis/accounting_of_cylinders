@@ -8,6 +8,7 @@ const routesVisualControl = require('./routesVisualControl');
 const routesUltrasonicControl = require('./routesUltrasonicControl');
 const routesSolidControl = require('./routesSolidControl');
 const routesPneumoControl = require('./routesPneumoControl');
+const routesMath = require('./routesMath');
 
 function subscribeToRoutes(ipcMain, connection) {
   const allRoutes = [
@@ -20,6 +21,19 @@ function subscribeToRoutes(ipcMain, connection) {
     ...routesSolidControl,
     ...routesPneumoControl
   ];
+
+  ipcMain.handle(routesMath.routeName, () => {
+    return new Promise((resolve, reject) => {
+      try {
+        const mathResult = routesMath.func();
+        mathResult.then((result) => {
+          resolve(result);
+        })
+      } catch (error) {
+        reject(error);
+      }
+    });
+  })
 
   allRoutes.forEach((route) => {
     if (route.method === 'handle') {

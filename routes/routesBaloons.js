@@ -5,6 +5,11 @@ const routesBaloons = [
     query: 'SELECT * FROM baloon'
   },
   {
+    method: 'handle',
+    routeName: 'get-baloons-inactive',
+    query: `SELECT id, prod_date, prod_number, volume, shape FROM baloon WHERE status = 'InActive'`
+  },
+  {
     method: 'on',
     routeName: 'add-baloon',
     func: (formData) => {

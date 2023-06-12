@@ -1,0 +1,5649 @@
+[
+  {
+    "id": 1,
+    "prod_number": "771",
+    "prod_date": "1980",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 0,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "prod_number": "245",
+    "prod_date": "1985",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "prod_number": "545",
+    "prod_date": "1975",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 0
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "prod_number": "434",
+    "prod_date": "1979",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "prod_number": "564",
+    "prod_date": "1989",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "prod_number": "123",
+    "prod_date": "1985",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "prod_number": "128",
+    "prod_date": "1985",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 0,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "prod_number": "220",
+    "prod_date": "2008",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 0,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "prod_number": "638",
+    "prod_date": "2008",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "prod_number": "545",
+    "prod_date": "2010",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "prod_number": "434",
+    "prod_date": "2010",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 0,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "prod_number": "564",
+    "prod_date": "2011",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 0
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "prod_number": "111",
+    "prod_date": "2010",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "prod_number": "222",
+    "prod_date": "2009",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 0,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "prod_number": "333",
+    "prod_date": "2013",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 0,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "prod_number": "444",
+    "prod_date": "2012",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "prod_number": "544",
+    "prod_date": "2014",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "prod_number": "777",
+    "prod_date": "2011",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "prod_number": "793",
+    "prod_date": "2010",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "prod_number": "801",
+    "prod_date": "2015",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 21,
+    "prod_number": "802",
+    "prod_date": "2014",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "prod_number": "807",
+    "prod_date": "2013",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "prod_number": "883",
+    "prod_date": "2012",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "prod_number": "945",
+    "prod_date": "2011",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 25,
+    "prod_number": "958",
+    "prod_date": "2010",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "prod_number": "1314",
+    "prod_date": "2015",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "prod_number": "1315",
+    "prod_date": "2014",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 28,
+    "prod_number": "1570",
+    "prod_date": "2013",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 29,
+    "prod_number": "1216",
+    "prod_date": "2012",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 30,
+    "prod_number": "2197",
+    "prod_date": "2011",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 31,
+    "prod_number": "1577",
+    "prod_date": "2010",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 32,
+    "prod_number": "1344",
+    "prod_date": "2015",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  },
+  {
+    "id": 33,
+    "prod_number": "2273",
+    "prod_date": "2014",
+    "expertises": [
+      {
+        "id": 31,
+        "date": "2010-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 32,
+        "date": "2010-10-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 33,
+        "date": "2011-05-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 34,
+        "date": "2011-11-04T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 35,
+        "date": "2012-05-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 36,
+        "date": "2012-11-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 37,
+        "date": "2013-05-05T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 38,
+        "date": "2013-11-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 39,
+        "date": "2014-05-10T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 40,
+        "date": "2014-11-20T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 41,
+        "date": "2015-05-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 42,
+        "date": "2015-11-14T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 43,
+        "date": "2016-05-30T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 44,
+        "date": "2016-11-28T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 45,
+        "date": "2017-05-31T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 46,
+        "date": "2017-11-06T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 47,
+        "date": "2018-05-01T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 48,
+        "date": "2018-11-11T18:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 49,
+        "date": "2019-05-23T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 50,
+        "date": "2019-11-06T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 51,
+        "date": "2020-05-21T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 52,
+        "date": "2020-11-18T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 53,
+        "date": "2021-06-09T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 54,
+        "date": "2021-10-31T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 55,
+        "date": "2022-05-16T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 56,
+        "date": "2022-11-19T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 57,
+        "date": "2023-06-08T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      },
+      {
+        "id": 58,
+        "date": "2023-11-30T19:00:00.000Z",
+        "visual_check_result": 1,
+        "ultrasonic_check_result": 1,
+        "solid_check_result": 1,
+        "pneumatic_check_result": 1
+      }
+    ]
+  }
+]
