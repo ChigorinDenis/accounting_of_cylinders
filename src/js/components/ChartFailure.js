@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { Label } from 'semantic-ui-react';
 
 const data = [
   {
@@ -48,6 +49,8 @@ const data = [
 
 const ChartFailure = ({data}) => {
     return (
+      <>
+      <Label attached='top' color='blue' >Статистика отказов сосудов</Label>
       <ResponsiveContainer width="100%" height="100%" minWidth="300px"  minHeight="300px">
         <BarChart
           width={500}
@@ -65,11 +68,12 @@ const ChartFailure = ({data}) => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="total" fill="#74b9ff" />
-          <Bar dataKey="dead" fill="#ff7675" />
+          <Bar dataKey="total" fill="#a29bfe" name="Общее число"/>
+          <Bar dataKey="dead" fill="#ff7675" name="Отказы" />
           
         </BarChart>
       </ResponsiveContainer>
+      </>
     );
 }
 

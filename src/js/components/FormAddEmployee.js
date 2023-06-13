@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Form, Input  } from 'semantic-ui-react';
+import{ subDays, addYears, parseISO, format } from 'date-fns';
 
-const FormAddEmployee = () => {
+const FormAddEmployee = ({close}) => {
   const [formData, setFormData] = useState({
     fullname: '',
     post: '',
@@ -23,8 +24,11 @@ const FormAddEmployee = () => {
 
   const handleSubmit = () => {
     // Отправка данных в главный процесс Electron
-    electron.ipcRenderer.send('add-employee', formData);
-    console.log(formData);
+    const date = parseISO(formData.certificate_date);
+    const decreasedDate = subDays(date, 1);
+    const certificate_end = format(addYears(decreasedDate, 1), 'yyyy-MM-dd');
+    electron.ipcRenderer.send('add-employee', {...formData, certificate_end });
+    close();
   };
 
   return (
@@ -64,7 +68,7 @@ const FormAddEmployee = () => {
           name="certificate_date"
           type='date'
           control={Input}
-          label='Дата сертификата'
+          label='Дата выдачи сертификата'
           placeholder='Дата сертификата'
           value={formData.certificate_date}
           onChange={handleInputChange}

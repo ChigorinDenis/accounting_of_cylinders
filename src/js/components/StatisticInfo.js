@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Icon, Image, Statistic, Input, Form, Label, Table, Menu} from 'semantic-ui-react'
+import { Icon, Image, Statistic, Input, Form, Label, Table, Menu, Button, Select} from 'semantic-ui-react'
 import formHandling from '../../utils/formHandling';
 import getFailureProbability from '../../utils/countProbability';
 
@@ -31,8 +31,8 @@ const TableStatistic = ({ data }) => (
 
     <Table.Footer>
       <Table.Row>
-        <Table.HeaderCell colSpan="4">
-          <Menu floated="right" pagination>
+        <Table.HeaderCell colSpan="5">
+          {/* <Menu floated="right" pagination>
             <Menu.Item as="a" icon>
               <Icon name="chevron left" />
             </Menu.Item>
@@ -43,26 +43,45 @@ const TableStatistic = ({ data }) => (
             <Menu.Item as="a" icon>
               <Icon name="chevron right" />
             </Menu.Item>
-          </Menu>
+          </Menu> */}
         </Table.HeaderCell>
       </Table.Row>
     </Table.Footer>
   </Table>
 );
 
-const FormStatistic = () => {
+
+const probabilityOptions = [
+  { key: '30p', text: '<30%', value: 30 },
+  { key: '40p', text: '<40%', value: 40},
+  { key: '50p', text: '<60%', value: 60},
+  { key: '70p', text: '<75%', value: 75},
+];
+
+const monthOptions = [
+  { key: '0m', text: 'на сегодня', value: 0 },
+  { key: '6m', text: '6 месяцев', value: 6 },
+  { key: '1year', text: '1 год', value: 12},
+  { key: '15year', text: '1 год 6 месяцев', value: 18},
+  { key: '2year', text: '2 года', value: 24},
+  { key: '3year', text: '3 года', value: 36},
+];
+const FormStatistic = ({params}) => {
   const [formData, setFormData] = useState({
-    probability: 30,
-    month: 12,   
+    probability: params.probability,
+    month: params.month,   
   });
 
-  const { handleInputChange, handleSelectChange } = formHandling(formData, setFormData);
+  const handleSelectChange = (f) => (e, { name, value }) => {
+    setFormData({ ...formData, [name]: value });
+    f(value);
+  };
 
   const handleSubmit = () => {
-    // Отправка данных в главный процесс Electron
-    electron.ipcRenderer.send('add-baloon', formData);
-    
+    params.setProbability(formData.probability);
+    params.setMonth(formData.month);
   };
+
   const formStyle = {
     marginTop: '30px',
     marginBottom: '30px'
@@ -70,7 +89,7 @@ const FormStatistic = () => {
   return (
     <Form style={formStyle}>
       <Form.Group widths='equal' inline>
-        <Form.Field
+        {/* <Form.Field
           name="probability"
           control={Input}
           label='Вероятность отказа'
@@ -85,24 +104,36 @@ const FormStatistic = () => {
           placeholder='Месяцев до отказа'
           value={formData.month}
           onChange={handleInputChange}
-        />
-        {/* <Form.Field
-          control={Select}
-          options={envOptions}
-          label={{ children: 'Среда', htmlFor: 'form-select-env' }}
-          placeholder='Среда'
-          search
-          searchInput={{ id: 'form-select-control-env'}}
-          name="env"
-          value={formData.env}
-          onChange={handleSelectChange}
         /> */}
+        <Form.Field
+          control={Select}
+          options={monthOptions}
+          label={{ children: 'Время до отказа', htmlFor: 'form-select-month' }}
+          placeholder='Время до отказа'
+          search
+          searchInput={{ id: 'form-select-control-month' }}
+          name="month"
+          value={formData.month}
+          onChange={handleSelectChange(params.setMonth)}
+        />
+        <Form.Field
+          control={Select}
+          options={probabilityOptions}
+          label={{ children: 'Вероятность', htmlFor: 'form-select-probability' }}
+          placeholder='Вероятность отказа'
+          search
+          searchInput={{ id: 'form-select-control-probability' }}
+          name="probability"
+          value={formData.probability}
+          onChange={handleSelectChange(params.setProbability)}
+        />
+        {/* <Button color='blue' onClick={handleSubmit}>ОК</Button> */}
       </Form.Group>
     </Form>
   );
 }
 
-const StatisticInfo = ({data}) => {
+const StatisticInfo = ({data, params}) => {
   // const [inActiveBaloons, setInActiveBaloons] = useState([]);
 
   // useEffect(() => {
@@ -126,7 +157,7 @@ const StatisticInfo = ({data}) => {
       <Label attached='top'>Статистика отказов</Label>
       <Statistic.Group widths='three' size='mini'>
         <Statistic color='red'>
-          <Statistic.Value>30%</Statistic.Value>
+          <Statistic.Value>{params.probability}%</Statistic.Value>
           <Statistic.Label>
             Вероятность
             <br />
@@ -136,7 +167,7 @@ const StatisticInfo = ({data}) => {
 
         <Statistic color='blue'>
           <Statistic.Value>
-            38 месяцев
+            {params.month} месяцев
           </Statistic.Value>
           <Statistic.Label>
             Медиана
@@ -147,12 +178,12 @@ const StatisticInfo = ({data}) => {
 
         <Statistic color='brown'>
           <Statistic.Value>
-            5 ед.
+            {data && data.length || 0} ед.
           </Statistic.Value>
           <Statistic.Label>Количество<br/> сосудов</Statistic.Label>
         </Statistic>
       </Statistic.Group>
-      <FormStatistic />
+      <FormStatistic  params={params}/>
       <TableStatistic data={data}/>
     </div>
   )

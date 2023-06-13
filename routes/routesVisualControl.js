@@ -14,7 +14,7 @@ const routesVisualControl = [
     routeName: "get-visual-control-result",
     func: (value) => {
       console.log('get-visul result is worked', value)
-      const query = `SELECT b.prod_number, b.prod_date, vr.id, vr.check, vr.description
+      const query = `SELECT b.prod_number, b.prod_date, vr.id, vr.check_result, vr.description
       FROM expertise e
       JOIN visual_control vc ON vc.id_expertise = e.id
       JOIN visual_result vr ON vr.id_visual_control = vc.id

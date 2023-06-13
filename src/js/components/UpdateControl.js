@@ -16,7 +16,7 @@ import TableInfo from "./TableInfo";
 
 function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme = true, setIsUpdate }) {
   // console.log('updateControl')
-  const [saved, setSaved] = useState(false);
+  const [saved, setSaved] = useState(true);
   const [employees, setEmployees] = useState([]);
   const [equipment, setEquipment] = useState([]);
   const [formData, setFormData] = useState({

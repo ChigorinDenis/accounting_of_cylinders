@@ -12,11 +12,12 @@ const routesEmployees = [
       fullname,
       post,
       certificate_number,
-      certificate_date
+      certificate_date,
+      certificate_end
     } = formData;
     
-    const query = `INSERT INTO \`employee\` (\`fullname\`, \`post\`, \`certificate_number\`, \`certificate_date\`) 
-      VALUES ('${fullname}', '${post}', '${certificate_number}', '${certificate_date}');`;
+    const query = `INSERT INTO \`employee\` (\`fullname\`, \`post\`, \`certificate_number\`, \`certificate_date\`, \`certificate_end\`)  
+      VALUES ('${fullname}', '${post}', '${certificate_number}', '${certificate_date}', '${certificate_end}');`;
     return query;
     }
   },

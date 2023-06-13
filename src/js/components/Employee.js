@@ -21,7 +21,11 @@ export default () => {
       };
     }
     fetchData(); 
-  }, []);
+  }, [isOpenNewEmployee]);
+
+  const handleClose = () => {
+    dispatch(setIsOpenNewEmployee(false));
+  }
 
   return (
     <>
@@ -32,7 +36,8 @@ export default () => {
           <Table.HeaderCell>Полное имя</Table.HeaderCell>
           <Table.HeaderCell>Должность</Table.HeaderCell>
           <Table.HeaderCell>Номер сертификата</Table.HeaderCell>
-          <Table.HeaderCell>Дата сертификата</Table.HeaderCell>
+          <Table.HeaderCell>Дата выдачи <br/> сертификата</Table.HeaderCell>
+          <Table.HeaderCell>Дата окночания<br/>сертификата</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
@@ -44,14 +49,19 @@ export default () => {
             post,
             certificate_number,
             certificate_date,
+            certificate_end
           } = employee;
-          const date = new Date(certificate_date);
+
+          const date_start = new Date(certificate_date);
+          const date_end = new Date(certificate_end);
+
           return (
             <Table.Row key={`${id}${fullname}`}>
               <Table.Cell>{fullname}</Table.Cell>
               <Table.Cell>{post}</Table.Cell>
               <Table.Cell>{certificate_number}</Table.Cell>
-              <Table.Cell>{format(date, 'dd.MM.yyyy')}</Table.Cell>
+              <Table.Cell>{format(date_start, 'dd.MM.yyyy')}</Table.Cell>
+              <Table.Cell>{format(date_end, 'dd.MM.yyyy')}</Table.Cell>
             </Table.Row>
           )
         })}
@@ -78,7 +88,7 @@ export default () => {
       </Table.Footer>
     </Table>
     <Modal open={isOpenNewEmployee} close={setIsOpenNewEmployee}>
-      <FormAddEmployee />
+      <FormAddEmployee close={handleClose}/>
     </Modal>
     </>
     );

@@ -13,6 +13,8 @@ const chartStyles = {
 const Statistic = () => {
   const [math, setMath] = useState([]);
   const [inActiveBaloons, setInActiveBaloons] = useState([]);
+  const [probability, setProbability] = useState(40);
+  const [month, setMonth] = useState(12);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,10 +22,12 @@ const Statistic = () => {
       const dataMath = await electron.ipcRenderer.invoke('get-math');
       const dataBaloons = await electron.ipcRenderer.invoke('get-baloons-inactive');
 
-      const dataProbability = dataBaloons.map(baloon => {
-        const probability = getFailureProbability(dataMath.survivalData, baloon.prod_date);
-        return {...baloon, probability}
-      });
+      const dataProbability = dataBaloons
+        .map(baloon => {
+          const probability = getFailureProbability(dataMath.survivalData, baloon.prod_date, month);
+          return {...baloon, probability}
+        })
+        .filter((baloon) => (Number(baloon.probability) <= (probability / 100)))
 
       setInActiveBaloons(dataProbability);
 
@@ -33,31 +37,22 @@ const Statistic = () => {
       };
     }
     fetchData(); 
-  }, [math]);
+  }, [math, probability, month]);
 
   return (
     <Grid columns={2} divided>
       <Grid.Row>
         <Grid.Column>
           <Segment >
-          <ChartSurvival data={math.survivalData}/>
+            <ChartSurvival data={math.survivalData}/>
           </Segment>
-        </Grid.Column>
-        <Grid.Column>
-          <Segment>
-            <StatisticInfo data={inActiveBaloons}/>
-          </Segment>
-        </Grid.Column>
-      </Grid.Row>
-      <Grid.Row>
-        <Grid.Column>
-          <Segment>
-            {/* <FormComponent /> */}
-          </Segment>
-        </Grid.Column>
-        <Grid.Column>
           <Segment>
             <ChartFailure data={math.failureData}/>
+          </Segment>
+        </Grid.Column>
+        <Grid.Column>
+          <Segment>
+            <StatisticInfo data={inActiveBaloons} params={{probability, month, setProbability, setMonth}}/>
           </Segment>
         </Grid.Column>
       </Grid.Row>

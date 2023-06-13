@@ -44,12 +44,13 @@ export default () => {
                 <Table.Cell>
                   <Icon name='file alternate outline' />
                   {number}
-                  <Icon color='green' name='checkmark'  />
+                  {/* <Icon color='green' name='checkmark'  /> */}
                 </Table.Cell>
                 <Table.Cell>
                   {format(date, 'dd.MM.yyyy')}
                   <br />
-                  {(dateNow < date) && (differenceInDays(date, dateNow) < 10) && <span style={spanStyle}>осталось меньше 10дн.</span>}
+                  {(dateNow < date) && (differenceInDays(date, dateNow) < 40) && <span style={spanStyle}>Истекает срок</span>}
+                  {(dateNow > date) &&  <span style={spanStyle}>Срок истек</span>}
                   </Table.Cell>
               </Table.Row>
             );

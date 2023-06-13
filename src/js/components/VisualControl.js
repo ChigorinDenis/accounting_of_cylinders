@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
   { id: 2, title: 'Год выпуска', name: 'prod_date', width: 1, editable: false },
-  { id: 3, title: 'Визуальное состояние', name: 'check', width: 1, editable: false },
+  { id: 3, title: 'Визуальное состояние', name: 'check_result', width: 1, editable: false },
   { id: 4, title: 'Описание', name: 'description', width: 1, editable: true }
 ];
 

@@ -43,7 +43,19 @@ function UltrasonicExpertise({next}) {
         controlEquipment
       });
 
-      setResults(data);
+      const mappedData = data.map((item) => ({
+        ...item,
+        point_1: item.point_1.toFixed(1),
+        point_2: item.point_2.toFixed(1),
+        point_3: item.point_3.toFixed(1),
+        point_4: item.point_4.toFixed(1),
+        point_5: item.point_5.toFixed(1),
+        point_6: item.point_6.toFixed(1),
+        point_7: item.point_7.toFixed(1),
+        point_8: item.point_8.toFixed(1),
+        point_9: item.point_9.toFixed(1)
+      }))
+      setResults(mappedData);
       return () => {
         ipcRenderer.removeAllListeners('get-ultrasonic-control-result');
       };

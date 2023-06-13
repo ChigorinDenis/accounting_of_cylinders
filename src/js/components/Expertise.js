@@ -13,7 +13,7 @@ const spanStyle = {
 export default () => {
   const [expertise, setExpertise] = useState([]);
   const activeExpertise = useSelector((state) => state.expertise);
-  const modal = useSelector((state) => state.modal);
+  const isOpenNewExpertise = useSelector((state) => state.modal.isOpenNewExpertise);
 
   const dispatch = useDispatch();
 
@@ -28,42 +28,9 @@ export default () => {
     fetchData();
   }, []);
 
-  
-  // const getAllControlData = (id) => {
-  //   const getControlData = async (routeName) => {
-  //     const [control] = await electron.ipcRenderer.invoke(`get-${routeName}-by-id`, id);
-  //     control.date = control.date && control.date.toISOString();
-  //     const controlResult = await electron.ipcRenderer.invoke(`get-${routeName}-result`, id);
-  //     const controlEquipment = await electron.ipcRenderer.invoke(`get-${routeName}-equipments`, id);
-  //     const controlEmployees = await electron.ipcRenderer.invoke(`get-${routeName}-employees`, id);
-  //     return {
-  //       control,
-  //       controlResult,
-  //       controlEquipment,
-  //       controlEmployees
-  //     }
-  //   }
-  //   const routes = ['visual-control', 'ultrasonic-control', 'solid-control', 'pneumatic-control'];
-  //   const [visualControl, ultrasonicControl, solidControl, pneumaticControl] =  routes.map(getControlData);
-  //   const mapRoutes = {
-  //     'visual-control': 'visualControl',
-  //     'ultrasonic-control': 'ultrasonicControl',
-  //     'solid-control': 'solidControl',
-  //     'pneumatic-control': 'pneumaticControl'
-  //   }
-
-  //   const result = {};
-
-  //   Promise.all(routes)
-  //     .then((route) => {
-  //       const controlName = mapRoutes[route];
-  //       const data = getControlData(route);
-  //       result[controlName] = data;
-  //     })
-
-  //   dispatch(setControlsData(result));
-  //   // dispatch(setIsOpen(true));
-  // }
+  const handleClose = () => {
+    dispatch(setIsOpenNewExpertise(false));
+  }
 
   const openExpertiseModal = async (id) =>{
     const [visualControl] = await electron.ipcRenderer.invoke('get-visual-control-by-id', id);
@@ -94,7 +61,7 @@ export default () => {
           <Table.Row>
             <Table.HeaderCell>Номер</Table.HeaderCell>
             <Table.HeaderCell>Дата проведения</Table.HeaderCell>
-            <Table.HeaderCell>Статус</Table.HeaderCell>
+            <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -141,8 +108,8 @@ export default () => {
         </Table.Footer>
       </Table>
 
-      <Modal open={modal.isOpenNewExpertise} close={setIsOpenNewExpertise}>
-        <ExpertiseCreate />
+      <Modal open={isOpenNewExpertise} close={setIsOpenNewExpertise}>
+        <ExpertiseCreate  close={handleClose}/>
       </Modal>
     </>
   );

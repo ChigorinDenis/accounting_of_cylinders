@@ -8,9 +8,9 @@ function getMonthsDiff(startYear) {
   return monthsDiff;
 }
 
-function getFailureProbability(data, year) {
+function getFailureProbability(data, year, prediction_time) {
   // Сортировка данных по времени в порядке возрастания
-  const time = getMonthsDiff(year);
+  const time = getMonthsDiff(year) + prediction_time;
   const sortedData = data.slice().sort((a, b) => a.time - b.time);
 
   // Найти ближайшее значение времени, которое больше или равно заданному времени

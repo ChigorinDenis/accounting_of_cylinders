@@ -37,6 +37,12 @@ function Header({ contextRef }) {
           onClick={handleItemClick}
           color="blue"
         />
+        <Menu.Item
+          name='статистика'
+          active={activeItem === 'статистика'}
+          onClick={handleItemClick}
+          color="blue"
+        />
         <Menu.Menu position='right'>
           <Menu.Item>
             <Input icon='search' placeholder='Поиск...' />

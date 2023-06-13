@@ -14,7 +14,7 @@ const envOptions = [
   { key: 'h', text: 'Водород', value: 'Водород' }
 ]
 
-const FormAddBaloon = () => {
+const FormAddBaloon = ({close}) => {
   const [formData, setFormData] = useState({
     prod_number: '123',
     prod_date: 1985,
@@ -27,7 +27,7 @@ const FormAddBaloon = () => {
     length: 11,
     mark: '38ХА',
     gost: 'ГОСТ 4247-71',
-    status: 'Активный'
+    status: 'InActive'
   });
 
   const { handleInputChange, handleSelectChange } = formHandling(formData, setFormData);
@@ -35,7 +35,7 @@ const FormAddBaloon = () => {
   const handleSubmit = () => {
     // Отправка данных в главный процесс Electron
     electron.ipcRenderer.send('add-baloon', formData);
-    
+    close();
   };
 
   return (

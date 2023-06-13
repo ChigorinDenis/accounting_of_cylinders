@@ -6,10 +6,12 @@ export default (formData, setFormData) => {
       ...prevFormData,
       [name]: value
     }));
+   
   };
   
   const handleSelectChange = (e, { name, value }) => {
     setFormData({ ...formData, [name]: value });
+   
   };
 
   return {

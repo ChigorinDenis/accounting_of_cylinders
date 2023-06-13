@@ -4,7 +4,7 @@ import { Form, Select, Input, Button, Message, Header} from "semantic-ui-react";
 import formHandling from '../../utils/formHandling';
 
 
-function ExpertiseCreate() {
+function ExpertiseCreate({close}) {
   const [employees, setEmployees] = useState([]);
   const [equipment, setEquipment] = useState([]);
   const [idBaloons, setIdBaloons] = useState([]);
@@ -53,6 +53,7 @@ function ExpertiseCreate() {
         idPneumaticControl,
         idBaloons
       });
+      close();
   }
 
 

@@ -14,6 +14,7 @@ import { setIsOpen } from './state/expertiseReducer';
 import ChartSurvival from './components/ChartSurvival';
 import Statistic from './components/Statistic';
 
+
 export default function App() {
   const activeTab = useSelector((state) => state.tabs.activeTab);
   const activeExpertise = useSelector((state) => state.expertise); 
@@ -37,7 +38,8 @@ export default function App() {
             {activeTab === 'сосуды' && <Main />}
             {activeTab === 'персонал' && <Employee />}
             {activeTab === 'оборудование' && <Equipment />}
-            {activeTab === 'экспертиза' && <Statistic />}
+            {activeTab === 'статистика' && <Statistic />}
+            {activeTab === 'экспертиза' && <Expertise />}
           </div>
         </div>
         </Ref>

@@ -4,7 +4,7 @@ import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsOpenNewBaloon } from '../state/modalReducer';
-
+import FilterSelect  from './FilterSelect';
 
 const statusTag = (status) => {
   switch (status) {
@@ -17,27 +17,40 @@ const statusTag = (status) => {
   }
 }
 
+const filterData = (baloons, filter) => {
+  if (filter === 'all') {
+    return baloons;
+  }
+  return baloons.filter((baloon) => (baloon.status === filter));
+}
+
 export default ({ handleSet, footer = true }) => {
 
   const [baloons, setBaloons] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
-
   const dispatch = useDispatch();
+
   const isOpenNewBaloon = useSelector(state => state.modal.isOpenNewBaloon);
+  const filter = useSelector(state => state.filter);
 
   useEffect(() => {
     async function fetchData() {
       // You can await here
       const data = await electron.ipcRenderer.invoke('get-baloons');
-      const mappedData = data.map((baloon) => ({...baloon, checked: false}))
-      setBaloons(mappedData);
+      const mappedData = data.map((baloon) => ({...baloon, checked: false}));
+      const filteredData = filterData(mappedData, filter.baloon);
+      setBaloons(filteredData);
       return () => {
         ipcRenderer.removeAllListeners('get-baloons');
       };
     }
     fetchData(); 
-  }, []);
+  }, [filter, isOpenNewBaloon]);
 
+
+  const handleClose = () => {
+    dispatch(setIsOpenNewBaloon(false));
+  }
   const onChangeAll = () => {
     setAllChecked(!allChecked)
     const newBaloons = baloons.map((baloon) => ({...baloon, checked: !allChecked}));
@@ -73,8 +86,30 @@ export default ({ handleSet, footer = true }) => {
 
   return (
     <>
-    <Header style={{marginTop: '30px', marginBottom: '20px'}} as='h3'>Сосуды</Header>
-    
+    {footer && <div style={{
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignItems: 'middle',
+      marginTop: '30px',
+      marginBottom: '20px' 
+    }}>
+      <Header style={{marginRight: '10px'}} as='h3'>Сосуды</Header>
+      <FilterSelect style={{marginRight: '10px'}}/>
+      <Button
+        floated='right'
+        icon
+        labelPosition='left'
+        primary
+        size='small'
+        onClick={() => {
+          dispatch(setIsOpenNewBaloon(true))
+        }}
+        style={{marginLeft: 'auto'}}
+      >
+        <Icon name='fire extinguisher' /> Добавить балон
+      </Button>
+    </div>}
     <Table striped>
       <Table.Header>
         <Table.Row>
@@ -96,7 +131,7 @@ export default ({ handleSet, footer = true }) => {
           <Table.HeaderCell>Длина</Table.HeaderCell>
           <Table.HeaderCell>Марка</Table.HeaderCell>
           <Table.HeaderCell>Гост</Table.HeaderCell>
-          <Table.HeaderCell>Статус</Table.HeaderCell>
+          <Table.HeaderCell>Состояние</Table.HeaderCell>
         </Table.Row>
       </Table.Header>
 
@@ -148,24 +183,12 @@ export default ({ handleSet, footer = true }) => {
       {footer && <Table.Row>
         <Table.HeaderCell />
         <Table.HeaderCell colSpan='12'>
-          <Button
-            floated='right'
-            icon
-            labelPosition='left'
-            primary
-            size='small'
-            onClick={() => {
-              dispatch(setIsOpenNewBaloon(true))
-            }}
-          >
-            <Icon name='fire extinguisher' /> Добавить балон
-          </Button>
         </Table.HeaderCell>
       </Table.Row>}
     </Table.Footer>
     </Table>
     <Modal open={isOpenNewBaloon} close={setIsOpenNewBaloon}>
-      <FormAddBaloon />
+      <FormAddBaloon close={handleClose}/>
     </Modal>
     </>
     );

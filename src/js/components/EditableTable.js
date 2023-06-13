@@ -68,11 +68,11 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
   };
 
   const spanBuild = (field, value) => {
-    if (field === 'check') {
+    if (field === 'check_result') {
       switch (value) {
-        case 'unchecked':
+        case 0:
           return <Icon name='exclamation' color='yellow' />
-        case 'checked':
+        case 1:
           return <Icon name='check' color='green'/>
         default:
           return value
@@ -138,14 +138,14 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
                   name='check square outline'
                   color='green'
                   size='large'
-                  onClick={() => updateTableData(tableData, row, 'checked')}
+                  onClick={() => updateTableData(tableData, row, 1)}
                   style={{ cursor: "pointer" }}
                 />
                 <Icon
                   name='exclamation triangle'
                   color='yellow'
                   size='large'
-                  onClick={() => updateTableData(tableData, row, 'unchecked')}
+                  onClick={() => updateTableData(tableData, row, 0)}
                   style={{ cursor: "pointer" }}
                 />
               </Table.Cell>}
