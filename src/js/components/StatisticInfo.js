@@ -52,10 +52,10 @@ const TableStatistic = ({ data }) => (
 
 
 const probabilityOptions = [
-  { key: '30p', text: '<30%', value: 30 },
-  { key: '40p', text: '<40%', value: 40},
-  { key: '50p', text: '<60%', value: 60},
-  { key: '70p', text: '<75%', value: 75},
+  { key: '30p', text: '30%', value: 30 },
+  { key: '40p', text: '40%', value: 40},
+  { key: '50p', text: '60%', value: 60},
+  { key: '70p', text: '75%', value: 75},
 ];
 
 const monthOptions = [
@@ -89,22 +89,6 @@ const FormStatistic = ({params}) => {
   return (
     <Form style={formStyle}>
       <Form.Group widths='equal' inline>
-        {/* <Form.Field
-          name="probability"
-          control={Input}
-          label='Вероятность отказа'
-          placeholder='Вероятность отказа'
-          value={formData.probability}
-          onChange={handleInputChange}
-        />
-        <Form.Field
-          name="prod_date"
-          control={Input}
-          label='Месяцев до отказа'
-          placeholder='Месяцев до отказа'
-          value={formData.month}
-          onChange={handleInputChange}
-        /> */}
         <Form.Field
           control={Select}
           options={monthOptions}
@@ -170,8 +154,6 @@ const StatisticInfo = ({data, params}) => {
             {params.month} месяцев
           </Statistic.Value>
           <Statistic.Label>
-            Медиана
-            <br />
             безотказной работы
           </Statistic.Label>
         </Statistic>

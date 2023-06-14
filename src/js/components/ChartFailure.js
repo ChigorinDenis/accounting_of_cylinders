@@ -64,8 +64,8 @@ const ChartFailure = ({data}) => {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="time" />
-          <YAxis />
+          <XAxis dataKey="time"  label={{ value: 'Время(мес.)', position: 'insideBottomRight' }}/>
+          <YAxis label={{ value: 'Количество', angle: -90, position: 'insideBottom' }}/>
           <Tooltip />
           <Legend />
           <Bar dataKey="total" fill="#a29bfe" name="Общее число"/>

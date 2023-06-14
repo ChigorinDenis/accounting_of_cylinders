@@ -3,6 +3,7 @@ import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
 import { useSelector } from "react-redux";
+import ResultControlInfo from "./ResultContolInfo";
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
@@ -55,6 +56,7 @@ function SolidControl({next}) {
   return (
     <>
     <Header as="h3" color="blue">Замер твердости</Header>
+    <ResultControlInfo controlName='solid' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'solid-control'} type_doc={true} quality_doc={true} data={{...solidControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
     <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>

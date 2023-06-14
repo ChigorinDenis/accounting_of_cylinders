@@ -59,9 +59,19 @@ const routesEquipment = [
     method: "on",
     routeName: "add-equipment",
     func: (formData) => {
-      const { id, name, prod_number } = formData;
-      const query = `INSERT INTO \`equipment\` (\`id\`, \`name\`, \`prod_number\`)
-        VALUES (${id}, '${name}', '${prod_number}');`;
+      const { name, prod_number } = formData;
+      const query = `INSERT INTO \`equipment\` (\`name\`, \`prod_number\`)
+        VALUES ('${name}', '${prod_number}');`;
+      return query;
+    },
+  },
+  {
+    method: "on",
+    routeName: "add-certificate",
+    func: (formData) => {
+      const { number, check_date, id_equipment } = formData;
+      const query = `INSERT INTO \`certificate\` (\`number\`, \`check_date\`, \`status\`, \`id_equipment\`)
+        VALUES ('${number}', '${check_date}', 'current', '${id_equipment}');`;
       return query;
     },
   },

@@ -3,6 +3,7 @@ import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
 import { useSelector } from "react-redux";
+import ResultControlInfo from "./ResultContolInfo";
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
@@ -65,6 +66,7 @@ function UltrasonicExpertise({next}) {
   return (
     <>
     <Header as="h3" color="blue">Ультразвуковая толщинаметрия</Header>
+    <ResultControlInfo controlName={'ultrasonic'} results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'ultrasonic-control'} ptd={true} ntd={true} data={{...ultrasonicControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
     <EditableTable tableHeader={tableHeader} data={results}  submit={submitUpdate} />

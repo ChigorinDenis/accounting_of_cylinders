@@ -1,13 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useSelector, useDispatch } from 'react-redux';
 import { Button, Icon, Table, Header} from "semantic-ui-react";
 import { format, differenceInDays} from "date-fns";
-// import Modal from "./Modal";
-// import FormAddEquipment from "./FormAddEquipment";
+import Modal from "./Modal";
+import FormAddEquipment from "./FormAddEquipment";
+import { setIsOpenNewEquipment } from "../state/modalReducer";
+
+
 const spanStyle = {
   color: 'red'
 }
+
 export default () => {
   const [equipment, setEquipment] = useState([]);
+  const isOpenNewEquipment = useSelector(state => state.modal.isOpenNewEquipment);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     async function fetchData() {
@@ -18,7 +25,11 @@ export default () => {
       };
     }
     fetchData();
-  }, []);
+  }, [isOpenNewEquipment]);
+
+  const handleClose = () => {
+    dispatch(setIsOpenNewEquipment(false));
+  }
 
   return (
     <>
@@ -66,6 +77,9 @@ export default () => {
                 labelPosition="left"
                 primary
                 size="small"
+                onClick={() => {
+                  dispatch(setIsOpenNewEquipment(true))
+                }}
               >
                 <Icon name="plus" />
                 Добавить оборудование
@@ -75,9 +89,9 @@ export default () => {
         </Table.Footer>
       </Table>
 
-      {/* <Modal>
-        <FormAddEquipment />
-      </Modal> */}
+      <Modal open={isOpenNewEquipment} close={setIsOpenNewEquipment}>
+        <FormAddEquipment close={handleClose}/>
+      </Modal>
     </>
   );
 };

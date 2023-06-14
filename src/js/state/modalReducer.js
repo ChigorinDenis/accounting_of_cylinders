@@ -4,6 +4,7 @@ const initialState = {
   isOpenNewExpertise: false,
   isOpenNewBaloon: false,
   isOpenNewEmployee: false,
+  isOpenNewEquipment: false,
 };
 
 const modalSlice = createSlice({
@@ -19,8 +20,11 @@ const modalSlice = createSlice({
     setIsOpenNewEmployee: (state, action) => {
       state.isOpenNewEmployee = action.payload;
     },
+    setIsOpenNewEquipment: (state, action) => {
+      state.isOpenNewEquipment = action.payload;
+    },
   },
 });
 
-export const { setIsOpenNewExpertise, setIsOpenNewBaloon, setIsOpenNewEmployee } = modalSlice.actions;
+export const { setIsOpenNewExpertise, setIsOpenNewBaloon, setIsOpenNewEquipment, setIsOpenNewEmployee } = modalSlice.actions;
 export default modalSlice.reducer;

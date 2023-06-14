@@ -26,7 +26,7 @@ export default () => {
       };
     }
     fetchData();
-  }, []);
+  }, [isOpenNewExpertise]);
 
   const handleClose = () => {
     dispatch(setIsOpenNewExpertise(false));

@@ -4,7 +4,7 @@ import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
 import { groupByTwoField } from "../../utils/performData";
 import { useSelector } from "react-redux";
-
+import ResultControlInfo from "./ResultContolInfo";
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
   { id: 2, title: 'Год выпуска', name: 'prod_date', width: 1, editable: false },
@@ -53,6 +53,7 @@ function VisualControl({next}) {
   return (
     <>
     <Header as="h3" color="blue">Визуально-измерительный контроль</Header>
+    <ResultControlInfo controlName='visual' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'visual-control'} ntd={true} data={{...visualControlData, controlData}} setIsUpdate={setIsUpdate} />
     <Header as="h4" color="blue">Сосуды</Header>
     <EditableTable tableHeader={tableHeader} data={results} actionCell={true} submit={submitUpdate}/>

@@ -9,7 +9,7 @@ function ExpertiseCreate({close}) {
   const [equipment, setEquipment] = useState([]);
   const [idBaloons, setIdBaloons] = useState([]);
   const [formData, setFormData] = useState({
-    number: 'AE-21',
+    number: '',
     date: '',
   });
 

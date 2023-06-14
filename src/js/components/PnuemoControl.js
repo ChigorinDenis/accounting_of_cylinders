@@ -3,6 +3,7 @@ import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
 import { Button, Header } from "semantic-ui-react";
 import { useSelector } from "react-redux";
+import ResultControlInfo from "./ResultContolInfo";
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
@@ -14,7 +15,15 @@ const tableHeader = [
   { id: 7, title: '420 (Рисп)', name: 'load_420', width: 1, editable: true },
 ];
 
-
+const changeStatus = (status) => {
+  switch (status) {
+    case 'active': return 'Активный';
+    case 'passive': return 'Неактивный';
+    case 'critical': return 'Критический';
+    case 'extra': return 'Катастрофический'
+    default: return '';
+  }
+}
 function PnematicControl({next}) {
   const [results, setResults] = useState([]);
   const [pneumaticControlData, setPneumaticControlData] = useState({ controlEquipment: [], controlEmployees: []});
@@ -33,14 +42,24 @@ function PnematicControl({next}) {
       const data = await electron.ipcRenderer.invoke('get-pneumatic-control-result', idExpertiseActive);  
       const controlEquipment = await electron.ipcRenderer.invoke('get-pneumatic-control-equipments', idExpertiseActive);
       const controlEmployees = await electron.ipcRenderer.invoke('get-pneumatic-control-employees', idExpertiseActive);
-      console.log('Pnematic', controlEquipment, controlEmployees)
+      const mappedData = data.map((item) => {
+        const { load_100, load_200, load_300, load_400, load_420 } = item;
+        return {
+          ...item,
+          'load_100': changeStatus(load_100),
+          'load_200': changeStatus(load_200),
+          'load_300': changeStatus(load_300),
+          'load_400': changeStatus(load_400),
+          'load_420': changeStatus(load_420),
+        }
+      })
       setPneumaticControlData({
         controlData,
         controlEmployees,
         controlEquipment
       });
       
-      setResults(data);
+      setResults(mappedData);
       return () => {
         ipcRenderer.removeAllListeners('get-pneumatic-control-result');
       };
@@ -50,6 +69,7 @@ function PnematicControl({next}) {
   return (
     <>
     <Header as="h3" color="blue">Пневматические испытания</Header>
+    <ResultControlInfo controlName='pneumatic' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'pneumatic-control'} quality_doc={true} volme={false} data={{...pneumaticControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
     <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
