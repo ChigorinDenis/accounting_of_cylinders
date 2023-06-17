@@ -1,11 +1,11 @@
 
-const { BrowserWindow, app, ipcMain, Notification } = require('electron');
+const { BrowserWindow, app, ipcMain, Notification, dialog } = require('electron');
 const path = require('path');
 const url = require('url');
 const isDev = require('electron-is-dev');
 const mysql = require('mysql2');
 const buildProbabilitiesData = require('./mathModel/prepareData');
-
+const runWord = require('./printout/index.js');
 const subscribeToRoutes = require('./routes/routes');
 
 
@@ -54,6 +54,22 @@ function createWindow() {
   );
 }
 
+ipcMain.on('save-dialog', (event) => {
+  const options = {
+    title: 'Выберите директорию для сохранения файла',
+    buttonLabel: 'Сохранить',
+    properties: ['openDirectory']
+  };
+
+  dialog.showOpenDialog(options).then((result) => {
+    if (!result.canceled) {
+      const selectedDirectory = result.filePaths[0];
+      // Отправляем выбранную директорию в Renderer process
+      event.reply('selected-directory', selectedDirectory);
+    }
+  });
+})
+
 // ipcMain.on('notify', (_, message) => {
 //   new Notification({title: 'Notifiation', body: message}).show();
 // })
@@ -61,6 +77,7 @@ function createWindow() {
 // buildProbabilitiesData(connection); 
 
 subscribeToRoutes(ipcMain, connection);
+// runWord();
 
 app.setPath('userData', path.join(__dirname, 'build', 'fonts'));
   

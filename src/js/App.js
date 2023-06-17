@@ -13,20 +13,12 @@ import Header from './components/Header';
 import { setIsOpen } from './state/expertiseReducer';
 import ChartSurvival from './components/ChartSurvival';
 import Statistic from './components/Statistic';
+// import { Button } from'semantic-ui-react';
 
 
 export default function App() {
   const activeTab = useSelector((state) => state.tabs.activeTab);
   const activeExpertise = useSelector((state) => state.expertise); 
-  const tableHeader = [
-    { id: 1, title: 'Дата произодства', name: 'prod_date', width: 1, editable: false },
-    { id: 2, title: 'Название', name: 'name', width: 2, editable: true }
-  ];
-
-  const data = [
-    {id:1, prod_date: 2022, name: "Гигроскоп"},
-    {id:2, prod_date: 2000, name: "Телескоп"},
-  ]
   const contextRef = createRef();
 
   return (
@@ -41,7 +33,11 @@ export default function App() {
             {activeTab === 'статистика' && <Statistic />}
             {activeTab === 'экспертиза' && <Expertise />}
           </div>
+          <Button onClick={() => {
+          electron.ipcRenderer.send('save-dialog');
+        }}>Диалог сохранения</Button>
         </div>
+        
         </Ref>
       <Modal open={activeExpertise.isOpen} close={setIsOpen}><ExpertiseControl/></Modal>
     </>

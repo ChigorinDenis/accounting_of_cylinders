@@ -9,6 +9,8 @@ const routesUltrasonicControl = require('./routesUltrasonicControl');
 const routesSolidControl = require('./routesSolidControl');
 const routesPneumoControl = require('./routesPneumoControl');
 const routesMath = require('./routesMath');
+const getExpertiseAllInfo = require('./routesDocx');
+const runWord = require('../printout/index');
 
 function subscribeToRoutes(ipcMain, connection) {
   const allRoutes = [
@@ -33,6 +35,12 @@ function subscribeToRoutes(ipcMain, connection) {
         reject(error);
       }
     });
+  })
+
+  ipcMain.handle('get-expertise-all-info', async (event, value) => {
+    console.log('route is working');
+    const expertiseAllInfo = await getExpertiseAllInfo(connection, value);
+    runWord(expertiseAllInfo);
   })
 
   allRoutes.forEach((route) => {
