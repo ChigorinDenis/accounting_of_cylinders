@@ -1,22 +1,38 @@
 import React, { useEffect, useState} from 'react';
-import { Header, Checkbox, Icon, Table, Button, Label} from 'semantic-ui-react'
+import { Header, Checkbox, Icon, Table, Button, Label, Popup} from 'semantic-ui-react'
 import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsOpenNewBaloon } from '../state/modalReducer';
 import FilterSelect  from './FilterSelect';
+import { getTimeToFailure } from '../../utils/countProbability';
+import fakeData from '../../../mathModel/fakeData';
 
 const statusTag = (status) => {
   switch (status) {
     case 'InActive':
-      return <Label basic color='green'>Экплуатируется</Label>
+      return <Label basic color='green' size='mini'>Экплуатируется</Label>
     case 'Defective':
-      return <Label basic color='red'>Брак</Label>
+      return <Label basic color='red' size='mini'>Брак</Label>
     default:
-      return <Label basic color='grey'>Неопределен</Label>
+      return <Label basic color='grey' size='mini'>Неопределен</Label>
   }
 }
-
+const monthLabel = (month) => {
+  const color = month < 12? 'red' : month < 24? 'yellow' : month === 'grey';
+  const timeRemain = month < 0 ? '1' : month;
+  return (
+    <Popup 
+      content='Вероятность отказа более 10%'  
+      trigger={
+        <Label color={color} size='mini' >
+          Время до отказа: 
+          <Label.Detail>{timeRemain} мес.</Label.Detail>
+        </Label>
+      }
+    />
+  )
+}
 const filterData = (baloons, filter) => {
   if (filter === 'all') {
     return baloons;
@@ -24,7 +40,7 @@ const filterData = (baloons, filter) => {
   return baloons.filter((baloon) => (baloon.status === filter));
 }
 
-export default ({ handleSet, footer = true }) => {
+export default ({ handleSet, footer = true, first = true }) => {
 
   const [baloons, setBaloons] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
@@ -39,7 +55,14 @@ export default ({ handleSet, footer = true }) => {
       const data = await electron.ipcRenderer.invoke('get-baloons');
       const mappedData = data.map((baloon) => ({...baloon, checked: false}));
       const filteredData = filterData(mappedData, filter.baloon);
-      setBaloons(filteredData);
+      const dataRemainTime = filteredData
+        .map(baloon => {
+          const remainTime = getTimeToFailure(fakeData.survivalData, baloon.prod_date);
+          return {...baloon, remain_time: remainTime };
+        })
+  
+      filter.baloon === 'Defective'? setBaloons(filteredData) : setBaloons(dataRemainTime);
+      // setBaloons(dataRemainTime);
       return () => {
         ipcRenderer.removeAllListeners('get-baloons');
       };
@@ -113,12 +136,12 @@ export default ({ handleSet, footer = true }) => {
     <Table striped>
       <Table.Header>
         <Table.Row>
-          <Table.HeaderCell>
+          {first &&<Table.HeaderCell>
             <Checkbox
               checked={allChecked}
               onChange={onChangeAll}
             />
-          </Table.HeaderCell>
+          </Table.HeaderCell>}
           
           <Table.HeaderCell>Зав.номер</Table.HeaderCell>
           <Table.HeaderCell>Дата производства</Table.HeaderCell>
@@ -131,7 +154,8 @@ export default ({ handleSet, footer = true }) => {
           <Table.HeaderCell>Длина</Table.HeaderCell>
           <Table.HeaderCell>Марка</Table.HeaderCell>
           <Table.HeaderCell>Гост</Table.HeaderCell>
-          <Table.HeaderCell>Состояние</Table.HeaderCell>
+          {footer&& <Table.HeaderCell>Состояние</Table.HeaderCell>}
+          {footer && <Table.HeaderCell>Остаток<br/> ресурса</Table.HeaderCell>}
         </Table.Row>
       </Table.Header>
 
@@ -151,17 +175,18 @@ export default ({ handleSet, footer = true }) => {
             length,
             mark,
             gost,
-            status
+            status,
+            remain_time
           } = baloon;
           // const date = new Date(prod_date).getFullYear();
           return (
             <Table.Row key={`${id}${prod_number}`}>
-              <Table.Cell>
+              {first && <Table.Cell>
                 <Checkbox 
                   checked={checked}
                   onChange={onChange(id)}
                 />
-              </Table.Cell>
+              </Table.Cell>}
               <Table.Cell>{prod_number}</Table.Cell>
               <Table.Cell>{prod_date}</Table.Cell>
               <Table.Cell>{pressure_work}</Table.Cell>
@@ -173,7 +198,13 @@ export default ({ handleSet, footer = true }) => {
               <Table.Cell>{length}</Table.Cell>
               <Table.Cell>{mark}</Table.Cell>
               <Table.Cell>{gost}</Table.Cell>
-              <Table.Cell>{statusTag(status)}</Table.Cell>
+              {footer && <Table.Cell>
+                {statusTag(status)}
+              </Table.Cell>}
+              {footer &&<Table.Cell>
+                {filter.baloon != 'Defective' && monthLabel(remain_time)}
+                </Table.Cell>}
+              
             </Table.Row>
           )
         })}

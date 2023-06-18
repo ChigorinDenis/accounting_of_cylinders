@@ -27,10 +27,10 @@ export default function App() {
         <div>
           <Header contextRef={contextRef}/>
           <div style={{width: '95%', margin: '0 auto'}}>
-            {activeTab === 'сосуды' && <Main />}
+            {activeTab === 'сосуды' && <Main first={false}/>}
             {activeTab === 'персонал' && <Employee />}
             {activeTab === 'оборудование' && <Equipment />}
-            {activeTab === 'статистика' && <Statistic />}
+            {activeTab === 'прогнозирование' && <Statistic />}
             {activeTab === 'экспертиза' && <Expertise />}
           </div>
         </div>

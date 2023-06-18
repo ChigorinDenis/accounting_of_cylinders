@@ -6,7 +6,7 @@ import { Label } from 'semantic-ui-react';
 const ChartFailure = ({data}) => {
     return (
       <>
-      <Label attached='top' color='blue' >Статистика отказов сосудов</Label>
+      <Label attached='top' >Статистика отказов сосудов</Label>
       <ResponsiveContainer width="100%" height="100%" minWidth="300px"  minHeight="300px">
         <BarChart
           width={500}

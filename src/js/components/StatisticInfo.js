@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { Icon, Image, Statistic, Input, Form, Label, Table, Menu, Button, Select} from 'semantic-ui-react'
+import { Icon, Image, Statistic, Input, Form, Label, Table, Menu, Button, Select, Popup} from 'semantic-ui-react'
 import formHandling from '../../utils/formHandling';
 import getFailureProbability from '../../utils/countProbability';
 
+
+const PopupInfo = () => (
+  <Popup 
+    content='Вероятность отказа более 10%'  
+    trigger={<Icon name="attention" />} />
+)
 const TableStatistic = ({ data }) => (
   <Table celled>
     <Table.Header>
@@ -11,19 +17,23 @@ const TableStatistic = ({ data }) => (
         <Table.HeaderCell>Год выпуска</Table.HeaderCell>
         <Table.HeaderCell>Объем</Table.HeaderCell>
         <Table.HeaderCell>Форма</Table.HeaderCell>
-        <Table.HeaderCell>Вероятность</Table.HeaderCell>
+        <Table.HeaderCell>Вероятность<br />отказа</Table.HeaderCell>
       </Table.Row>
     </Table.Header>
 
     <Table.Body>
       {data && data.map((baloon) => {
         return (
-          <Table.Row key={baloon.id}>
+          <Table.Row key={baloon.id} error={baloon.probability >= 0.1}>
             <Table.Cell>{baloon.prod_number}</Table.Cell>
             <Table.Cell>{baloon.prod_date}</Table.Cell>
             <Table.Cell>{baloon.volume}</Table.Cell>
             <Table.Cell>{baloon.shape}</Table.Cell>
-            <Table.Cell>{baloon.probability}</Table.Cell>
+            <Table.Cell textAlign='right'>
+              {baloon.probability}
+              &nbsp;
+              {baloon.probability >= 0.1 && <PopupInfo />}
+            </Table.Cell>
           </Table.Row>
         );
       })}
@@ -59,12 +69,13 @@ const probabilityOptions = [
 ];
 
 const monthOptions = [
-  { key: '0m', text: 'на сегодня', value: 0 },
   { key: '6m', text: '6 месяцев', value: 6 },
   { key: '1year', text: '1 год', value: 12},
   { key: '15year', text: '1 год 6 месяцев', value: 18},
   { key: '2year', text: '2 года', value: 24},
   { key: '3year', text: '3 года', value: 36},
+  { key: '4year', text: '4 года', value: 48},
+  { key: '5year', text: '5 лет', value: 60},
 ];
 const FormStatistic = ({params}) => {
   const [formData, setFormData] = useState({
@@ -92,15 +103,15 @@ const FormStatistic = ({params}) => {
         <Form.Field
           control={Select}
           options={monthOptions}
-          label={{ children: 'Время до отказа', htmlFor: 'form-select-month' }}
-          placeholder='Время до отказа'
+          label={{ children: 'Прогнозирование через', htmlFor: 'form-select-month' }}
+          placeholder='Прогнозирование через'
           search
           searchInput={{ id: 'form-select-control-month' }}
           name="month"
           value={formData.month}
           onChange={handleSelectChange(params.setMonth)}
         />
-        <Form.Field
+        {/* <Form.Field
           control={Select}
           options={probabilityOptions}
           label={{ children: 'Вероятность', htmlFor: 'form-select-probability' }}
@@ -110,7 +121,7 @@ const FormStatistic = ({params}) => {
           name="probability"
           value={formData.probability}
           onChange={handleSelectChange(params.setProbability)}
-        />
+        /> */}
         {/* <Button color='blue' onClick={handleSubmit}>ОК</Button> */}
       </Form.Group>
     </Form>
@@ -138,8 +149,9 @@ const StatisticInfo = ({data, params}) => {
 
   return (
     <div>
-      <Label attached='top'>Статистика отказов</Label>
-      <Statistic.Group widths='three' size='mini'>
+      <Label attached='top' color='blue'>Прогноз через периоды времени</Label>
+      
+      {/* <Statistic.Group widths='three' size='mini'>
         <Statistic color='red'>
           <Statistic.Value>{params.probability}%</Statistic.Value>
           <Statistic.Label>
@@ -164,7 +176,7 @@ const StatisticInfo = ({data, params}) => {
           </Statistic.Value>
           <Statistic.Label>Количество<br/> сосудов</Statistic.Label>
         </Statistic>
-      </Statistic.Group>
+      </Statistic.Group> */}
       <FormStatistic  params={params}/>
       <TableStatistic data={data}/>
     </div>

@@ -38,8 +38,8 @@ function Header({ contextRef }) {
           color="blue"
         />
         <Menu.Item
-          name='статистика'
-          active={activeItem === 'статистика'}
+          name='прогнозирование'
+          active={activeItem === 'прогнозирование'}
           onClick={handleItemClick}
           color="blue"
         />

@@ -6,7 +6,7 @@ import { Label } from 'semantic-ui-react';
 const ChartSurvival = ({data}) => {
   return (
     <>
-      <Label attached='top' color='blue'>Статистика вероятности безотказной работы</Label>
+      <Label attached='top' color='blue'>Прогнозируемая вероятность отказа сосудов</Label>
       <ResponsiveContainer width="100%" height="100%" minWidth="300px"  minHeight="350px">
         <LineChart data={data} margin={{
               top: 5,
@@ -19,7 +19,8 @@ const ChartSurvival = ({data}) => {
           <YAxis label={{ value: 'Вероятность', angle: -90, position: 'insideBottom' }}/>
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="St" stroke="#34495e" name="Кривая безотказной работы"/>
+          {/* <Line type="monotone" dataKey="survival" stroke="#27ae60" name="Кривая безотказной работы"/> */}
+          <Line type="monotone" dataKey="unsurvival" stroke="#e67e22" name="Прогнозируемая кривая вероятности"/>
         </LineChart>
       </ResponsiveContainer>
     </>
