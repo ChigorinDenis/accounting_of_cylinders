@@ -3,6 +3,8 @@ const Docxtemplater = require("docxtemplater");
 const { format, parseISO } = require("date-fns");
 const buildSummary = require("./buildSummary");
 
+const fs = require("fs");
+const path = require("path");
 
 const trasformPoints = (data) => {
   return data.map((item) => {
@@ -37,11 +39,9 @@ const trasformPoints = (data) => {
   date: format(new Date(data.date), "dd.MM.yyyy"),
  })
 
-const fs = require("fs");
-const path = require("path");
 
 // Load the docx file as binary content
-const runWord = (data) => {
+const runWord = (data, outputfile) => {
 const content = fs.readFileSync(
     path.resolve(__dirname, "templates", "template.docx"),
     "binary"
@@ -96,7 +96,8 @@ const buf = doc.getZip().generate({
 
 // buf is a nodejs Buffer, you can either write it to a
 // file or res.send it with express for example.
-fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
+// fs.writeFileSync(path.resolve(__dirname, "output.docx"), buf);
+fs.writeFileSync(outputfile, buf);
 }
 
 module.exports = runWord;

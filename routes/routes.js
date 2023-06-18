@@ -1,4 +1,5 @@
 const { promisify } = require('util');
+const { dialog } = require('electron');
 
 const routesBaloons = require('./routesBaloons');
 const routesEmployees = require('./routesEmployees');
@@ -40,8 +41,41 @@ function subscribeToRoutes(ipcMain, connection) {
   ipcMain.handle('get-expertise-all-info', async (event, value) => {
     console.log('route is working');
     const expertiseAllInfo = await getExpertiseAllInfo(connection, value);
-    runWord(expertiseAllInfo);
+    const { expertise_data } = expertiseAllInfo;
+    const fileName = expertise_data[0].number;
+
+    const options = {
+          title: 'Выберите директорию для сохранения файла',
+          buttonLabel: 'Сохранить',
+          properties: ['openDirectory'],
+          defaultPath: `Заключение экпертизы ${fileName}`,
+          filters: [
+            { name: 'Документы', extensions: ['docx'] },
+            // Дополнительные типы файлов
+          ]
+        };
+    dialog.showSaveDialog(options).then((result) => {
+      if (!result.canceled) {
+        const selectedDirectory = result.filePath;
+        // Отправляем выбранную директорию в Renderer process
+        console.log(result);
+        
+        // event.reply('selected-directory', selectedDirectory);
+        runWord(expertiseAllInfo, selectedDirectory);
+      }
+    });
+   
   })
+
+  // ipcMain.on('save-dialog', (event) => {
+  //   const options = {
+  //     title: 'Выберите директорию для сохранения файла',
+  //     buttonLabel: 'Сохранить',
+  //     properties: ['openDirectory']
+  //   };
+  
+    
+  // })
 
   allRoutes.forEach((route) => {
     if (route.method === 'handle') {

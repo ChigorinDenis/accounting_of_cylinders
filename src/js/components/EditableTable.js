@@ -48,19 +48,20 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
   const updateTableData = (tableData, row, value) => {
     const updatedTableData = tableData.map((rowData) => {
       if (rowData.id === row.id) {
-        return { ...rowData, check: value }; // Изменение поля "check" на true
+        return { ...rowData, check_result: value }; // Изменение поля "check" на true
       }
       return rowData;
     });
-  
+   
+
     const updatedChangedRow = [...changedRow];
     const changedRowIndex = updatedChangedRow.findIndex((item) => item.id === row.id);
     if (changedRowIndex !== -1) {
       // Изменения уже были в записи, обновляем ее
-      updatedChangedRow[changedRowIndex].check = value;
+      updatedChangedRow[changedRowIndex].check_result = value;
     } else {
       // Изменения в записи еще не было, добавляем новую запись
-      const newChangedRow = { ...row, check: value };
+      const newChangedRow = { ...row, check_result: value };
       updatedChangedRow.push(newChangedRow);
     }
     setTableData(updatedTableData);
@@ -71,7 +72,7 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
     if (field === 'check_result') {
       switch (value) {
         case 0:
-          return <Icon name='exclamation' color='yellow' />
+          return <Icon name='warning sign' className='icon color' />
         case 1:
           return <Icon name='check' color='green'/>
         default:
@@ -100,7 +101,7 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
               />
             ) : (
               <span>
-                {row[field] || ''}
+                {row[field] || '-//-'}
               </span>
             )}
           </Table.Cell>
@@ -119,9 +120,10 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
       <Table>
         <Table.Header>
           <Table.Row>
-            {tableHeader
-              .map(({ id, name, title, width }) => (
-                <Table.HeaderCell key={`${id}${name}`} width={width}>{title}</Table.HeaderCell>
+            {tableHeader.map(({ id, name, title, width }) => (
+              <Table.HeaderCell key={`${id}${name}`} width={width}>
+                {title}
+              </Table.HeaderCell>
             ))}
             {actionCell && <Table.HeaderCell width={1}></Table.HeaderCell>}
           </Table.Row>
@@ -129,31 +131,39 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
         <Table.Body>
           {tableData.map((row) => (
             <Table.Row key={row.id}>
-              {Object.keys(row)
-                .map((field) => buildCell(field, row))
-              }
-              {actionCell &&
-              <Table.Cell>
-                <Icon
-                  name='check square outline'
-                  color='green'
-                  size='large'
-                  onClick={() => updateTableData(tableData, row, 1)}
-                  style={{ cursor: "pointer" }}
-                />
-                <Icon
-                  name='exclamation triangle'
-                  color='yellow'
-                  size='large'
-                  onClick={() => updateTableData(tableData, row, 0)}
-                  style={{ cursor: "pointer" }}
-                />
-              </Table.Cell>}
+              {Object.keys(row).map((field) => buildCell(field, row))}
+              {actionCell && (
+                <Table.Cell>
+                  <Button
+                    className='ui button_yellow'
+                    size="mini"
+                    onClick={() => updateTableData(tableData, row, 0)}
+                    floated='right'
+                  >
+                    Не соотв.
+                  </Button>
+                  <Button
+                    className='ui button_green'
+                    size="mini"
+                    onClick={() => updateTableData(tableData, row, 1)}
+                    floated='right'
+                  >
+                    Соотв.
+                  </Button>
+                  
+                </Table.Cell>
+              )}
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
-      <Button  onClick={() => submit(changedRow)} style={{margin: '20px 0'}} color="blue">Сохранить</Button>
+      <Button
+        onClick={() => submit(changedRow)}
+        style={{ margin: "20px 0" }}
+        color="blue"
+      >
+        Сохранить
+      </Button>
     </>
   );
 };

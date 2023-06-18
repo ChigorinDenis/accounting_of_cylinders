@@ -33,9 +33,6 @@ export default function App() {
             {activeTab === 'статистика' && <Statistic />}
             {activeTab === 'экспертиза' && <Expertise />}
           </div>
-          <Button onClick={() => {
-          electron.ipcRenderer.send('save-dialog');
-        }}>Диалог сохранения</Button>
         </div>
         
         </Ref>

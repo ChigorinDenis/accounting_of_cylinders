@@ -5,3 +5,17 @@ body {
 h1 {
   color: blue;
 }
+
+.ui.button_green:hover {
+  /* Your custom hover styles here */
+  background-color: #27ae60;
+  color: white;
+}
+.ui.button_yellow:hover {
+  /* Your custom hover styles here */
+  background-color:#34495e;
+  color: white;
+}
+.icon.color {
+  color:#34495e;
+}
