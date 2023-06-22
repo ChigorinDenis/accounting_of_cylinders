@@ -77,9 +77,33 @@ export default () => {
 
   return (
     <>
-      <Header style={{ marginTop: "30px", marginBottom: "20px" }} as="h3">
-        Экспертиза
-      </Header>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "middle",
+          marginTop: "30px",
+          marginBottom: "20px",
+        }}
+      >
+        <Header  as="h3">
+          Экспертиза
+        </Header>
+        <Button
+          floated="right"
+          icon
+          labelPosition="left"
+          primary
+          size="small"
+          onClick={() => {
+            dispatch(setIsOpenNewExpertise(true));
+          }}
+        >
+          <Icon name="plus" />
+          Новая экспертиза
+        </Button>
+      </div>
       <Table striped>
         <Table.Header>
           <Table.Row>
@@ -97,8 +121,8 @@ export default () => {
                 <Table.Cell>{number}</Table.Cell>
                 <Table.Cell>{format(date_exp, "dd.MM.yyyy")}</Table.Cell>
                 <Table.Cell>
-                  <Button 
-                    animated="vertical" 
+                  <Button
+                    animated="vertical"
                     floated="right"
                     onClick={() => {
                       electron.ipcRenderer.invoke("get-expertise-all-info", id);
@@ -127,21 +151,7 @@ export default () => {
 
         <Table.Footer fullWidth>
           <Table.Row>
-            <Table.HeaderCell colSpan="4">
-              <Button
-                floated="right"
-                icon
-                labelPosition="left"
-                primary
-                size="small"
-                onClick={() => {
-                  dispatch(setIsOpenNewExpertise(true));
-                }}
-              >
-                <Icon name="plus" />
-                Новая экспертиза
-              </Button>
-            </Table.HeaderCell>
+            <Table.HeaderCell colSpan="4"></Table.HeaderCell>
           </Table.Row>
         </Table.Footer>
       </Table>

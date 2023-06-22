@@ -59,7 +59,7 @@ function SolidControl({next}) {
     <ResultControlInfo controlName='solid' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'solid-control'} type_doc={true} quality_doc={true} data={{...solidControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
+    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate} limit={123}/>
     <Button onClick={() => next('pneumatic')} floated="right" style={{margin: '20px 0'}}>Далее</Button>
     </>
   )

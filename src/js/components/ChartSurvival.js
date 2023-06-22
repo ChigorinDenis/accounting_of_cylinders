@@ -17,10 +17,13 @@ const ChartSurvival = ({data}) => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="time" label={{ value: 'Время(мес.)', position: 'insideBottomRight' }}/>
           <YAxis label={{ value: 'Вероятность', angle: -90, position: 'insideBottom' }}/>
-          <Tooltip />
+          {/* <Tooltip /> */}
+          {/* <ReferenceLine x={174} label="Max" stroke="red" strokeDasharray="3 3" /> */}
+          
           <Legend />
           {/* <Line type="monotone" dataKey="survival" stroke="#27ae60" name="Кривая безотказной работы"/> */}
           <Line type="monotone" dataKey="unsurvival" stroke="#e67e22" name="Прогнозируемая кривая вероятности"/>
+          <Tooltip content={{ time: 174, unsurvival: 0.09}} />
         </LineChart>
       </ResponsiveContainer>
     </>

@@ -56,7 +56,7 @@ function VisualControl({next}) {
     <ResultControlInfo controlName='visual' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'visual-control'} ntd={true} data={{...visualControlData, controlData}} setIsUpdate={setIsUpdate} />
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results} actionCell={true} submit={submitUpdate}/>
+    <EditableTable tableHeader={tableHeader} data={results} actionCell={true} submit={submitUpdate} />
     <Button onClick={() => next('ultrasonic')} floated="right" style={{margin: '20px 0'}}>Далee</Button>
     </>
   )

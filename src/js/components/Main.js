@@ -4,6 +4,7 @@ import Modal from './Modal';
 import FormAddBaloon from './FormAddBaloon'
 import { useSelector, useDispatch } from 'react-redux';
 import { setIsOpenNewBaloon } from '../state/modalReducer';
+import { setUnsurvivalBaloons } from '../state/baloonsReducer';
 import FilterSelect  from './FilterSelect';
 import { getTimeToFailure } from '../../utils/countProbability';
 import fakeData from '../../../mathModel/fakeData';
@@ -54,15 +55,22 @@ export default ({ handleSet, footer = true, first = true }) => {
       // You can await here
       const data = await electron.ipcRenderer.invoke('get-baloons');
       const mappedData = data.map((baloon) => ({...baloon, checked: false}));
-      const filteredData = filterData(mappedData, filter.baloon);
+      const filteredData = filterData(mappedData, filter.baloon)
+        .sort((a, b) => b.prod_date - a.prod_date);
       const dataRemainTime = filteredData
-        .map(baloon => {
-          const remainTime = getTimeToFailure(fakeData.survivalData, baloon.prod_date);
-          return {...baloon, remain_time: remainTime };
+        .map(baloon => { 
+          if (baloon.status === 'InActive') {
+            const remainTime = getTimeToFailure(fakeData.survivalData, baloon.prod_date);
+            return {...baloon, remain_time: remainTime };
+          }
+          return baloon;
         })
-  
-      filter.baloon === 'Defective'? setBaloons(filteredData) : setBaloons(dataRemainTime);
-      // setBaloons(dataRemainTime);
+        .sort((a, b) => a.remain_time - b.remain_time);
+      // filter.baloon === 'InActive'? setBaloons(dataRemainTime) : setBaloons(filteredData);
+      setBaloons(dataRemainTime);
+      const expertisePeriod = 6;
+      const unsurvival = dataRemainTime.filter(baloon => baloon.remain_time <= expertisePeriod);
+      dispatch(setUnsurvivalBaloons(unsurvival));
       return () => {
         ipcRenderer.removeAllListeners('get-baloons');
       };
@@ -202,7 +210,7 @@ export default ({ handleSet, footer = true, first = true }) => {
                 {statusTag(status)}
               </Table.Cell>}
               {footer &&<Table.Cell>
-                {filter.baloon != 'Defective' && monthLabel(remain_time)}
+                {remain_time && monthLabel(remain_time)}
                 </Table.Cell>}
               
             </Table.Row>

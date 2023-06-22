@@ -1,13 +1,14 @@
 import React, { useState} from 'react'
-import { Input, Menu, Sticky} from 'semantic-ui-react'
+import { Input, Menu, Sticky, Label, Icon} from 'semantic-ui-react'
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveTab } from '../state/tabsSlice';
-
+import Notification from './Notification';
 
 
 function Header({ contextRef }) {
   const dispatch = useDispatch();
   const activeItem = useSelector((state) => state.tabs.activeTab);
+  const unsurvivalBaloons = useSelector(state => state.unsurvivalBaloons);
 
   const handleItemClick = (e, { name }) => dispatch(setActiveTab(name));
   return (
@@ -43,7 +44,17 @@ function Header({ contextRef }) {
           onClick={handleItemClick}
           color="blue"
         />
+       
         <Menu.Menu position='right'>
+          <Menu.Item>
+            {/* <Label color='black'>
+              <Icon name='mail'/>
+              <Label circular color="red">
+                2
+              </Label>
+          </Label> */}
+          <Notification data={unsurvivalBaloons}/>
+          </Menu.Item>
           <Menu.Item>
             <Input icon='search' placeholder='Поиск...' />
           </Menu.Item>

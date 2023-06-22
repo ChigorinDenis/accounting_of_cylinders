@@ -69,7 +69,7 @@ function UltrasonicExpertise({next}) {
     <ResultControlInfo controlName={'ultrasonic'} results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'ultrasonic-control'} ptd={true} ntd={true} data={{...ultrasonicControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results}  submit={submitUpdate} />
+    <EditableTable tableHeader={tableHeader} data={results}  submit={submitUpdate} limit={24}/>
     <Button onClick={() => next('solid')} floated="right" style={{margin: '20px 0'}}>Далee</Button>
     </>
   )

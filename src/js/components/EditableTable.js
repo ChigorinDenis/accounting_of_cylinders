@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Button, Icon } from 'semantic-ui-react';
+import { Table, Input, Button, Icon, Label} from 'semantic-ui-react';
 
-const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
+const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
   const [editingCell, setEditingCell] = useState(null); // Хранение информации о редактируемой ячейке
   const [tableData, setTableData] = useState([]);
   const [changedRow, setChangedRow] = useState([]);
@@ -81,6 +81,17 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
     }
     return value;
   }
+  const statusResult = (value) => {
+   
+      switch (value) {
+        case 0:
+          return <Label color='red' size='mini'>Отклонение</Label>
+        case 1:
+          return <Label color='green' size='mini'>Норма</Label>
+        default:
+          return value
+      }
+  }
 
   const buildCell = (field, row) => {
     const finded = tableHeader.find((item) => item.name === field);
@@ -90,7 +101,11 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
     if (finded?.editable) {
       return (
         <>
-          <Table.Cell key={`${row}${field}`}  onClick={() => handleCellClick(row.id, field)}>
+          <Table.Cell 
+            key={`${row}${field}`}
+            error={limit && row[field] < limit}
+            onClick={() => handleCellClick(row.id, field)}
+          >
             {editingCell &&
             editingCell.rowId === row.id &&
             editingCell.field === field ? (
@@ -126,6 +141,7 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
               </Table.HeaderCell>
             ))}
             {actionCell && <Table.HeaderCell width={1}></Table.HeaderCell>}
+            <Table.HeaderCell width={1}></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
@@ -153,6 +169,7 @@ const EditableTable = ({ tableHeader, data, submit, actionCell }) => {
                   
                 </Table.Cell>
               )}
+              <Table.Cell>{statusResult(row?.check_result)}</Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>

@@ -29,13 +29,13 @@ function getFailureProbability(data, year, prediction_time) {
 
   // Если не удалось найти ближайшее значение времени,
   // можно вернуть значение по умолчанию или сделать дополнительную обработку
-  const middleIndex = Math.floor(data.length / 2);
-  return data[middleIndex].survival.toFixed(2);
+  // const middleIndex = Math.floor(data.length / 2);
+  return (1 - data[data.length - 1].survival).toFixed(2);
 }
 
 function getTimeToFailure(data, year ) {
   // Сортировка данных по вероятности безотказной работы (f) в порядке возрастания
-  const failureProbability = 0.07;
+  const failureProbability = 0.1;
   const timeLive = getMonthsDiff(year);
   const sortedData = data.slice().sort((a, b) => a.unsurvival - b.unsurvival);
 
@@ -52,7 +52,7 @@ function getTimeToFailure(data, year ) {
   // можно вернуть значение по умолчанию или сделать дополнительную обработку
 
   const middleIndex = Math.floor(data.length / 2);
-  return data[middleIndex].time - timeLive;
+  return data[data.length - 1].time - timeLive;
 }
 
 export { getFailureProbability, getTimeToFailure };
