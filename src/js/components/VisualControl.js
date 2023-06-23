@@ -18,12 +18,22 @@ function VisualControl({next}) {
   const [results, setResults] = useState([]);
   const [visualControlData, setVisualControlData] = useState({ controlEquipment: [], controlEmployees: []});
   const [isUpdate, setIsUpdate] = useState(null);
+  const [isSended, setIsSended] = useState(false);
 
   const controlData = useSelector((state) => (state.expertise.controlsData.visualControl));
   const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
 
   const submitUpdate = (formData) => {
-    electron.ipcRenderer.send('update-visual-result', formData);
+    
+    const mapped = formData.map((item) => {
+      return {
+        ...item,
+        check_result: item.check_result === null? 1 : item.check_result
+      }
+    })
+    console.log('visual', mapped);
+    electron.ipcRenderer.send('update-visual-result', mapped);
+    setIsSended(!isSended);
   }
   
   useEffect(() => {
@@ -48,15 +58,15 @@ function VisualControl({next}) {
       };
     }
     fetchData(); 
-  }, [isUpdate]);
+  }, [isUpdate, isSended]);
   
   return (
     <>
     <Header as="h3" color="blue">Визуально-измерительный контроль</Header>
     <ResultControlInfo controlName='visual' results={results} visible={controlData.result === 'finished'}/>
-    <UpdateControl routeName={'visual-control'} ntd={true} data={{...visualControlData, controlData}} setIsUpdate={setIsUpdate} />
+    <UpdateControl routeName={'visual-control'} ntd={true} data={{...visualControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results} actionCell={true} submit={submitUpdate} />
+    <EditableTable tableHeader={tableHeader} data={results} actionCell={true} submit={submitUpdate}  checkLimit={() => false}/>
     <Button onClick={() => next('ultrasonic')} floated="right" style={{margin: '20px 0'}}>Далee</Button>
     </>
   )

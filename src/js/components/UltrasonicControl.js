@@ -24,12 +24,27 @@ function UltrasonicExpertise({next}) {
   const [results, setResults] = useState([]);
   const [ultrasonicControlData, setUltrasonicControlData] = useState({ controlEquipment: [], controlEmployees: []});
   const [isUpdate, setIsUpdate] = useState(null);
-
+  const [isSended, setIsSended] = useState(false);
   const controlData = useSelector((state) => (state.expertise.controlsData.ultrasonicControl));
   const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
+  const limit = 24;
 
   const submitUpdate = (formData) => {
-    electron.ipcRenderer.send('update-ultrasonic-result', formData);
+    const mappedData = formData.map((record) => {
+      let check_result = 1;
+      for (const key in record) {
+        if (key.includes('point') && record[key] < limit) {
+          check_result = 0;
+          break;
+        }
+      }
+      return {
+        ...record,
+        check_result
+      }
+    })
+    electron.ipcRenderer.send('update-ultrasonic-result', mappedData);
+    setIsSended(!isSended);
   }
 
   useEffect(() => {
@@ -46,15 +61,15 @@ function UltrasonicExpertise({next}) {
 
       const mappedData = data.map((item) => ({
         ...item,
-        point_1: item.point_1.toFixed(1),
-        point_2: item.point_2.toFixed(1),
-        point_3: item.point_3.toFixed(1),
-        point_4: item.point_4.toFixed(1),
-        point_5: item.point_5.toFixed(1),
-        point_6: item.point_6.toFixed(1),
-        point_7: item.point_7.toFixed(1),
-        point_8: item.point_8.toFixed(1),
-        point_9: item.point_9.toFixed(1)
+        point_1: item.point_1 && item.point_1.toFixed(1),
+        point_2: item.point_2 && item.point_2.toFixed(1),
+        point_3: item.point_3 && item.point_3.toFixed(1),
+        point_4: item.point_4 && item.point_4.toFixed(1),
+        point_5: item.point_5 && item.point_5.toFixed(1),
+        point_6: item.point_6 && item.point_6.toFixed(1),
+        point_7: item.point_7 && item.point_7.toFixed(1),
+        point_8: item.point_8 && item.point_8.toFixed(1),
+        point_9: item.point_9 && item.point_9.toFixed(1)
       }))
       setResults(mappedData);
       return () => {
@@ -62,14 +77,14 @@ function UltrasonicExpertise({next}) {
       };
     }
     fetchData(); 
-  }, [isUpdate]);
+  }, [isUpdate, isSended]);
   return (
     <>
     <Header as="h3" color="blue">Ультразвуковая толщинаметрия</Header>
     <ResultControlInfo controlName={'ultrasonic'} results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'ultrasonic-control'} ptd={true} ntd={true} data={{...ultrasonicControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results}  submit={submitUpdate} limit={24}/>
+    <EditableTable tableHeader={tableHeader} data={results}  submit={submitUpdate} limit={limit}/>
     <Button onClick={() => next('solid')} floated="right" style={{margin: '20px 0'}}>Далee</Button>
     </>
   )

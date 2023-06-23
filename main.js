@@ -20,6 +20,7 @@ function handleConnect() {
   connection.connect((err) => {
     if (err) {
       console.error('Error connection to DB', err);
+      throw err;
     } else {
       console.log('Connection to DB is successfull');
     }
@@ -54,21 +55,7 @@ function createWindow() {
   );
 }
 
-// ipcMain.on('save-dialog', (event) => {
-//   const options = {
-//     title: 'Выберите директорию для сохранения файла',
-//     buttonLabel: 'Сохранить',
-//     properties: ['openDirectory']
-//   };
 
-//   dialog.showOpenDialog(options).then((result) => {
-//     if (!result.canceled) {
-//       const selectedDirectory = result.filePaths[0];
-//       // Отправляем выбранную директорию в Renderer process
-//       event.reply('selected-directory', selectedDirectory);
-//     }
-//   });
-// })
 
 // ipcMain.on('notify', (_, message) => {
 //   new Notification({title: 'Notifiation', body: message}).show();

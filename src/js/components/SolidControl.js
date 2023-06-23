@@ -24,12 +24,28 @@ function SolidControl({next}) {
   const [results, setResults] = useState([]);
   const [solidControlData, setSolidControlData] = useState({ controlEquipment: [], controlEmployees: []});
   const [isUpdate, setIsUpdate] = useState(null);
-
+  const [isSended, setIsSended] = useState(false);
   const controlData = useSelector((state) => (state.expertise.controlsData.solidControl));
   const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
+  const limit = 123;
 
   const submitUpdate = (formData) => {
-    electron.ipcRenderer.send('update-solid-result', formData);
+    const mappedData = formData.map((record) => {
+      let check_result = 1;
+      for (const key in record) {
+        if (key.includes('point') && record[key] < limit) {
+          check_result = 0;
+          break;
+        }
+      }
+      return {
+        ...record,
+        check_result
+      }
+    })
+    // console.log(mappedData);
+    electron.ipcRenderer.send('update-solid-result', mappedData);
+    setIsSended(!isSended);
   }
 
   useEffect(() => {
@@ -51,7 +67,7 @@ function SolidControl({next}) {
       };
     }
     fetchData(); 
-  }, [isUpdate]);
+  }, [isUpdate, isSended]);
 
   return (
     <>
@@ -59,7 +75,7 @@ function SolidControl({next}) {
     <ResultControlInfo controlName='solid' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'solid-control'} type_doc={true} quality_doc={true} data={{...solidControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate} limit={123}/>
+    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate} limit={limit}/>
     <Button onClick={() => next('pneumatic')} floated="right" style={{margin: '20px 0'}}>Далее</Button>
     </>
   )

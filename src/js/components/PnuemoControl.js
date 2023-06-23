@@ -24,16 +24,61 @@ const changeStatus = (status) => {
     default: return '';
   }
 }
+
+const returnStatus = (status) => {
+  switch (status) {
+    case 'Активный': return 'active';
+    case 'Неактивный': return 'passive';
+    case 'Критический': return 'critical';
+    case 'Катастрофический': return 'extra'
+    default: return '';
+  }
+}
+const checkLimit = (field, row) => {
+  const value = row[field];
+  if (field === 'load_100' || field === 'load_200' || field === 'load_300') {
+    if (value === 'Катастрофический' || value === 'Критический' ||  value === 'Активный') {
+      return true;
+    }
+    return false;
+  }
+  if (field === 'load_400' || field === 'load_420') {
+    if (value === 'Катастрофический' || value === 'Критический') {
+      return true;
+    }
+    return false;
+  }
+}
 function PnematicControl({next}) {
   const [results, setResults] = useState([]);
   const [pneumaticControlData, setPneumaticControlData] = useState({ controlEquipment: [], controlEmployees: []});
   const [isUpdate, setIsUpdate] = useState(null);
+  const [isSended, setIsSended] = useState(false);
 
   const controlData = useSelector((state) => (state.expertise.controlsData.pneumaticControl));
   const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
 
   const submitUpdate = (formData) => {
-    electron.ipcRenderer.send('update-pneumatic-result', formData);
+    const mappedData = formData.map((record) => {
+      let check_result = 1;
+      for (const key in record) {
+        
+        if (key.includes('load')) {
+          
+          if (checkLimit(key, record)) {
+            check_result = 0;
+          }
+          record[key] = returnStatus(record[key]);
+        }
+      }
+      return {
+        ...record,
+        check_result
+      }
+    })
+    // console.log('submitUpdate', mappedData);
+    electron.ipcRenderer.send('update-pneumatic-result', mappedData);
+    setIsSended(!isSended);
   }
 
   useEffect(() => {
@@ -65,14 +110,14 @@ function PnematicControl({next}) {
       };
     }
     fetchData(); 
-  }, [isUpdate]);
+  }, [isUpdate, isSended]);
   return (
     <>
     <Header as="h3" color="blue">Пневматические испытания</Header>
     <ResultControlInfo controlName='pneumatic' results={results} visible={controlData.result === 'finished'}/>
     <UpdateControl routeName={'pneumatic-control'} quality_doc={true} volme={false} data={{...pneumaticControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
-    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate}/>
+    <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate} checkLimit={checkLimit}/>
     <Button onClick={() => next('pneumatic')} floated="right" style={{margin: '20px 0'}}>Завершить</Button>
     </>
   )

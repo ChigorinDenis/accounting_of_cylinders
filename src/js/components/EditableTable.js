@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Input, Button, Icon, Label} from 'semantic-ui-react';
 
-const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
+const EditableTable = ({ tableHeader, data, submit, actionCell, limit, checkLimit}) => {
   const [editingCell, setEditingCell] = useState(null); // Хранение информации о редактируемой ячейке
   const [tableData, setTableData] = useState([]);
   const [changedRow, setChangedRow] = useState([]);
@@ -42,7 +42,6 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
       // Обновляем состояние changedRow
       setChangedRow([...changedRow, newChangedRow]);
     }
-    console.log(changedRow);
   };
 
   const updateTableData = (tableData, row, value) => {
@@ -95,6 +94,7 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
 
   const buildCell = (field, row) => {
     const finded = tableHeader.find((item) => item.name === field);
+    const isLimit = limit ? row[field] < limit : checkLimit(field, row)
     if (!finded) {
       return null;
     }
@@ -103,7 +103,7 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
         <>
           <Table.Cell 
             key={`${row}${field}`}
-            error={limit && row[field] < limit}
+            error={isLimit}
             onClick={() => handleCellClick(row.id, field)}
           >
             {editingCell &&
@@ -140,14 +140,16 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
                 {title}
               </Table.HeaderCell>
             ))}
+            <Table.HeaderCell width={1}>Результат</Table.HeaderCell>
             {actionCell && <Table.HeaderCell width={1}></Table.HeaderCell>}
-            <Table.HeaderCell width={1}></Table.HeaderCell>
+            
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {tableData.map((row) => (
             <Table.Row key={row.id}>
               {Object.keys(row).map((field) => buildCell(field, row))}
+              <Table.Cell>{statusResult(row?.check_result)}</Table.Cell>
               {actionCell && (
                 <Table.Cell>
                   <Button
@@ -169,13 +171,13 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit }) => {
                   
                 </Table.Cell>
               )}
-              <Table.Cell>{statusResult(row?.check_result)}</Table.Cell>
+              
             </Table.Row>
           ))}
         </Table.Body>
       </Table>
       <Button
-        onClick={() => submit(changedRow)}
+        onClick={() => submit(tableData)}
         style={{ margin: "20px 0" }}
         color="blue"
       >

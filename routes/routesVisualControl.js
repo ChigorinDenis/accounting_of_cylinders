@@ -87,11 +87,10 @@ const routesVisualControl = [
       const queries = formData.map((rc) => {
         const {
           id,
-          check,
-          description
+          check_result,
         } = rc;
         const query = `UPDATE visual_result
-        SET \`check\`='${check}', description='${description}'
+        SET \`check_result\`='${check_result}'
         WHERE id = ${id}`;
         return query;
       } );

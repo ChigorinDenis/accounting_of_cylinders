@@ -89,10 +89,12 @@ const routesPneumoControl = [
           load_200,
           load_300,
           load_400,
-          load_420
+          load_420,
+          check_result,
         } = rc;
         const query = `UPDATE pneumatic_result
-        SET load_100='${load_100}', load_200='${load_200}', load_300='${load_300}', load_400='${load_400}', load_420='${load_420}'
+        SET load_100='${load_100}', load_200='${load_200}', load_300='${load_300}', 
+        load_400='${load_400}', load_420='${load_420}', check_result=${check_result}
         WHERE id = ${id}`;
         return query;
       } );

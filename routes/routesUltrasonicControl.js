@@ -95,11 +95,12 @@ const routesUltrasonicControl = [
           point_6,
           point_7,
           point_8,
-          point_9
+          point_9,
+          check_result,
         } = rc;
         const query = `UPDATE ultrasonic_result
         SET point_1=${point_1}, point_2=${point_2}, point_3=${point_3}, point_4=${point_4}, point_5=${point_5},
-        point_6=${point_6}, point_7=${point_7}, point_8=${point_8}, point_9=${point_9}
+        point_6=${point_6}, point_7=${point_7}, point_8=${point_8}, point_9=${point_9}, check_result = ${check_result}
         WHERE id = ${id}`;
         return query;
       } );
