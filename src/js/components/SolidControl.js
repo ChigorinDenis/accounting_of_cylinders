@@ -28,7 +28,7 @@ function SolidControl({next}) {
   const [solidControlData, setSolidControlData] = useState({ controlEquipment: [], controlEmployees: []});
   const [isUpdate, setIsUpdate] = useState(null);
   const [isSended, setIsSended] = useState(false);
-  const [isFill, setIsFill] = useState(null)
+  const [isFill, setIsFill] = useState(null);
 
   const controlData = useSelector((state) => (state.expertise.controlsData.solidControl));
   const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
@@ -57,7 +57,8 @@ function SolidControl({next}) {
     const fields = ['point_1', 'point_2', 'point_3', 'point_4', 'point_5', 'point_6', 'point_7', 'point_8', 'point_9']
     const isFillData = checkFilling(results, fields);
     if (isFillData) {
-      next('pneumatic')
+      electron.ipcRenderer.send('update-solid-status', controlData.id);
+      next('pneumatic');
     }
     else {
       setIsFill(true);

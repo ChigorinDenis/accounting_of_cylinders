@@ -55,6 +55,7 @@ function UltrasonicExpertise({next}) {
     const fields = ['point_1', 'point_2', 'point_3', 'point_4', 'point_5', 'point_6', 'point_7', 'point_8', 'point_9']
     const isFillData = checkFilling(results, fields);
     if (isFillData) {
+      electron.ipcRenderer.send('update-ultrasonic-status', controlData.id);
       next('solid')
     }
     else {

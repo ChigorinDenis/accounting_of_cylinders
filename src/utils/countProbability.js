@@ -24,7 +24,7 @@ function getFailureProbability(data, year, prediction_time) {
     // Вероятность отказа = 1 - вероятность безотказной работы
     const failureProbability = 1 - survivalProbability;
 
-    return failureProbability.toFixed(2);
+    return (failureProbability - 0.01).toFixed(2);
   }
 
   // Если не удалось найти ближайшее значение времени,
@@ -51,7 +51,7 @@ function getTimeToFailure(data, year ) {
   // Если не удалось найти ближайшее значение вероятности безотказной работы,
   // можно вернуть значение по умолчанию или сделать дополнительную обработку
 
-  const middleIndex = Math.floor(data.length / 2);
+  // const middleIndex = Math.floor(data.length / 2);
   return data[data.length - 1].time - timeLive;
 }
 

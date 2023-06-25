@@ -10,17 +10,21 @@ import {
   Label,
   List,
 } from "semantic-ui-react";
+import { useDispatch } from "react-redux";
+import  { setToggleUpdate } from "../state/expertiseReducer";
+
 import formHandling from "../../utils/formHandling";
 import TableInfo from "./TableInfo";
 
 
 function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme = true, setIsUpdate }) {
   // console.log('updateControl')
+  const dispatch = useDispatch();
   const [saved, setSaved] = useState(false);
   const [employees, setEmployees] = useState([]);
   const [equipment, setEquipment] = useState([]);
   const [formData, setFormData] = useState({
-    date: "",
+    date: new Date(),
     employee: [],
     equipment: [],
     ptd_doc: "",
@@ -36,8 +40,8 @@ function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme
   );
 
   const tableComponent = useMemo(() => {
-    return <TableInfo data={data} ptd={ptd || formData.ptd_doc} type_doc={type_doc || formData.ntd_type_doc} ntd={ntd || formData.ntd_doc} quality_doc={quality_doc || formData.ntd_quality_doc} volme={volme || formData.volme_control} />;
-  }, [data, ptd, type_doc, ntd, quality_doc, volme]);
+    return <TableInfo data={data} ptd={ptd || formData.ptd_doc} type_doc={type_doc || formData.ntd_type_doc} ntd={ntd || formData.ntd_doc} quality_doc={quality_doc || formData.ntd_quality_doc} volme={volme || formData.volme_control}  date={formData.date}/>;
+  }, [data, ptd, type_doc, ntd, quality_doc, volme, formData.date]);
 
   useEffect(() => {
     async function fetchData() {
@@ -97,6 +101,7 @@ function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme
 
     setIsUpdate('updated');
     setSaved(true);
+    dispatch(setToggleUpdate());
   };
 
   return (

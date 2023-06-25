@@ -82,6 +82,16 @@ const routesSolidControl = [
   },
   {
     method: "on",
+    routeName: "update-solid-status",
+    func: (idControl) => {
+      const query = `UPDATE solid_control
+      SET result = 'finished'
+      WHERE id = ${idControl}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
     multiple: true,
     routeName: "update-solid-result",
     func: (formData) => {

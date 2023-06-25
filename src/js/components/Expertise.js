@@ -26,7 +26,7 @@ const statusTag = (status) => {
 }
 export default () => {
   const [expertise, setExpertise] = useState([]);
-  const activeExpertise = useSelector((state) => state.expertise);
+  const { toggleUpdate } = useSelector((state) => state.expertise);
   const isOpenNewExpertise = useSelector(
     (state) => state.modal.isOpenNewExpertise
   );
@@ -47,7 +47,7 @@ export default () => {
       };
     }
     fetchData();
-  }, [isOpenNewExpertise]);
+  }, [isOpenNewExpertise, toggleUpdate]);
 
   const handleClose = () => {
     dispatch(setIsOpenNewExpertise(false));

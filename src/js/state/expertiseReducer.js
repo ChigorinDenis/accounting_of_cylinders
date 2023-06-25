@@ -4,7 +4,8 @@ const initialState = {
   activeExpertise: null, // Изначально активной вкладкой является "Оборудование"
   isOpen: false,
   controlsData: {},
-  statusExpertise: null
+  statusExpertise: null,
+  toggleUpdate: false,
 };
 
 const expertiseSlice = createSlice({
@@ -25,8 +26,12 @@ const expertiseSlice = createSlice({
       console.log(action.payload)
       state.controlsData = action.payload;
     },
+    setToggleUpdate: (state) => {
+      console.log('toggle', state.toggleUpdate)
+      state.toggleUpdate = !state.toggleUpdate
+    },
   },
 });
 
-export const { setActiveExpertise, setIsOpen, setControlsData, setStatusExpertise } = expertiseSlice.actions;
+export const { setActiveExpertise, setIsOpen, setControlsData, setStatusExpertise, setToggleUpdate } = expertiseSlice.actions;
 export default expertiseSlice.reducer;

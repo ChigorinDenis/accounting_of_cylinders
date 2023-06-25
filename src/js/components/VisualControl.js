@@ -43,6 +43,7 @@ function VisualControl({next}) {
     const fields = ['check_result']
     const isFillData = checkFilling(results, fields);
     if (isFillData) {
+      electron.ipcRenderer.send('update-visual-status', controlData.id);
       next('ultrasonic')
     }
     else {

@@ -6,14 +6,15 @@ import {
 } from "semantic-ui-react";
 import { format } from 'date-fns'
 
-const TableInfo = ({ data, ptd, type_doc, ntd, quality_doc, volme }) => {
+const TableInfo = ({ data, ptd, type_doc, ntd, quality_doc, volme, date}) => {
   const { controlData, controlEmployees, controlEquipment } = data;
+  const dateEnd = controlData.date? controlData.date: date;
   return (
     <>
       <Label basic color="green">
         Дата проведения
         <Label.Detail>
-          {controlData && format(new Date(controlData.date), 'dd.MM.yyyy')}
+          {format(new Date(dateEnd), 'dd.MM.yyyy')}
         </Label.Detail>
       </Label>
 

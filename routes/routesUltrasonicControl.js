@@ -81,6 +81,16 @@ const routesUltrasonicControl = [
   },
   {
     method: "on",
+    routeName: "update-ultrasonic-status",
+    func: (idControl) => {
+      const query = `UPDATE ultrasonic_control
+      SET result = 'finished'
+      WHERE id = ${idControl}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
     multiple: true,
     routeName: "update-ultrasonic-result",
     func: (formData) => {

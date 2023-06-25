@@ -115,7 +115,8 @@ function PnematicControl({next}) {
     const fields = ['check_result'];
     const isFillData = checkFilling(results, fields);
     if (isFillData) {
-      finish(idExpertiseActive)
+      electron.ipcRenderer.send('update-pneumatic-status', controlData.id);
+      finish(idExpertiseActive);
     }
     else {
       setIsFill(true);

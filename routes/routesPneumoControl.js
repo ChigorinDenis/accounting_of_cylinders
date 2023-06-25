@@ -79,6 +79,16 @@ const routesPneumoControl = [
   },
   {
     method: "on",
+    routeName: "update-pneumatic-status",
+    func: (idControl) => {
+      const query = `UPDATE pneumatic_control
+      SET result = 'finished'
+      WHERE id = ${idControl}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
     multiple: true,
     routeName: "update-pneumatic-result",
     func: (formData) => {

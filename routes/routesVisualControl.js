@@ -81,6 +81,16 @@ const routesVisualControl = [
   },
   {
     method: "on",
+    routeName: "update-visual-status",
+    func: (idControl) => {
+      const query = `UPDATE visual_control
+      SET result = 'finished'
+      WHERE id = ${idControl}`;
+      return query;
+    },
+  },
+  {
+    method: "on",
     multiple: true,
     routeName: "update-visual-result",
     func: (formData) => {
