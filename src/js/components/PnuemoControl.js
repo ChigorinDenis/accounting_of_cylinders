@@ -1,18 +1,37 @@
 import React, {useState, useEffect} from "react";
 import EditableTable from "./EditableTable";
 import UpdateControl from "./UpdateControl";
-import { Button, Header } from "semantic-ui-react";
-import { useSelector } from "react-redux";
+import { Button, Header, Message } from "semantic-ui-react";
+import { useSelector, useDispatch } from "react-redux";
 import ResultControlInfo from "./ResultContolInfo";
+import { setIsOpen } from "../state/expertiseReducer";
+import checkFilling from "../../utils/checkFilling";
+
+const MessageText = ({show}) => (
+  show && <Message error>
+    <Message.Header>Неполные данные</Message.Header>
+    <p>
+      Заполните все поля, завершить экспертизу.
+    </p>
+  </Message>
+);
+
+const options = [
+  {key: '0', label: '-//-', value: ''},
+  { key: 'ac', label: 'Активный', value: 'Активный' },
+  { key: 'pa', label: 'Неактивный', value: 'Неактивный' },
+  { key: 'cr', label: 'Критический', value: 'Критический' },
+  { key: 'ex', label: 'Катастрофический', value: 'Катастрофический' }
+];
 
 const tableHeader = [
   { id: 1, title: 'Заводской номер', name: 'prod_number', width: 1, editable: false },
   { id: 2, title: 'Год выпуска', name: 'prod_date', width: 1, editable: false },
-  { id: 3, title: '100 (0,25Рраб)', name: 'load_100', width: 1, editable: true },
-  { id: 4, title: '200 (0,5Рраб)', name: 'load_200', width: 1, editable: true },
-  { id: 5, title: '300,5 (0,75Рраб)', name: 'load_300', width: 1, editable: true },
-  { id: 6, title: '400 (Рраб)', name: 'load_400', width: 1, editable: true },
-  { id: 7, title: '420 (Рисп)', name: 'load_420', width: 1, editable: true },
+  { id: 3, title: '100 (0,25Рраб)', name: 'load_100', width: 1, editable: true, type: 'select', options },
+  { id: 4, title: '200 (0,5Рраб)', name: 'load_200', width: 1, editable: true, type: 'select', options },
+  { id: 5, title: '300,5 (0,75Рраб)', name: 'load_300', width: 1, editable: true, type: 'select', options },
+  { id: 6, title: '400 (Рраб)', name: 'load_400', width: 1, editable: true, type: 'select', options },
+  { id: 7, title: '420 (Рисп)', name: 'load_420', width: 1, editable: true, type: 'select', options },
 ];
 
 const changeStatus = (status) => {
@@ -49,11 +68,22 @@ const checkLimit = (field, row) => {
     return false;
   }
 }
+
+
+
 function PnematicControl({next}) {
   const [results, setResults] = useState([]);
   const [pneumaticControlData, setPneumaticControlData] = useState({ controlEquipment: [], controlEmployees: []});
   const [isUpdate, setIsUpdate] = useState(null);
   const [isSended, setIsSended] = useState(false);
+  const [isFill, setIsFill] = useState(null);
+
+  const dispatch = useDispatch();
+  // Daria's function
+  function finish(idExpertise) {
+    electron.ipcRenderer.send('expertise-finish', idExpertise);
+    dispatch(setIsOpen(false));
+  }
 
   const controlData = useSelector((state) => (state.expertise.controlsData.pneumaticControl));
   const idExpertiseActive = useSelector((state) => (state.expertise.activeExpertise));
@@ -79,6 +109,20 @@ function PnematicControl({next}) {
     // console.log('submitUpdate', mappedData);
     electron.ipcRenderer.send('update-pneumatic-result', mappedData);
     setIsSended(!isSended);
+  }
+
+  const checkFillingAllData = () => {
+    const fields = ['check_result'];
+    const isFillData = checkFilling(results, fields);
+    if (isFillData) {
+      finish(idExpertiseActive)
+    }
+    else {
+      setIsFill(true);
+      setTimeout(() => {
+        setIsFill(false);
+      }, 7000);
+    }
   }
 
   useEffect(() => {
@@ -118,7 +162,8 @@ function PnematicControl({next}) {
     <UpdateControl routeName={'pneumatic-control'} quality_doc={true} volme={false} data={{...pneumaticControlData, controlData}} setIsUpdate={setIsUpdate}/>
     <Header as="h4" color="blue">Сосуды</Header>
     <EditableTable tableHeader={tableHeader} data={results} submit={submitUpdate} checkLimit={checkLimit}/>
-    <Button onClick={() => next('pneumatic')} floated="right" style={{margin: '20px 0'}}>Завершить</Button>
+    <Button onClick={checkFillingAllData} floated="right" style={{margin: '20px 0'}}>Завершить</Button>
+    <MessageText show={isFill}/>
     </>
   )
 }

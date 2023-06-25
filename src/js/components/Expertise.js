@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Header, Icon, Table } from "semantic-ui-react";
+import { Button, Header, Icon, Table, Label} from "semantic-ui-react";
 import { format, differenceInDays } from "date-fns";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setActiveExpertise,
   setIsOpen,
   setControlsData,
+  setStatusExpertise,
 } from "../state/expertiseReducer";
 import { setIsOpenNewExpertise } from "../state/modalReducer";
 import Modal from "./Modal";
@@ -14,6 +15,15 @@ import ExpertiseCreate from "./ExpertiseCreate";
 const spanStyle = {
   color: "red",
 };
+
+const statusTag = (status) => {
+  switch (status) {
+    case 'finished':
+      return <Label basic color='green' size='mini'>Завершено</Label>
+    default:
+      return <Label basic color='grey' size='mini'>Выполняется</Label>
+  }
+}
 export default () => {
   const [expertise, setExpertise] = useState([]);
   const activeExpertise = useSelector((state) => state.expertise);
@@ -26,7 +36,12 @@ export default () => {
   useEffect(() => {
     async function fetchData() {
       const data = await electron.ipcRenderer.invoke("get-expertise");
-      setExpertise(data);
+      const sortedExpertise = data.sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
+        return dateB - dateA;
+      });
+      setExpertise(sortedExpertise);
       return () => {
         ipcRenderer.removeAllListeners("get-expertise");
       };
@@ -109,19 +124,21 @@ export default () => {
           <Table.Row>
             <Table.HeaderCell>Номер</Table.HeaderCell>
             <Table.HeaderCell>Дата проведения</Table.HeaderCell>
+            <Table.HeaderCell>Статус</Table.HeaderCell>
             <Table.HeaderCell></Table.HeaderCell>
           </Table.Row>
         </Table.Header>
         <Table.Body>
           {expertise.map((item) => {
-            const { id, number, date } = item;
+            const { id, number, date, status} = item;
             const date_exp = new Date(date);
             return (
               <Table.Row key={`${id}${number}`}>
                 <Table.Cell>{number}</Table.Cell>
                 <Table.Cell>{format(date_exp, "dd.MM.yyyy")}</Table.Cell>
+                <Table.Cell>{statusTag(status)}</Table.Cell>
                 <Table.Cell>
-                  <Button
+                  {status === "finished" && <Button
                     animated="vertical"
                     floated="right"
                     onClick={() => {
@@ -132,17 +149,29 @@ export default () => {
                     <Button.Content visible>
                       <Icon name="download" />
                     </Button.Content>
-                  </Button>
+                  </Button>}
+                  {status === "finished"? (
                   <Button
                     basic
                     color="blue"
                     floated="right"
                     onClick={() => {
+                      dispatch(setStatusExpertise('finished'));
                       openExpertiseModal(id);
                     }}
                   >
                     Результаты
-                  </Button>
+                  </Button>) : (
+                    <Button
+                      floated="right"
+                      onClick={() => {
+                        dispatch(setStatusExpertise('in_progress'));
+                        openExpertiseModal(id);
+                      }}
+                    >
+                      Контроль
+                    </Button>
+                  )}
                 </Table.Cell>
               </Table.Row>
             );

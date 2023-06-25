@@ -16,16 +16,16 @@ const envOptions = [
 
 const FormAddBaloon = ({close}) => {
   const [formData, setFormData] = useState({
-    prod_number: '123',
-    prod_date: 1985,
-    pressure_work: 10.5,
-    shape: 'Тороид',
-    volume: 10.0,
-    env: 'Азот',
-    thickness: 11,
-    diameter: 11,
-    length: 11,
-    mark: '38ХА',
+    prod_number: '',
+    prod_date: '',
+    pressure_work: '',
+    shape: '',
+    volume: '',
+    env: '',
+    thickness: '',
+    diameter: '',
+    length: '',
+    mark: '',
     gost: 'ГОСТ 4247-71',
     status: 'InActive'
   });

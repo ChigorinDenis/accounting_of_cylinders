@@ -4,12 +4,14 @@ import VisualControl from "./VisualControl";
 import SolidControl from "./SolidControl";
 import PnuemoControl from "./PnuemoControl"
 import UltrasonicControl from "./UltrasonicControl";
-import { Transition } from "semantic-ui-react";
+import { useSelector } from "react-redux";
 
 function ExpertiseControl() {
   const [stepsState, setStepsState] = useState({
     current: 'visual',
-  })
+  });
+
+  const statusExpertise = useSelector(state => state.expertise.statusExpertise);
 
   const next = (stepName) => {
     setStepsState({current: stepName})
@@ -18,10 +20,10 @@ function ExpertiseControl() {
   return (
     <>
       <Steps current={stepsState.current}/>
-        {stepsState.current === 'visual' && <VisualControl next={next}/>}
-        {stepsState.current === 'ultrasonic' && <UltrasonicControl next={next} />}
-        {stepsState.current === 'solid' && <SolidControl next={next} />}
-        {stepsState.current === 'pneumatic' && <PnuemoControl next={next} />}
+        {stepsState.current === 'visual' && <VisualControl next={next} statusExpertise={statusExpertise} />}
+        {stepsState.current === 'ultrasonic' && <UltrasonicControl next={next} statusExpertise={statusExpertise} />}
+        {stepsState.current === 'solid' && <SolidControl next={next} statusExpertise={statusExpertise} />}
+        {stepsState.current === 'pneumatic' && <PnuemoControl next={next} statusExpertise={statusExpertise }/>}
     </>
     
   )

@@ -15,6 +15,14 @@ const routesExpertise = [
       return query;
     },
   },
+  {
+    method: "on",
+    routeName: "expertise-finish",
+    func: (id) => {
+      const query = `UPDATE \`expertise\` SET status='finished' WHERE \`id\`='${id}';` 
+      return query;
+    },
+  },
 ];
 
 module.exports = routesExpertise;

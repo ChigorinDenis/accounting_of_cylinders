@@ -1,21 +1,27 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from'react-redux';
 import { Table, Input, Button, Icon, Label} from 'semantic-ui-react';
 
 const EditableTable = ({ tableHeader, data, submit, actionCell, limit, checkLimit}) => {
   const [editingCell, setEditingCell] = useState(null); // Хранение информации о редактируемой ячейке
   const [tableData, setTableData] = useState([]);
   const [changedRow, setChangedRow] = useState([]);
+  const [selectedValue, setSelectedValue] = useState('');
+  const statusExpertise = useSelector(state => state.expertise.statusExpertise);
 
   useEffect(() => {
     setTableData(data);
   }, [data, actionCell]);
 
   const handleCellClick = (rowId, field) => {
-    setEditingCell({ rowId, field });
+    const row = tableData.find((row) => row.id === rowId);
+    const currentValue = row ? row[field] : '';
+    setEditingCell({ rowId, field, currentValue });
   };
 
   const handleCellChange = (event, rowId, field) => {
     const newValue = event.target.value;
+    setSelectedValue(newValue);
     setTableData((prevData) => {
       const newData = prevData.map((row) => {
         if (row.id === rowId) {
@@ -28,44 +34,40 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit, checkLimi
   };
 
   const handleCellBlur = (row, field) => {
-    setEditingCell(null);
+    setEditingCell('');
     const changedRowIndex = changedRow.findIndex((item) => item.id === row.id);
     if (changedRowIndex !== -1) {
-      // Изменения уже были в записи, обновляем ее
       const updatedChangedRow = [...changedRow];
       updatedChangedRow[changedRowIndex][field] = row[field];
-      // Обновляем состояние changedRow
       setChangedRow(updatedChangedRow);
     } else {
-      // Изменения в записи еще не было, добавляем новую запись
-      const newChangedRow = { ...row };
-      // Обновляем состояние changedRow
+      const newChangedRow = { ...row, [field]: row[field] };
       setChangedRow([...changedRow, newChangedRow]);
     }
+    setSelectedValue(''); // Сбросить выбранное значение после сохранения
   };
 
   const updateTableData = (tableData, row, value) => {
     const updatedTableData = tableData.map((rowData) => {
       if (rowData.id === row.id) {
-        return { ...rowData, check_result: value }; // Изменение поля "check" на true
+        return { ...rowData, check_result: value };
       }
       return rowData;
     });
-   
-
+  
     const updatedChangedRow = [...changedRow];
     const changedRowIndex = updatedChangedRow.findIndex((item) => item.id === row.id);
     if (changedRowIndex !== -1) {
-      // Изменения уже были в записи, обновляем ее
       updatedChangedRow[changedRowIndex].check_result = value;
     } else {
-      // Изменения в записи еще не было, добавляем новую запись
       const newChangedRow = { ...row, check_result: value };
       updatedChangedRow.push(newChangedRow);
     }
     setTableData(updatedTableData);
     setChangedRow(updatedChangedRow);
+    setSelectedValue(''); // Сбросить выбранное значение после сохранения
   };
+  
 
   const spanBuild = (field, value) => {
     if (field === 'check_result') {
@@ -99,30 +101,51 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit, checkLimi
       return null;
     }
     if (finded?.editable) {
-      return (
-        <>
+      if (finded.type === "select") {
+        return (
           <Table.Cell 
             key={`${row}${field}`}
             error={isLimit}
             onClick={() => handleCellClick(row.id, field)}
           >
-            {editingCell &&
-            editingCell.rowId === row.id &&
-            editingCell.field === field ? (
+            {editingCell && editingCell.rowId === row.id && editingCell.field === field ? (
+              <select
+                value={selectedValue}
+                onChange={(event) => handleCellChange(event, row.id, field)}
+                onBlur={() => handleCellBlur(row, field)}
+              >
+                {finded.options.map((option) => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            ) : (
+              <span>{row[field] || "-//-"}</span>
+            )}
+          </Table.Cell>
+        );
+      } else {
+        return (
+          <Table.Cell
+            key={`${row}${field}`}
+            error={isLimit}
+            onClick={() => handleCellClick(row.id, field)}
+          >
+            {editingCell && editingCell.rowId === row.id && editingCell.field === field ? (
               <Input
-                value={row[field] || ''}
+                value={row[field] || ""}
                 onChange={(event) => handleCellChange(event, row.id, field)}
                 onBlur={() => handleCellBlur(row, field)}
               />
             ) : (
-              <span>
-                {row[field] || '-//-'}
-              </span>
+              <span>{row[field] || "-//-"}</span>
             )}
           </Table.Cell>
-        </>
-      );
+        );
+      }
     }
+    
     return (
       <>
         <Table.Cell key={`${row}${field}`}>{spanBuild(field, row[field])}</Table.Cell>
@@ -176,13 +199,14 @@ const EditableTable = ({ tableHeader, data, submit, actionCell, limit, checkLimi
           ))}
         </Table.Body>
       </Table>
+      { statusExpertise === "in_progress" &&
       <Button
         onClick={() => submit(tableData)}
         style={{ margin: "20px 0" }}
         color="blue"
       >
         Сохранить
-      </Button>
+      </Button> }
     </>
   );
 };

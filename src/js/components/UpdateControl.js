@@ -36,7 +36,7 @@ function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme
   );
 
   const tableComponent = useMemo(() => {
-    return <TableInfo data={data} ptd={ptd} type_doc={type_doc} ntd={ntd} quality_doc={quality_doc} volme={volme} />;
+    return <TableInfo data={data} ptd={ptd || formData.ptd_doc} type_doc={type_doc || formData.ntd_type_doc} ntd={ntd || formData.ntd_doc} quality_doc={quality_doc || formData.ntd_quality_doc} volme={volme || formData.volme_control} />;
   }, [data, ptd, type_doc, ntd, quality_doc, volme]);
 
   useEffect(() => {
@@ -89,6 +89,7 @@ function UpdateControl({ routeName, ptd, type_doc, ntd, quality_doc, data, volme
       idControl,
       idEquipments,
     });
+    
     electron.ipcRenderer.send(`add-${routeName}-employee`, {
       idControl,
       idEmployees,

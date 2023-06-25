@@ -47,13 +47,7 @@ function Header({ contextRef }) {
        
         <Menu.Menu position='right'>
           <Menu.Item>
-            {/* <Label color='black'>
-              <Icon name='mail'/>
-              <Label circular color="red">
-                2
-              </Label>
-          </Label> */}
-          <Notification data={unsurvivalBaloons}/>
+            <Notification data={unsurvivalBaloons}/>
           </Menu.Item>
           <Menu.Item>
             <Input icon='search' placeholder='Поиск...' />
