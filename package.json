@@ -5,21 +5,35 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build:asar": "asar pack build app.asar",
     "build": "electron-builder",
     "watch": "webpack --config webpack.common.js --watch",
     "start": "electron ."
   },
   "build": {
     "appId": "com.example.app",
-    "productName": "My Electron App",
+    "asar": true,
+    "productName": "Экпертиза",
     "directories": {
       "output": "dist"
     },
+    "files": [
+      "preload.js",
+      "package.json",
+      "fonts",
+      "build/js",
+      "main.js",
+      "index.html",
+      "node_modules/",
+      "mathModel/",
+      "printout/",
+      "routes/"
+    ],
     "win": {
       "target": "nsis",
       "icon": "path/to/icon.ico"
     }
-  },  
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -27,8 +41,8 @@
     "@reduxjs/toolkit": "^1.9.5",
     "date-fns": "^2.30.0",
     "docxtemplater": "^3.37.11",
-    "electron-reload": "^2.0.0-alpha.1",
     "electron-is-dev": "^2.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
     "lodash": "^4.17.21",
     "mysql2": "^3.3.1",
     "pizzip": "^3.1.4",
@@ -41,12 +55,14 @@
     "semantic-ui-react": "^2.1.4"
   },
   "devDependencies": {
-    "electron": "^10.1.2",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "@babel/preset-react": "^7.10.4",
+    "asar": "^3.2.0",
     "babel-loader": "^8.1.0",
     "css-loader": "^4.3.0",
+    "electron": "^10.1.2",
+    "electron-builder": "^24.4.0",
     "file-loader": "^6.2.0",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",

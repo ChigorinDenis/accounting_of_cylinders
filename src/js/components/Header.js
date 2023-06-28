@@ -45,13 +45,13 @@ function Header({ contextRef }) {
           color="blue"
         />
        
-        <Menu.Menu position='right'>
+        <Menu.Menu position='left'>
           <Menu.Item>
             <Notification data={unsurvivalBaloons}/>
           </Menu.Item>
-          <Menu.Item>
+          {/* <Menu.Item>
             <Input icon='search' placeholder='Поиск...' />
-          </Menu.Item>
+          </Menu.Item> */}
         </Menu.Menu>
       </Menu>
     </Sticky>

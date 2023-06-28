@@ -53,6 +53,7 @@ function createWindow() {
       slashes: true,
     })
   );
+  win.setMenu(null);
 }
 
 
